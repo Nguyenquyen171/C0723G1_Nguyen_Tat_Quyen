@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // // Cách 1
+    function SecondLargest(arr) {
+        let max = arr[0];
+        let secondMax = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                secondMax = max;
+                max = arr[i];
+            } else if (arr[i] > secondMax && arr[i] < max) {
+                secondMax = arr[i];
+            }
+        }
+
+        return secondMax;
+    }
+    let numbers = [3, 52, 8, 20, 15];
+
+    let secondLargest = SecondLargest(numbers);
+    console.log("Số lớn thứ hai trong mảng là: " + secondLargest);
+    // cách 2
+    // function findSecondLargestNumber(arr) {
+    //     let max = arr[0];
+    //     let secondMax = arr[0];
+    //     for (let i =1  ; i < arr.length; i++) {
+    //         if (arr[i] > max) {
+    //             secondMax = max;
+    //             max = arr[i];
+    //         } else if (arr[i] > secondMax && arr[i] < max) {
+    //             secondMax = arr[i];
+    //         }
+    //     }
+    //
+    //     return secondMax;
+    // }
+    //
+    // let numbers = +prompt("Nhập dãy số muốn kiểm tra ");
+    //
+    // let secondLargest = findSecondLargestNumber(numbers);
+    // console.log("Số lớn thứ hai trong mảng là: " + secondLargest);
+</script>
+</body>
+</html>
