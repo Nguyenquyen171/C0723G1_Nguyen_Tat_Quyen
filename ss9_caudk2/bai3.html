@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let module = +prompt("Tổng số buổi của module 1");
+        let day = +prompt("Tổng số buổi nghĩ của module 1");
+        let absent = day/module * 100;
+        if (!isNaN(module) && !isNaN(day) && module > 0 && day > 0 && module > ) {day
+            if (absent > 10 && absent < 20) {
+                document.write("Số buổi vắng của bạn đã tới" + absent + " phần trăm, coi chừng bị buộc thôi học chuyển ");
+            } else if (absent >= 20) {
+                document.write("Bạn buộc phải thôi học chuyển lớp");
+            } else {
+                document.write("Số buổi nghĩ của bạn vẫn nằm trong vùng an toàn ")
+            }
+            break;
+        } else {
+            alert(" Nhập sai, vui lòng  lại");
+        }
+    } while (true);
+
+
+</script>
+
+</body>
+</html>
