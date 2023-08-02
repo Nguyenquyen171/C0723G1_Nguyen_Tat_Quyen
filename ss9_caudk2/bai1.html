@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>quy doi</title>
+</head>
+
+<body>
+<form>
+    <h2>Thiết bị chuyển đổi tiền tệ từ VietNamese</h2>
+    <input type="number" id="number" placeholder="Nhập Số tiền muốn đổi">
+    <select id="money">
+        <option value="USD"> USD(Đô La)</option>
+        <option value="JPY"> JPY(Yên Nhật)</option>
+        <option value="RMB"> RMB (Nhân dân tệ TQ)</option>
+        <option value="GBP"> GBP (Bảng Anh)</option>
+        <option value="VND"> VND (Việt Nam</option>
+    </select>
+    </select>
+    <button onclick="result()" style="background-color: yellowgreen" type="button"
+            value="convert">Quy đổi
+    </button>
+    <p style="color: blueviolet" id="result">Số tiền được chuyển thành:</p>
+</form>
+<script>
+    function result() {
+        let amount = document.getElementById("number").value;
+
+        let from = document.getElementById("money").value;
+        if (from === "USD") {
+            document.getElementById("result").innerText = amount / 23000 + 'USD(Đô La)';
+        }
+        if (from === "JPY") {
+            document.getElementById("result").innerText = amount / 16865 + 'JPY(Yên Nhật)';
+        }
+        if (from === "RMB") {
+            document.getElementById("result").innerText = amount / 35510 + ' RMB (Nhân dân tệ TQ)';
+        }
+        if (from === "GBP") {
+            document.getElementById("result").innerText = amount / 30000 + ' GBP (Bảng Anh)';
+        }
+        if (from === "VND") {
+            document.getElementById("result").innerText = amount + ' VND';
+        }
+    }
+
+
+</script>
+</body>
+
+</html>

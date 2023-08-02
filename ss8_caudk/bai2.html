@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Cách 2 khi sắp xếp được số từ nhỏ đến lớn
+    // let a = 3;
+    // let b = 5;
+    // let c = 2;
+    // let d = 4;
+    // let number = [a, b, c, d];
+    // number.sort(function (a, b) {
+    //     return a - b;
+    // });
+    //
+    // console.log("Các số theo thứ tự từ nhỏ đến lớn: " + number.join(" "));
+    // let arr1= number.join(" ");
+    // let max= arr1[arr1.length - 1 ];
+    // let  = arr1[0];
+    // console.log("Số lớn nhất là: " + max);
+    // console.log("Số nhỏ nhất là: " + min);
+    // number.sort(function (a, b) {
+    //     return b - a;min
+    // });
+    //
+    // console.log("Các số theo thứ tự từ nhỏ đến lớn: " + number.join(" "));
+    let a = 3;
+    let b = 5;
+    let c = 2;
+    let d = 4;
+    let number = [a, b, c, d];
+    let max = number[0];
+    let min = number[0];
+    number.sort(function (a, b) {
+        return a - b;
+    });
+
+    console.log("Các số theo thứ tự từ nhỏ đến lớn: " + number.join(" "));
+    number.sort(function (a, b) {
+        return b - a;
+    });
+
+    console.log("Các số theo thứ tự từ nhỏ đến lớn: " + number.join(" "));
+
+
+    for (let i = 1; i < number.length; i++) {
+        if (max < number[i]) {
+            max = number[i];
+        }
+        if (min > number[i]) {
+            min = number[i];
+        }
+    }
+    console.log("Số lớn nhất là: " + max);
+    console.log("Số nhỏ nhất là: " + min);
+
+
+</script>
+
+</body>
+</html>

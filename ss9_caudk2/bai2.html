@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let timeWork = +prompt("Nhập số giờ bạn đã làm trong tháng qua");
+        let salary = +prompt("Nhập số lương của bạn (triệu đồng) ");
+        if (isNaN(timeWork) === false && isNaN(salary) === false && isNaN(timeWork > 0 && salary > 0)) {
+            break;
+        } else {
+            alert("Nhập sai vui lòng bạn nhập lại")
+        }
+    } while (true)
+    if (salary >= 100 && salary < 200) {
+        document.write("Số tiền thưởng của bạn trong " + timeWork + " giờ là: " + timeWork * 0.1 + " triệu đồng ");
+    } else {
+        document.write("Bạn không được thưởng do số  làm quá ít")
+        giờ
+    }
+
+</script>
+</body>
+</html>
