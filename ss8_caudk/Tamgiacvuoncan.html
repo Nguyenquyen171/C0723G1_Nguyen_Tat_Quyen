@@ -6,25 +6,24 @@
 </head>
 <body>
 <script>
-
     do {
-        let numberA = +prompt("Chiều dài cannh A của tam giác ");
-        let numberB = +prompt("Chiều dài cannh B của tam giác ");
-        let numberC = +prompt("Chiều dài cannh C của tam giác ");
-        if (isNaN(numberA) === false && isNaN(numberB) === false && isNaN(numberC === false && numberA > 0 && numberB > 0 && numberC > 0)) {
+        let numberA = +prompt("Chiều dài cạnh A của tam giác");
+        let numberB = +prompt("Chiều dài cạnh B của tam giác");
+        let numberC = +prompt("Chiều dài cạnh C của tam giác");
+        if (!isNaN(numberA) && !isNaN(numberB) && !isNaN(numberC) && numberA > 0 && numberB > 0 && numberC > 0) {
+            let conditionOne = numberA * numberA + numberB * numberB === numberC * numberC || numberA * numberA + numberC * numberC === numberB * numberB || numberB * numberB + numberC * numberC === numberA * numberA;
+            let conditionTwo = numberA === numberB || numberA === numberC || numberB === numberC;
+
+            if (conditionOne && conditionTwo) {
+                document.write("Hình này là hình tam giác vuông cân");
+            } else {
+                document.write("Hình này không phải là hình tam giác vuông cân");
+            }
             break;
         } else {
-            alert("Nhập sai vui lòng bạn nhập lại")
+            alert("Nhập sai, vui lòng nhập lại");
         }
-    } while (true)
-    let conditionOne = numberA * numberA + numberB * numberB === numberC * numberC || numberA * numberA + numberC * numberC === numberB * numberB || numberB * numberB + numberC * numberC === numberA * numberA;
-    let conditionTwo = numberA === numberB || numberA === numberC || numberB === numberC;
-
-    if (conditionOne && conditionTwo) {
-        console.log("Hình này là hình tam giác vuông cân ");
-    } else {
-        console.log("Hình này k phải là hình tam giác vuông cân");
-    }
+    } while (true);
 
 </script>
 </body>
