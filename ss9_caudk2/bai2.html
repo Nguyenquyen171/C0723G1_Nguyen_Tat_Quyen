@@ -6,21 +6,35 @@
 </head>
 <body>
 <script>
+    // do {
+    //     let timeWork = +prompt("Nhập số giờ bạn đã làm trong tháng qua");
+    //     let salary = +prompt("Nhập số lương của bạn (triệu đồng) ");
+    //     if (isNaN(timeWork) === false && isNaN(salary) === false && isNaN(timeWork > 0 && salary > 0)) {
+    //         break;
+    //     } else {
+    //         alert("Nhập sai vui lòng bạn nhập lại")
+    //     }
+    // } while (true)
+    // if (salary >= 100 && salary < 200) {
+    //     document.write("Số tiền thưởng của bạn trong " + timeWork + " giờ là: " + timeWork * 0.1 + " triệu đồng ");
+    // } else {
+    //     document.write("Bạn không được thưởng do số  làm quá ít")
+    // }
     do {
         let timeWork = +prompt("Nhập số giờ bạn đã làm trong tháng qua");
         let salary = +prompt("Nhập số lương của bạn (triệu đồng) ");
-        if (isNaN(timeWork) === false && isNaN(salary) === false && isNaN(timeWork > 0 && salary > 0)) {
+        if (!isNaN(timeWork) && !isNaN(salary) && timeWork > 0 && salary > 0) {
+            if (salary >= 100 && salary < 200) {
+                document.write("Số tiền thưởng của bạn trong " + timeWork + " giờ là: " + timeWork * 0.1 + " triệu đồng ");
+            } else {
+                document.write("Bạn không được thưởng do số  làm quá ít")
+            }
             break;
         } else {
-            alert("Nhập sai vui lòng bạn nhập lại")
+            alert(" Nhập sai, vui lòng  lại");
         }
-    } while (true)
-    if (salary >= 100 && salary < 200) {
-        document.write("Số tiền thưởng của bạn trong " + timeWork + " giờ là: " + timeWork * 0.1 + " triệu đồng ");
-    } else {
-        document.write("Bạn không được thưởng do số  làm quá ít")
-        giờ
-    }
+    } while (true);
+
 
 </script>
 </body>

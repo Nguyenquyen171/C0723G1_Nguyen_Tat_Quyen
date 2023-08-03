@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    do {
+//        let number = +prompt("Nhập số muốn kiểm tra");
+//        if (!isNaN(number) && number >= 1) {
+//            for (let i = 2; i <= Math.sqrt(number); i++) {
+//                if (number % i === 0) {
+//                    // prime = false
+//                    alert("Số này không phải là số nguyên tố mời bạn nhâp lại")
+//                } else {
+//                    document.write("Số" + number + " là số nguyên tố");
+//                }
+//            }
+//            break;
+//        } else {
+//            alert("Bạn đã nhập sai vui lòng nhập lại");
+//        }
+//    } while (true);
+do {
+    let number = +prompt("Nhập số muốn kiểm tra");
+    if (!isNaN(number) && number >= 1) {
+        let Prime = true;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                Prime = false;
+                break;
+            }
+        }
+        if (Prime) {
+            document.write("Số " + number + " là số nguyên tố");
+            break;
+        } else {
+            alert("Số này không phải là số nguyên tố, mời bạn nhập lại");
+        }
+        
+    } else {
+        alert("Bạn đã nhập sai vui lòng nhập lại");
+    }
+} while (true);
+</script>
+
+</body>
+</html>
