@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let num;
+        let isDuplicate;
+        do {
+            num = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+            isDuplicate = arr.includes(num);
+            if (isDuplicate) {
+                alert("Phần tử đã tồn tại. Vui lòng nhập lại.");
+            }
+        } while (isDuplicate);
+        arr.push(num);
+    }
+    document.write("Các phần tử trong mảng là:" + "[" + arr + "]")
+</script>
+
+
+</body>
+</html>

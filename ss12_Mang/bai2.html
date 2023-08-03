@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ" + (i + 1));
+    }
+    document.write("Mảng sau khi được thêm mới là: " + "[" + arr + "]" + "<br>");
+
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (Math.sqrt(arr[i]) % 1 === 0) {
+            arr1.push(arr[i]);
+
+        } else {
+            arr2.push(arr[i]);
+        }
+
+    }
+    document.write("Các số chính phương trong mảng là: " + arr1 + "<br>")
+
+</script>
+
+</body>
+</html>

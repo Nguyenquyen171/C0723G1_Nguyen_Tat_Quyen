@@ -14,6 +14,8 @@
         if (childAge + 25 < childFather && !isNaN(childAge) && !isNaN(childFather) && childAge > 0 && childFather > 0 && childFather < 120 && childAge < 120) {
             if (childAge + 25 < childFather) {
                 year = 0
+                document.write("Qua 0 năm thì tuổi cha gấp đôi tuổi con")
+                break;
             }
             for (let i = 1; i < 100; i++) {
                 childFather++;

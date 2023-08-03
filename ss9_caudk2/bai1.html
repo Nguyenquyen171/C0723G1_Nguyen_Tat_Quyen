@@ -16,9 +16,11 @@
         <option value="RMB"> RMB (Nhân dân tệ TQ)</option>
         <option value="GBP"> GBP (Bảng Anh)</option>
         <option value="VND"> VND (Việt Nam</option>
+        <option value="Won"> WON (Hàn)</option>
     </select>
+
     <button onclick="result()" style="background-color: yellowgreen" type="button"
-            >Quy đổi
+    >Quy đổi
     </button>
     <p style="color: blueviolet" id="result">Số tiền được chuyển thành:</p>
 </form>
@@ -41,6 +43,9 @@
         }
         if (from === "VND") {
             document.getElementById("result").innerText = amount + ' VND';
+        }
+        if (from === "Won") {
+            document.getElementById("result").innerText = amount / 18.278 + ' Won(Hàn)';
         }
     }
 
