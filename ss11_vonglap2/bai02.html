@@ -7,24 +7,28 @@
 <body>
 <script>
     debugger
-    let year=0
-    do{
-        let childAge= parseInt(prompt("Nhập số tuổi con"));
-        let childFather= parseInt(prompt("Nhập số tuổi cha"));
-        if (childAge+25<childFather && !isNaN(childAge) && !isNaN(childFather) && childAge>0 && childFather>0 && childFather<120 && childAge<120 ){
-            for (let i=1;i<100;i++){
-                childFather ++;
-                year ++
-                if (childFather>=childAge*2){
-                    document.write("Qua " + year +" năm thì tuổi cha gấp đôi tuổi con");
+    let year = 0
+    do {
+        let childAge = parseInt(prompt("Nhập số tuổi con"));
+        let childFather = parseInt(prompt("Nhập số tuổi cha"));
+        if (childAge + 25 < childFather && !isNaN(childAge) && !isNaN(childFather) && childAge > 0 && childFather > 0 && childFather < 120 && childAge < 120) {
+            if (childAge + 25 < childFather) {
+                year = 0
+            }
+            for (let i = 1; i < 100; i++) {
+                childFather++;
+                year++
+                if (childFather >= childAge * 2) {
+                    document.write("Qua " + i + " năm thì tuổi cha gấp đôi tuổi con");
                     break;
                 }
-            }break;
+            }
+            break;
         } else {
             alert("Bạn đã nhập sai số tuổi vui lòng nhập lại:")
         }
 
-    }while (true)
+    } while (true)
 </script>
 
 </body>

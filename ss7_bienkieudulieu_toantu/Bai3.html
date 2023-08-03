@@ -5,20 +5,43 @@
     <title>Title</title>
 </head>
 <body>
-<h3> How much was your bill</h3>
-<br>
-$<input type="number" id="Money" placeholder="1000" style="width: 300px">
+<h2 style="width:300px; background-color: Red" align="center"> TIP CALCULATOR </h2>
+<h4> How much was your bill</h4>
+$<input type="number" id="Money" placeholder="1000" style="width: 180px">
 <br>
 <h4> How was your service ?</h4>
-<select>
-    <option> Outstanding: 30%</option>
-    <option> Good: 20%</option>
-    <option> It was OK: 15%	</option>
-    <option> BAD: 10%   	</option>
-    <option>Terrible: 5%	</option>
+<select style="height: 60px; width: 200px" id="feeling">
+    <option value="Outstanding"> Outstanding - 30%</option>
+    <option value="Good"> Good: 20%</option>
+    <option value="OK"> It was OK: 15%</option>
+    <option value="BAD"> BAD: 10%</option>
+    <option value="Terrible">Terrible: 5%</option>
 </select>
 <h4> How many people are sharing the bill?</h4>
-<input type="number" id="people" placeholder="5" style="width: 300px"> People
+<input type="number" id="people" placeholder="5" style="width: 180px"> People
+<br>
+<br>
+
+<button onclick="result" style="width:200px; background-color: yellowgreen" align="center">CACULATE! </button>
+<p style="color: blueviolet" id="result">Số tiền được chuyển thành:</p>
+<script>
+    function result() {
+        let money = document.getElementById("Money").value;
+        let tip = document.getElementById("feeling").value;
+        let number = document.getElementById("people").value;
+        if ( tip === Outstanding ){
+            document.getElementById(result).innerText= "Số tiền tip của mỗi người là" + money*0.3/number ;
+        }if ( tip === Good ){
+            document.getElementById(result).innerText= "Số tiền tip của mỗi người là" + money*0.2/number ;
+        }if ( tip === OK ){
+            document.getElementById(result).innerText= "Số tiền tip của mỗi người là" + money*0.15/number ;
+        }if ( tip === BAD ){
+            document.getElementById(result).innerText= "Số tiền tip của mỗi người là" + money*0.1/number ;
+        }if ( tip === Terrible ){
+            document.getElementById(result).innerText= "Số tiền tip của mỗi người là" + money*0.05/number ;
+        }
+            }
+</script>
 
 
 </body>
