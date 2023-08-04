@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function mainArr() {
+    do {
+        let n = +prompt("Nhập chiều dài của mảng");
+        let arr = [];
+        if (!isNaN(n) && n >= 0) {
+            for (let i = 0; i < n; i++) {
+                arr[i] = +prompt("Nhập số phần tử thứ " + (i + 1));
+            }
+            document.write("Các phần tử trong mảng 1 chiều là:" + arr + "<br>");
+            let evenNumber = [];
+            let oddNumber = [];
+            let other = [];
+            for (let i = 0; i < arr.length; i++) {
+                if(!isNaN(arr[i]) && arr[i]>0) {
+                    if (arr[i] === 0) {
+                        other.push(arr[i])
+                    }
+                    if (arr[i] % 2 === 0 && arr[i] !== 0) {
+                        evenNumber.push(arr[i]);
+                    } else if (arr[i] !== 0 && arr[i] % 2 !== 0) {
+                        oddNumber.push(arr[i]);
+                    }
+                }    else {
+                    alert("Các phần tử trong mảng phải là số");
+                }
+            }
+            document.write("Mảng các số chẵn là:" + "[" + evenNumber + "]" + "<br>");
+            document.write("Mảng các số lẻ là:" + "[" + oddNumber + "]" + "<br>");
+            document.write("Mảng các không phải số chẳn cũng không phải số lẻ  là:" + "[" + other + "]");
+            break;
+        } else {
+            alert("Bạn nhập sai vui lòng nhập lại");
+        }
+    }
+    while (true) ;
+} mainArr()
+
+
+</script>
+
+</body>
+</html>

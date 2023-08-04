@@ -13,7 +13,7 @@
         arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
     }
     document.write("Các phân tử trong mảng mới là " + "[" + arr + "]" + "<br>");
-    for (i = 0; i < n; i++) {
+    for ( let i = 0; i < n; i++) {
         if (arr[i] % 2 === 0 && i % 2 !== 0) {
             sum += arr[i];
         }
