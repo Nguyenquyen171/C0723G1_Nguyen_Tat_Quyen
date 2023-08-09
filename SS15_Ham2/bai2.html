@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function triant(a, b, c) {
+        if (a + b > c && a + c > b && b + c > a) {
+            if (a * a + b * b === c * c || a * a + c * c === b * b || b * b + c * c === a * a) {
+                document.write("Hình này là tam giác vuông");
+            } else {
+                document.write("Hình này là tam giác");
+            }
+        } else {
+            document.write("Không phải là cạnh của tam giác");
+        }
+    }
+
+    do {
+        let a = +prompt("Nhập chiều dài cạnh a:");
+        let b = +prompt("Nhập chiều dài cạnh b:");
+        let c = +prompt("Nhập chiều dài cạnh c:");
+        if (!isNaN(a) && !isNaN(b) && !isNaN(c) && a > 0 && b > 0 && c > 0) {
+            document.write("Chiều dài cạnh thứ 1: " + a + "<br>");
+            document.write("Chiều dài cạnh thứ 2: " + b + "<br>");
+            document.write("Chiều dài cạnh thứ 3: " + c + "<br>");
+            triant(a, b, c);
+            break;
+        } else {
+            alert("Bạn nhập sai, vui lòng nhập lại:");
+        }
+    } while (true);
+    triant(a, b, c);
+
+
+</script>
+
+
+</body>
+</html>
