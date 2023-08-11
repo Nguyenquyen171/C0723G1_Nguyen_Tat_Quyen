@@ -6,15 +6,13 @@
 </head>
 <body>
 <script>
-    debugger
     let year = 0
     do {
         let childAge = parseInt(prompt("Nhập số tuổi con"));
         let childFather = parseInt(prompt("Nhập số tuổi cha"));
         if (childAge + 25 < childFather && !isNaN(childAge) && !isNaN(childFather) && childAge > 0 && childFather > 0 && childFather < 120 && childAge < 120) {
-            if (childAge + 25 < childFather) {
-                year = 0
-                document.write("Tuổi cha đã hơn gấp đôi tuổi con rồi")
+            if (childAge + 25 < childFather / 2) {
+                document.write("Tuổi cha đã hơn gấp đôi tuổi con rồi");
                 break;
             }
             for (let i = 1; i < 100; i++) {
