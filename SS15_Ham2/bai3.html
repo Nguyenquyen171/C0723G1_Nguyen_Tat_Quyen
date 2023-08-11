@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập số muốn kiểm tra ");
+    let arr = n.split("")
+    function findMaxNumer(arr) {
+        if (n / 1000 < 1) {
+            return -1
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] <= arr[i] + 1]) {
+                    arr.splice(i, 1);
+                    break;
+                }
+            }
+            return arr.join("");
+        }
+
+    }
+    document.write(findMaxNumer(arr));
+</script>
+</body>
+</html>
