@@ -7,63 +7,38 @@
 </head>
 <body>
 <script>
-    let n = +prompt("Nhập độ dài của mảng");
     let arr = [];
-    for (let i = 0; i < n; i++) {
-        arr[i] = +prompt("Nhập phần tử thứ " + (i+1) );
-    }
-    document.write("Mảng bạn nhập vào là : " + "[" + arr + "]");
-    let evenNumber = 0;
-    let oddNumber = 0;
-    for (let j = 0; j < arr.length; j++) {
-        if (arr[j] % 2 === 0) {
-            evenNumber++;
+    do {
+        let n = +prompt("Nhập độ dài của mảng");
+        if (!isNaN(n) && n>0){
+            for (let i = 0; i < n; i++) {
+            arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+        }
+            document.write("Mảng bạn nhập vào là : " + "[" + arr + "]");
+            break;
+
+        }else {
+            alert("Bạn nhập sai vui lòng nhập lại:");
+        }
+    }while (true)
+    function newArray(arr) {
+        let evenNumber = 0;
+        let oddNumber = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] % 2 === 0) {
+                evenNumber++;
+            } else {
+                oddNumber++;
+            }
+        }
+        if (oddNumber === evenNumber) {
+            alert("OK");
         } else {
-            oddNumber++;
+            alert("No");
         }
     }
-    if (oddNumber === evenNumber) {
-        alert("OK");
-    } else {
-        alert("No");
-    }
+    newArray(arr);
 
 </script>
 </body>
 </html>
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">-->
-<!--    <title>Document</title>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--<script>-->
-<!--    debugger-->
-<!--    let n = +prompt("Nhập độ dài mảng : ");-->
-<!--    let arr = [];-->
-<!--    let arr1 = [];-->
-<!--    let arr2 = [];-->
-<!--    for (let i = 0; i < n; i++) {-->
-<!--        arr[i] = +prompt("Nhập vào phần tử mảng tại phần tử thứ " + i);-->
-<!--    }-->
-<!--    document.write("Mảng bạn nhập vào là : " + "[" + arr + "]" + "</br>");-->
-<!--    for (let i = 0; i < arr.length; i++) {-->
-<!--        if (arr[i] % 2 === 0) {-->
-<!--            arr1.push(arr[i]);-->
-<!--        } else {-->
-<!--            arr2.push(arr[i]);-->
-<!--        }-->
-<!--    }-->
-<!--    if (arr1.length === arr2.length) {-->
-<!--        document.write('OK');-->
-<!--    } else {-->
-<!--        document.write('NO');-->
-<!--    }-->
-<!--</script>-->
-<!--</body>-->
-
-<!--</html>-->
