@@ -6,12 +6,20 @@
 </head>
 <body>
 <script>
+    let arr = [];
     do {
         let n = +prompt("Nhập chiều dài của mảng:");
-        let arr = [];
+
         if (!isNaN(n) && n > 0) {
             for (let i = 0; i < n; i++) {
-                arr[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " mảng");
+                do {
+                    arr[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " mảng");
+                    if (!isNaN(arr[i])) {
+                        break;
+                    }else {
+                        alert("Ban nhap sai vui long nhap lai: ");
+                    }
+                }while (true);
             }
             document.write("Các phần tử của mảng là: " + arr);
             break;
@@ -19,13 +27,24 @@
             alert("bạn đã nhập sai vui lòng nhập lại:");
         }
     } while (true);
-    let sum = arr[1] - arr[0]
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i - 1] > arr[i]) {
-            if (arr[i] - arr[i - 1] === sum) {
+
+    function checkSorted(arr) {
+        let sum = arr[1] - arr[0];
+        let isAscending = true;
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] + sum !== arr[i + 1]) {
+                isAscending = false;
+                break;
             }
         }
+        if (isAscending) {
+            document.write("OK");
+        } else {
+            document.write("NO");
+        }
     }
+
+    checkSorted(arr);
 
 </script>
 

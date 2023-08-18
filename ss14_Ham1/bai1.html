@@ -6,40 +6,41 @@
 </head>
 <body>
 <script>
-    let arr=[];
- do{
-     let n= +prompt("Nhập chiều dài của dãy số ");
+    let arr = [];
+    do {
+        let n = +prompt("Nhập chiều dài của dãy số ");
 
-     if(!isNaN(n)&& n>0){
-         for (let i=0;i<n;i++){
-             arr[i]= +prompt("Nhập phần tử thứ " + (i+1) + " của mảng" )
+        if (!isNaN(n) && n > 0) {
+            for (let i = 0; i < n; i++) {
+                arr[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng")
 
-         }document.write("Các phần tử của mảng là:" + arr);
-         break;
+            }
+            document.write("Các phần tử của mảng là:" + arr);
+            break;
 
-     }else {
-         alert("Bạn nhập k hợp lệ, vui lòng nhập lại")
-     }
- }while (true);
+        } else {
+            alert("Bạn nhập k hợp lệ, vui lòng nhập lại")
+        }
+    } while (true);
+    function CheckNumber(arr) {
+        if (arr[0] % 2 === 0) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 !== 0) {
+                    return -1;
+                }
+            }
+            return 1;
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    return -1;
+                }
+            }
+            return 0;
+        }
+    }
 
- function CheckNumber(arr) {
-     if (arr[0] % 2 === 0) {
-         for (let i = 0; i < arr.length; i++) {
-             if (arr[i] % 2 !== 0) {
-                 return -1;
-             }
-         }
-         return 1;
-     } else {
-         for (let i = 0; i < arr.length; i++) {
-             if (arr[i] % 2 === 0) {
-                 return -1;
-             }
-         }
-         return 0;
-     }
- }
- alert(CheckNumber(arr));
+    alert(CheckNumber(arr));
 
 </script>
 

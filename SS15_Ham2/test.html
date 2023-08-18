@@ -5,14 +5,65 @@
     <title>Title</title>
 </head>
 <body>
+
 <script>
-  let a= +prompt("Nhập số muốn tính");
-  let sum=0
-  for (let i=1; i<a;i++){
-    a = a*i
-    sum=a;
-  }
-  document.write(a)
+    // tim gia tri lon nhat k dung ham //
+    //  var array = [5,3,4,1,6,7,2];
+    //
+    //  for(var x=0; x<array.length; x++)
+    //  {
+    //      for(var y=array.length-1; y>x; y--)
+    //      {
+    //          if(array[x] > array[y])
+    //          {
+    //              var temp = array[y];
+    //              array[y] = array[x];
+    //              array[x] = temp;
+    //          }
+    //      }
+    //  }
+    //
+    // document.write(array);
+    let arr = []
+    do {
+        let number = +prompt("Nhap chieu dai cua mang:");
+        if (!isNaN(number) && number > 0) {
+            for (let i = 0; i < number; i++) {
+                do {
+                    arr[i] = prompt("Nhap phan tử thứ " + i + " của mảng");
+                    if (!isNaN(arr[i]) && arr[i] > 0) {
+                        break;
+                    } else {
+                        alert("Bạn nhập sai vui lòng nhập lại:");
+                    }
+                } while (true);
+            }
+            document.write("Các phần tử của mảng là: " + arr + "<br>");
+            break;
+
+        } else {
+            alert("Ban nhap sai vui long nhap lai");
+        }
+    } while (true);
+    function bubbleSort(arr) {
+        for (let x = 0; x < arr.length; x++) {
+            for (let y = arr.length - 1; y > x; y--) {
+                if (arr[x] > arr[y]) {
+                    let temp = arr[y];
+                    arr[y] = arr[x];
+                    arr[x] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    let sortedArray = bubbleSort(arr);
+    document.write("Các phần tử của mảng theo thứ tự tăng dần là: " + sortedArray);
+
+
+
+
 </script>
 
 </body>
