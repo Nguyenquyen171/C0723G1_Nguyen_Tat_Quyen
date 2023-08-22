@@ -6,47 +6,23 @@
 </head>
 <body>
 <script>
-    let arr=[];
-    do{
-        let number= +prompt("Nhap do dai cua mang");
-        if (!isNaN(number)&& number>0){
-            for (let i = 0; i < number; i++) {
-                do {
-                    arr[i]= +prompt("Nhap phan tu thu " + i + " cua mang");
-                    if (!isNaN(arr[i])&& arr[i]>0){
-                        break;
-                    }else {
-                        alert("Ban nhap sai vui long nhap lai")
-                    }
-                }while (true);
-
-            }document.write("Các phần tử của mảng là: " + arr);
-            break;
-        }else {
-            alert("Bạn nhập sai vui lòng nhap lại");
-        }
-    }while (true);
-    function checkSorted(arr) {
-
-        let isAscending = true;
-        let isDescending = true;
-
-        for (let i = 0; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                isAscending = false;
+    do {
+        let money = +prompt("Nhập số tiền lương của bạn (triệu đồng) ");
+        if (!isNaN(money) && money > 0) {
+            if (money > 15) {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.2) + " triệu đồng");
+                break;
+            } else if (money > 7) {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.1)+ " triệu đồng");
+                break;
+            } else {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.05)+ " triệu đồng");
+                break;
             }
-            if (arr[i] < arr[i + 1]) {
-                isDescending = false;
-            }
-        }
-        if (isAscending || isDescending) {
-            document.write("OK");
         } else {
-            document.write("NO");
+            alert("Bạn nhập sai vui lòng nhập lại:");
         }
-    }
-    checkSorted(arr);
-
+    } while (true) ;
 </script>
 </body>
 </html>

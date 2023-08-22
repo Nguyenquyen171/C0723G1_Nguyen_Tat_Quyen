@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý tài khoản</title>
+</head>
+<body>
+<h1>Quản lý tài khoản ngân hàng</h1>
+<button id="btnDeposit" onclick="depositMoney()">Nạp tiền</button>
+<button id="btnWithdraw" onclick="withdrawMoney()">Rút tiền</button>
+<br><br>
+<div id="accountTable"></div>
+<script>
+    class BankAccount {
+        constructor(accountNumber, accountName, balance) {
+            this.accountNumber = accountNumber;
+            this.accountName = accountName;
+            this.balance = balance;
+        }
+
+        deposit(amount) {
+            this.balance += amount;
+        }
+
+        withdraw(amount) {
+            if (this.balance >= amount) {
+                this.balance -= amount;
+            } else {
+                alert("Không đủ số dư để rút");
+            }
+        }
+    }
+
+    let account1 = new BankAccount('001', 'Nguyễn Văn A', 1000000);
+    let account2 = new BankAccount('002', 'Nguyễn Thị B', 2000000);
+    let account3 = new BankAccount('003', 'Trần Văn C', 3000000);
+    let accountList = [account1, account2, account3];
+    displayAccountList(accountList);
+
+    function displayAccountList(accountList) {
+        let table = "<table border='1px' style='border-collapse: collapse'>" +
+            "<tr>" +
+            "<th>STT</th>" +
+            "<th>Số tài khoản</th>" +
+            "<th>Tên tài khoản</th>" +
+            "<th>Số dư trong tài khoản</th>" +
+            "</tr>";
+        for (let i = 0; i < accountList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + accountList[i].accountNumber + "</td>" +
+                "<td>" + accountList[i].accountName + "</td>" +
+                "<td>" + accountList[i].balance + "</td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("accountTable").innerHTML = table;
+    }
+
+    function depositMoney() {
+        let accountNumber = prompt('Nhập số tài khoản cần nạp tiền');
+        let amount = +prompt('Nhập số tiền cần nạp');
+        let account = accountList.find(acc => acc.accountNumber === accountNumber);
+        if (account) {
+            account.deposit(amount);
+            alert("Nạp tiền thành công");
+        } else {
+            alert("Số tài khoản không hợp lệ");
+        }
+        displayAccountList(accountList);
+    }
+
+    function withdrawMoney() {
+        let accountNumber = prompt('Nhập số tài khoản cần rút tiền');
+        let amount = +prompt('Nhập số tiền cần rút');
+        let account = accountList.find(acc => acc.accountNumber === accountNumber);
+        if (account) {
+            if (account.balance >= amount) {
+                account.withdraw(amount);
+                alert("Rút tiền thành công");
+            } else {
+                alert("Không đủ số dư để rút");
+            }
+        } else {
+            alert("Số tài khoản không tồn tại");
+        }
+        displayAccountList(accountList);
+    }
+</script>
+</body>
+</html>
