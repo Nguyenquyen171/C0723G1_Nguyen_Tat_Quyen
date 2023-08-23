@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayNew = [];
+    do {
+        let string = prompt("Nhập xâu kí tự");
+        if (isNaN(string)) {
+            for (let i = 0; i < string.length; i++) {
+                if (arrayNew.indexOf(string[i]) === -1) {
+                    arrayNew.push(string[i]);
+                }
+            }
+            document.write("Xâu kí tự nhập vào là: " + string + "<br>")
+            document.write("Có " + arrayNew.length + " kí tự khác nhau là: " + arrayNew);
+            break;
+        } else {
+            alert("Bạn nhập không phải kí tự")
+        }
+    } while (true);
+
+
+</script>
+</body>
+</html>

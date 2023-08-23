@@ -13,7 +13,7 @@
             for (let i = 0; i < numberA; i++) {
                 do {
                     numerator[i] = +prompt("Nhập số tử phần tử thứ " + (i + 1) + " của mảng:");
-                    if (!isNaN(numerator[i])) {
+                    if (!isNaN(numerator[i])&&numerator%1===0) {
                         break;
                     } else {
                         alert("Bạn nhập sai vui lòng nhập lại");
@@ -51,7 +51,7 @@
 
     function maxFraction(numerator, denominator) {
         let maxFractionValue = numerator[0] / denominator[0];
-        for (let i = 1; i < numerator.length; i++) {
+        for (let i = 0; i < numerator.length; i++) {
             for (let j = 0; j < denominator.length; j++) {
                 if (numerator[i] / denominator[j] > maxFractionValue) {
                     maxFractionValue = numerator[i] / denominator[j]
