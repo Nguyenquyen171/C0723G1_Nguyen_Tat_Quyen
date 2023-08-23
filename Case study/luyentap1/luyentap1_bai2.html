@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let checkText = prompt("Kí tự bạn muốn kiểm tra");
+        let text = checkText.toLowerCase();
+        if (text.length === 1) {
+            if (!isNaN(text)) {
+                alert("Bạn nhập không phải là kí tự. Vui lòng nhập lại.");
+            } else {
+                switch (text) {
+                    case "o":
+                    case "u":
+                    case "i":
+                    case "a":
+                    case "e":
+                        alert("Kí tự " + text + " là kí tự nguyên âm");
+                        break;
+                    default:
+                        alert("Kí tự " + text + " không phải là kí tự nguyên âm");
+                }
+            }
+        } else {
+            alert("Bạn chỉ được nhập một kí tự. Vui lòng nhập lại.");
+        }
+    } while (true);
+</script>
+</body>
+</html>

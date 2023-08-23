@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerator = []
+    do {
+        let numberA = +prompt("Nhập độ dài số tử:");
+        if (!isNaN(numberA) && numberA > 0 && numberA % 1 === 0) {
+            for (let i = 0; i < numberA; i++) {
+                do {
+                    numerator[i] = +prompt("Nhập số tử phần tử thứ " + (i + 1) + " của mảng:");
+                    if (!isNaN(numerator[i])) {
+                        break;
+                    } else {
+                        alert("Bạn nhập sai vui lòng nhập lại");
+                    }
+                } while (true);
+            }
+            document.write("Các số tử của phân số là:" + "[" + numerator + "]" + "<br>");
+            break;
+        } else {
+            alert("Bạn đã nhập sai vui lòng nhập lại:");
+        }
+    } while (true);
+    let denominator = [];
+    do {
+        let numberB = +prompt("Nhập độ dài số mẫu:");
+        if (!isNaN(numberB) && numberB > 0 && numberB % 1 === 0) {
+            for (let i = 0; i < numberB; i++) {
+                do {
+                    denominator[i] = +prompt("Nhập mẫu của phần tử thứ " + (i + 1) + " của mảng:");
+                    if (!isNaN(denominator[i]) && denominator[i] !== 0) {
+                        break;
+                    } else {
+                        alert("Bạn nhập sai vui lòng nhập lại");
+                    }
+                } while (true);
+            }
+            document.write("Các số mẫu của phân số :" + "[" + denominator + "]" + "<br>");
+            break;
+        } else {
+            alert("Bạn đã nhập sai vui lòng nhập lại:");
+        }
+    } while (true);
+    let maxIndex = 0;
+    let maxValue = 0;
+
+    function maxFraction(numerator, denominator) {
+        let maxFractionValue = numerator[0] / denominator[0];
+        for (let i = 1; i < numerator.length; i++) {
+            for (let j = 0; j < denominator.length; j++) {
+                if (numerator[i] / denominator[j] > maxFractionValue) {
+                    maxFractionValue = numerator[i] / denominator[j]
+                    maxIndex = i;
+                    maxValue = j;
+                }
+            }
+        }
+    }
+
+    maxFraction(numerator, denominator)
+    document.write("Giá trị của phân số lớn nhất là: " + numerator[maxIndex] + "/" + denominator[maxValue] + "<br/>" + "maxIndex: " + maxIndex);
+
+</script>
+</body>
+</html>

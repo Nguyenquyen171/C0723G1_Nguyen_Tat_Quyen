@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let money = +prompt("Nhập số tiền lương của bạn (triệu đồng) ");
+        if (!isNaN(money) && money > 0) {
+            if (money > 15) {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.2) + " triệu đồng");
+                break;
+            } else if (money > 7) {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.1) + " triệu đồng");
+                break;
+            } else {
+                document.write("Số tiền thực nhận khi trừ thuế là:" + (money - money * 0.05) + " triệu đồng");
+                break;
+            }
+        } else {
+            alert("Bạn nhập sai vui lòng nhập lại:");
+        }
+    } while (true) ;
+</script>
+</body>
+</html>

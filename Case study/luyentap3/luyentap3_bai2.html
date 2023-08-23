@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrA = []
+    do {
+        let numberA = +prompt("Nhập độ dài mảng A:");
+        if (!isNaN(numberA) && numberA > 0 && numberA % 1 === 0) {
+            for (let i = 0; i < numberA; i++) {
+                do {
+                    arrA[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng:");
+                    if (!isNaN(arrA[i]) && arrA[i] > 0) {
+                        break;
+                    } else {
+                        alert("Bạn nhập sai vui lòng nhập lại");
+                    }
+                } while (true);
+            }
+            document.write("Các phần tử của mảng A là:" + "[" + arrA + "]" + "<br>");
+            break;
+        } else {
+            alert("Bạn đã nhập sai vui lòng nhập lại:");
+        }
+    } while (true);
+    let arrB = []
+    do {
+        let numberB = +prompt("Nhập độ dài mảng B:");
+        if (!isNaN(numberB) && numberB > 0 && numberB % 1 === 0) {
+            for (let i = 0; i < numberB; i++) {
+                do {
+                    arrB[i] = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng:");
+                    if (!isNaN(arrB[i]) && arrB[i] > 0) {
+                        break;
+                    } else {
+                        alert("Bạn nhập sai vui lòng nhập lại");
+                    }
+                } while (true);
+            }
+            document.write("Các phần tử của mảng là B:" + "[" + arrB + "]" + "<br>");
+            break;
+        } else {
+            alert("Bạn đã nhập sai vui lòng nhập lại:");
+        }
+    } while (true);
+    let arrMissing = [];
+
+
+    function missingValue(arrA, arrB) {
+
+        for (let i = 0; i < arrB.length; i++) {
+            if (!arrA.includes(arrB[i]) && !arrMissing.includes(arrB[i])) {
+                arrMissing.push(arrB[i]);
+            }
+        }
+        arrMissing.sort(function (a, b) {
+            return a - b;
+        })
+        document.write("Các phần tử mới là: " + "[" + arrMissing + "]");
+
+    }
+
+    missingValue(arrA, arrB);
+</script>
+
+</body>
+</html>

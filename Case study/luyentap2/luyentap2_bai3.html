@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let height= +prompt("Nhập chiều cao hình tam giác muốn vẽ:");
+  for (let i = 0; i <=height; i++) {
+    for (let k = height; k > i; k--) {
+      document.write("&nbsp");
+    }
+    for (let j = 1; j <= i; j++) {
+      if (i === 1 || i === height || j === 1 || j === i) {
+        document.write("*");
+      } else {
+        document.write("&nbsp&nbsp")
+      }
+    }
+    document.write("</br>")
+  }
+
+</script>
+</body>
+</html>
