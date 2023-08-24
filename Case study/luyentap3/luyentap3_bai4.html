@@ -5,8 +5,85 @@
     <title>b</title>
 </head>
 <body>
-<script>
-   <
+        <details>
+            <summary><h2>Menu quán nước</h2></summary>
+            <table border="1px">
+                <tr>
+                    <td>1</td>
+                    <td>Cafe</td>
+                    <td>15.000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cam Vắt</td>
+                    <td>20.000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nước ép cà chua</td>
+                    <td> 20.000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Nước ép cà chua</td>
+                    <td> 20.000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Nước lọc</td>
+                    <td> 5.000</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Nước dừa</td>
+                    <td> 30.000</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Thoát gọi món</td>
+                    <td>---------</td>
+                </tr>
+            </table>
+            <button onclick="oderDrink()">Mua Nước</button>
+        </details>
+    <script>
+        function oderDrink() {
+        let number = [1, 2, 3, 4, 5, 6];
+        let money = [15, 20, 20, 20, 5, 30];
+        let numberOf = 0;
+        let drink;
+        let sum = 0;
+        let total = 0;
+        do {
+        drink = +prompt("Nhập số để có thể oder nước");
+        for (let i = 0; i < number.length; i++) {
+        if (drink === number[i]) {
+        numberOf = +prompt("Bạn muốn mua mấy ly");
+        sum = money[i] * numberOf;
+        alert("Tiền bạn cần phải trả là: " + sum + "k ");
+            total += sum;
+        alert("Tổng tiền bạn phải trả là hiện  là:" + total + "k");
+    }
+    }
+        if (drink === 7) {
+        let lastOder = confirm("Bạn có muốn oder thêm không");
+        if (lastOder === true) {
+        alert("Tổng tền bạn cần phải thanh toán là " + total + "k");
+        break;
+    } else {
+        continue;
+    }
+
+    }
+        if (drink > 7 || drink < 1 || isNaN(drink) === true) {
+            alert("Vui lòng nhập số trong menu");
+        }
+    // } if(numberOf<0 || !isNaN(numberOf) ){
+    //         alert("Bạn nhập không đúng vui lòng nhập lại")
+    //         }
+    } while (true);
+    }
+
 </script>
 </body>
 </html>

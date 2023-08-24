@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        let m = +prompt('Nhập số hàng của mảng');
+        let n = +prompt('Nhập số cột của mảng');
+        let arr = [];
+        if (!isNaN(m)&& !isNaN(n)&& m >0 && n>0){
+        for (let i = 0; i < m; i++) {
+            arr[i] = [];
+            for (let j = 0; j < n; j++) {
+                arr[i][j] = prompt(`Nhập phần tử [${i}][${j}]`);
+            }
+        }
+        document.write("[" + arr + "]");
+        break;
+    }else {
+            alert("Ban nhap sai  vui long nhap lai")
+        }
+    }while (true);
+</script>
+
+</body>
+</html>
