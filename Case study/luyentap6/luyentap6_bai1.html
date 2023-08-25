@@ -1,13 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
+<h2>Danh sách học viên</h2>
+<div id="display"></div>
+<br>
+<button onclick="addStudent()">Thêm học viên</button>
+<button onclick="editStudent()">Sửa thông tin học viên</button>
+<button onclick="deleteStudent()">Xóa học viên</button>
 <script>
+    class Student {
+        constructor(id, name, grade, email, birthDay) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.birthDay = birthDay;
+        }
+    }
+    let student1 = new Student(1000, "Phan Văn Toại", "C0623G1", "a@gmail.com", "01/02/2001");
+    let student2 = new Student(1001, "Nguyễn Quyền", "C0623G1", "b@gmail.com", "01/02/2001");
+    let student3 = new Student(1002, "Nguyễn Minh Tuấn", "C0623G1", "c@gmail.com", "01/02/2001");
+    let studentList = [student1, student2, student3];
+    displayStudent(studentList);
 
+    function displayStudent(arr) {
+        let table = "<table border='1' style='border-collapse: collapse'>" +
+            "<tr>" +
+            "<th>Mã học viên</th>" +
+            "<th>Tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày sinh</th>" +
+            "</tr>";
+        for (let i = 0; i < arr.length; i++) {
+            table += "<tr>" +
+                "<td>" +"HV-"+ arr[i].id + "</td>" +
+                "<td>" + arr[i].name + "</td>" +
+                "<td>" + arr[i].grade + "</td>" +
+                "<td>" + arr[i].email + "</td>" +
+                "<td>" + arr[i].birthDay + "</td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("display").innerHTML = table;
+    }
+    function addStudent() {
+        let newName;
+        let newId;
+        do{
+            newId= +prompt("Nhập Id");
+            if(!isNaN(newId)&& newId>=1000 && newId<10000&& newId%1===0){
+                break;
+            }else {
+                alert("Ban nhap k phai id nhap lai");
+            }
+        }while(true);
+        do {
+            newName = prompt("Nhập tên muốn thêm:");
 
+            if (isNaN(newName) && newName.length<50 ) {
+                break;
+            } else {
+                alert("Bạn nhập không phải tên: ")
+            }
+        }while(true);
+        let newGrade= prompt("Nhập lớp");
+        let newEmail= prompt("Nhập email");
+        let newBirthDay;
+        do {
+            newBirthDay = prompt("Nhập ngày sinh nhật (dd/tt/yyyy):");
+            let value=newBirthDay.split("/")
+            if (value[0]<=31 && value[0]>0 && value[1]<=12 && value[1]>0 && value[2]<=2023 && value[2]>1800) {
+                value = value.join('/');
+                newBirthDay= value;
+                break;
+            } else {
+                alert("Ban phải nhập sinh nhật bằng số (dd/tt/yyyy) ");
+            }
+        }while(true);
+        let newStudent= new Student(newId, newName, newGrade, newEmail, newBirthDay);
+        studentList.push(newStudent);
+        displayStudent(studentList);
+    }
+    function editStudent() {
+        let editId;
+        do{
+            editId= +prompt("Nhập id mà bạn muốn sửa:");
+            if(editId===arr[i].id){
+
+            }
+        }
+    }
 </script>
 </body>
 </html>

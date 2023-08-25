@@ -47,23 +47,20 @@
         }
     } while (true);
     let maxIndex = 0;
-    let maxValue = 0;
 
     function maxFraction(numerator, denominator) {
         let maxFractionValue = numerator[0] / denominator[0];
         for (let i = 0; i < numerator.length; i++) {
-            for (let j = 0; j < denominator.length; j++) {
-                if (numerator[i] / denominator[j] > maxFractionValue) {
-                    maxFractionValue = numerator[i] / denominator[j]
+                if (numerator[i] / denominator[i] > maxFractionValue) {
+                    maxFractionValue = numerator[i] / denominator[i]
                     maxIndex = i;
-                    maxValue = j;
                 }
             }
         }
     }
 
     maxFraction(numerator, denominator)
-    document.write("Giá trị của phân số lớn nhất là: " + numerator[maxIndex] + "/" + denominator[maxValue] + "<br/>" + "maxIndex: " + maxIndex);
+    document.write("Giá trị của phân số lớn nhất là: " + numerator[maxIndex] + "/" + denominator[maxIndex] + "<br/>" + "maxIndex:");
 
 </script>
 </body>

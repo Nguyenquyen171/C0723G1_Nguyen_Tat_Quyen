@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let stringA = prompt('Nhập chuỗi ký tự 1: ')
+    let stringB = prompt('Nhập chuỗi ký tự 2: ')
+
+    function commonChar(stringA, stringB) {
+        let arr1 = stringA.split('');
+        let arr2 = stringB.split('');
+        let commonArr = [];
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    commonArr.push(arr2[j])
+                    arr2.splice(j, 1)
+                }
+            }
+        }console.log(commonArr);
+        return commonArr
+    }
+
+    alert('Có ' + commonChar(stringA, stringB).length + ' ký tự chung giữa hai xâu ' + stringA + " và " + stringB + ' đó là: ' + commonChar(stringA, stringB))
+
+</script>
+</body>
+</html>
