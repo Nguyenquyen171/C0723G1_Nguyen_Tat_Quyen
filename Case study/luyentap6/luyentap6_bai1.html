@@ -136,74 +136,73 @@
     }
 
     function editStudent() {
-        for (let i = 0; i < studentList.length; i++) {
-            do {
-                let editId = +prompt("Nhập số id mà bạn muốn sửa thông tin:");
+        let status = false;
+        do {
+            let editId = +prompt("Nhập số id mà bạn muốn sửa thông tin:");
+            for (let i = 0; i < studentList.length; i++) {
                 if (editId === studentList[i].id) {
-                    let confirmEdit = confirm("Bạn có chắc muốn sửa thông tin không?");
-                    if (confirmEdit) {
-                        // do {
-                        //     studentList[i].id = +prompt("Nhập số id mới bạn muốn:");
-                        //     if (!isNaN(studentList[i].id) && studentList[i].id >= 1000 && studentList[i].id < 10000) {
-                        //         break;
-                        //     } else {
-                        //         alert("Ban nhap k phai id vui long nhap lai:");
-                        //     }
-                        // } while (true);
-                        do {
-                            studentList[i].name = prompt("Nhập tên muốn sửa thành:");
-                            if (isNaN(studentList[i].name) && studentList[i].name.length < 50) {
-                                break;
-                            } else {
-                                alert("Bạn nhập không phải tên: ")
-                            }
-                        } while (true);
-                        studentList[i].grade = prompt("Nhập lớp muốn sửa thành:");
-                        studentList[i].email = prompt("Nhập emails muốn sửa thành:");
-                        do {
-                            studentList[i].birthDay = prompt("Nhập ngày sinh nhật (dd/mm/yyyy) sửa thành:");
-                            let editValue = studentList[i].birthDay.split("/");
-                            if (editValue[0] <= 31 && editValue[0] > 0 && editValue[1] <= 12 && editValue[1] > 0 && editValue[2] <= 2023 && editValue[2] > 1800 && editValue[i] % 1 === 0) {
-                                editValue = editValue.join('/');
-                                studentList[i].birthDay = editValue;
-                                break;
-                            } else {
-                                alert("Ban phải nhập sinh nhật bằng số (dd/mm/yyyy) ");
-                            }
-                        } while (true);
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
-                    alert("Mã id không tồn tại:");
-                }
-
-            } while (true);
-            displayStudent(studentList);
-            break;
-        }
-
-    }
-    function deleteStudent() {
-        for (let i = 0; i < studentList.length; i++) {
-            do {
-                let deleteIdStudent = +prompt("Nhập id cần xóa");
-                if (deleteIdStudent === studentList[i].id) {
-                    deleteIdStudent = confirm("Bạn có chắc muốn xóa không?");
-                    if (deleteIdStudent) {
-                        studentList.splice(i, 1);
-                    }
+                    // do {
+                    //     studentList[i].id = +prompt("Nhập số id mới bạn muốn:");
+                    //     if (!isNaN(studentList[i].id) && studentList[i].id >= 1000 && studentList[i].id < 10000) {
+                    //         break;
+                    //     } else {
+                    //         alert("Ban nhap k phai id vui long nhap lai:");
+                    //     }
+                    // } while (true);
+                    do {
+                        studentList[i].name = prompt("Nhập tên muốn sửa thành:");
+                        if (isNaN(studentList[i].name) && studentList[i].name.length < 50) {
+                            break;
+                        } else {
+                            alert("Bạn nhập không phải tên: ")
+                        }
+                    } while (true);
+                    studentList[i].grade = prompt("Nhập lớp muốn sửa thành:");
+                    studentList[i].email = prompt("Nhập emails muốn sửa thành:");
+                    do {
+                        studentList[i].birthDay = prompt("Nhập ngày sinh nhật (dd/tt/yyyy) sửa thành:");
+                        let editValue = studentList[i].birthDay.split("/")
+                        if (editValue[0] <= 31 && editValue[0] > 0 && editValue[1] <= 12 && editValue[1] > 0 && editValue[2] <= 2023 && editValue[2] > 1800) {
+                            editValue = editValue.join('/');
+                            studentList[i].birthDay = editValue;
+                            break;
+                        } else {
+                            alert("Ban phải nhập sinh nhật bằng số (dd/tt/yyyy) ");
+                        }
+                    } while (true);
+                    status = true;
                     break;
-                } else {
-                    alert("Bạn nhập không đúng id cần xóa: " + deleteIdStudent);
                 }
-            } while (true);
-        }
+                if (i === studentList.length - 1) {
+                    alert("ID ban nhap khong ton tai trong DS");
+                }
+            }
+        } while (!status);
         displayStudent(studentList);
     }
 
-
+    function deleteStudent() {
+        let deleteStatus = false;
+        do {
+            let deleteIdStudent = +prompt("Nhập id cần xóa: ");
+            for (let i = 0; i < studentList.length; i++) {
+                if (deleteIdStudent === studentList[i].id) {
+                    deleteIdStudent = confirm("Ban co chac muon xoa khong");
+                    if (deleteIdStudent) {
+                        studentList.splice(i, 1);
+                    } else {
+                        deleteStatus= true
+                    }
+                    deleteStatus = true;
+                    break;
+                }
+                if (i === studentList.length - 1) {
+                    alert("Bạn nhập k đúng id")
+                }
+            }
+        } while (!deleteStatus);
+        displayStudent(studentList);
+    }
 
 
 </script>
