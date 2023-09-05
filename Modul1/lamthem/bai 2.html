@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý tài khoản</title>
+</head>
+<body>
+<script>
+    let arr = []
+
+    function writeArray(arr) {
+        do {
+            let m = +prompt("Nhập số phan tu cua mang");
+            if (!isNaN(m) && m > 0 && m <= 50) {
+                for (let i = 0; i < m; i++) {
+                    arr[i] = +prompt("Nhap phan tu thu " + i + " cua mang");
+                }
+                return arr
+            } else {
+                alert("ban nhap sai  vui long nhap lai")
+            }
+
+        } while (true);
+
+    }
+
+    document.write("Cac phan cua mang: " + "[" + writeArray(arr) + "]" + "<br>");
+
+    let arrFibonaci = [];
+    let numberOne = 0;
+    let numberTwo = 1;
+    let sum = 0;
+    for (let i = 0; i < 1000; i++) {
+        sum = numberOne + numberTwo
+        numberOne = numberTwo;
+        numberTwo = sum;
+        arrFibonaci.push(sum);
+    }
+    let arrFibonaciNew=[]
+    function checkFibonaci(){
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arrFibonaci.length; j++) {
+                if(arr[i]===arrFibonaci[j]){
+                    arrFibonaciNew.push(arrFibonaci[j]);
+                }
+            }
+        }document.write(arrFibonaciNew + "<br>");
+    }checkFibonaci();
+    arrFibonaciNew.sort(function (a, b) {
+        return b-a;
+    })
+    document.write("Mang fibonaci sap xep theo dang tu lon den nho la:" + arrFibonaciNew);
+
+</script>
+</body>
+</html>

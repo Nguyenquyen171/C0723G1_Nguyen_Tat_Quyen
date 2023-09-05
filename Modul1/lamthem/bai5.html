@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="display">
+</div>
+<script>
+  class Student{
+      constructor(id,name,grade,gmail) {
+          this.id= id;
+          this.name= name;
+          this.grade= grade;
+          this.gmail= gmail;
+      }
+  }
+  let student1= new Student("001","Quyen","modul1","nguyenquyen171202@gmail.com");
+  let student2= new Student("001","Quyen","modul1","nguyenquyen171202@gmail.com");
+  let student3= new Student("001","Quyen","modul1","nguyenquyen171202@gmail.com");
+  let studentList=[student1,student2,student3];
+  displayStudent(studentList);
+  function displayStudent(arr) {
+      let table= "  <table border='1px' style='border-collapse: collapse' >" +
+          "        <tr>" +
+          "            <th>Id</th>" +
+          "            <th>Name</th>" +
+          "            <th>Grade</th>" +
+          "            <th>Gmail</th>" +
+          "        </tr>"
+      for (let i = 0; i < arr.length; i++) {
+          table += "<tr>" +
+              "<td>" + arr[i].id + "</td>" +
+              "<td>" + arr[i].name + "</td>" +
+              "<td>" + arr[i].grade + "</td>" +
+              "<td>" + arr[i].gmail + "</td>" +
+              "</tr>"
+      }
+      table += "</table>"
+      document.getElementById("display").innerHTML= table;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkStr(str) {
+        debugger
+        str = str.split(" ");
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== "") {
+                arr.push(str[i]);
+            }
+        }
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
+            result += arr[i][0].toUpperCase();
+            for (let j = 1; j < arr[i].length; j++) {
+                result += arr[i][j].shift();
+            }
+            result += " ";
+        }
+        return result;
+    }
+
+    let str = prompt("Nhap mang");
+    // document.write(arr + "<br>")
+    document.write(checkStr(str))
+
+
+</script>
+
+</body>
+</html>

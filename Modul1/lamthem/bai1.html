@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> m,</title>
+</head>
+<body>
+
+<script>
+    let arr = [];
+    do {
+        let number = +prompt("Nhập số phần tử của mảng");
+        if (!isNaN(number) && number <= 50 && number > 0 && number % 1 === 0) {
+            for (let i = 0; i < number; i++) {
+                arr[i] = +prompt("Nhap so phan tu thu " + i);
+            }
+            document.write("Các phần tử của mảng mới là:" + arr + "<br>");
+            break;
+        }
+    } while (true)
+
+    function checkArr(arr) {
+        let newArr = [];
+        let sum=0;
+        for (let i = 0; i < arr.length; i = i + 3) {
+            if (arr[i] % 5 === 0) {
+                newArr.push(arr[i]);
+                sum +=[arr[i]]
+            }
+        }
+        document.write(sum/newArr.length + "<br>");
+    }checkArr(arr)
+</script>
+</body>
+</html>
