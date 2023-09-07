@@ -6,9 +6,9 @@ public class Prime100Numbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean check;
-        for (int i = 2; i < 1000; i++) {
+        for (int i = 2; i < 100; i++) {
             check = true;
-            for (int j = 2; j <= i / 2; j++) {
+            for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
                     check = false;
                     break;

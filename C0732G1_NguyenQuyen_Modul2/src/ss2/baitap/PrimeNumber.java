@@ -11,7 +11,7 @@ public class PrimeNumber {
         boolean check;
             for (int i = 2; count < number; i++) {
                 check = true;
-                for (int j = 2; j <= i / 2; j++) {
+                for (int j = 2; j <= Math.sqrt(i); j++) {
                     if (i % j == 0) {
                         check = false;
                         break;
