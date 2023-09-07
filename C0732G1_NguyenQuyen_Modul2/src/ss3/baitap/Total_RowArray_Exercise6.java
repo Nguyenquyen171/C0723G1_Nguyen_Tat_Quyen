@@ -30,7 +30,7 @@ public class Total_RowArray_Exercise6 {
         } while (true);
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                System.out.print(array[i][j]);
+                System.out.print(array[i][j]+ " ");
             }
             System.out.println();
         }
@@ -39,7 +39,7 @@ public class Total_RowArray_Exercise6 {
         int indexCol= scanner.nextInt();
         if (indexCol>=0&& indexCol<row){
             for (int i = 0; i <row ; i++) {
-                sum += array[indexCol][i];
+                sum += array[i][indexCol];
             }
             System.out.println("Sum of the elements of the column: " + sum);
         }else {
