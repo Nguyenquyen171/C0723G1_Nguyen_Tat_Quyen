@@ -14,7 +14,7 @@ public class Prime100Numbers {
                     break;
                 }
             }
-            if (check && i < 100) {
+            if (check) {
                 System.out.println(i);
             }
 

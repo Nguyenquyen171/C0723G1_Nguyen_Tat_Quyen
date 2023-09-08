@@ -33,7 +33,7 @@ public class DiagonalLine_Array_Execise7 {
         }
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
-            sum += array[i][array.length - 1 - i];
+            sum += array[i][i];
         }
         System.out.println("Sums of elements in the square matrix: " + sum);
 
