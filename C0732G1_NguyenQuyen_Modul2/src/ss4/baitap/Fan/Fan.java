@@ -61,6 +61,7 @@ public class Fan {
         } else {
             return "Color: " + getColor() + "\n" +
                     "radius : " + getRadius() + "\n" +
+                    "The fan is off so there is no speed" + "/n" +
                     "Fan is Off";
         }
 
