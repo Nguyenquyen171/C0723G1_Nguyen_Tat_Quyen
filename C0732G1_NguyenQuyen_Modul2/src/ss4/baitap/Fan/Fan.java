@@ -54,13 +54,13 @@ public class Fan {
 
     public String toString() {
         if (this.isTurnOn()) {
-            return "Speed: " + this.getSpeed() + "\n" +
-                    "Color: " + this.getColor() + "\n" +
-                    "radius : " + this.getRadius() + "\n" +
+            return "Speed: " + getSpeed() + "\n" +
+                    "Color: " + getColor() + "\n" +
+                    "radius : " + getRadius() + "\n" +
                     "Fan is on";
         } else {
-            return "Color: " + this.getColor() + "\n" +
-                    "radius : " + this.getRadius() + "\n" +
+            return "Color: " + getColor() + "\n" +
+                    "radius : " + getRadius() + "\n" +
                     "Fan is Off";
         }
 
