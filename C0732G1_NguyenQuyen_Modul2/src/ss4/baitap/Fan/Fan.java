@@ -80,8 +80,10 @@ public class Fan {
         fan2.setColor("blue");
         fan2.setTurnOn(false);
 
+        System.out.println("The properties of the 1st fan are :");
         System.out.println(fan1);
         System.out.println();
+        System.out.println("The properties of the 2st fan are :");
         System.out.println(fan2);
     }
 
