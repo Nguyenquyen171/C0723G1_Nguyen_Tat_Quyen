@@ -15,7 +15,6 @@ public class Test {
         private String name="Join";
         private String classes="C02";
         public Student(){
-
         }
         public void setName(String name) {
             this.name = name;
