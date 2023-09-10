@@ -41,11 +41,8 @@ public class CircleAndCylinder {
         }
 
         public double getVolume() {
-            return 4 / 3 * 3.14 * radius * radius * radius;
+            return 4 / 3 * 3.14 * Math.pow(radius, 3);
         }
-
-
-
     }
 
     public static class Cylinder {
