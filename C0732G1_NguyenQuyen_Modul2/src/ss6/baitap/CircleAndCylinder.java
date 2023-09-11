@@ -1,6 +1,7 @@
 package ss6.baitap;
 
-public class CircleAndCylinder {
+
+public class CircleAndCylinder{
 
     public static void main(String[] args) {
         Circle circle=new Circle();

@@ -28,6 +28,6 @@ public class Main {
         } else if (equation.getDiscriminant() > 0) {
             System.out.println("The euqations has distinct solutions x1: " + equation.root1() + " and x2: " + equation.root2());
 
-        }
+       }
     }
 }

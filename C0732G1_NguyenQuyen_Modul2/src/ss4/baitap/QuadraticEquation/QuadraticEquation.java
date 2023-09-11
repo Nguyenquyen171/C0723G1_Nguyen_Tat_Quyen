@@ -27,8 +27,6 @@ public class QuadraticEquation {
         double delta = Math.pow(this.getB(), 2) - this.getA() * 4 * this.c;
         return delta;
     }
-
-
     public double root1() {
         double  distinctSolutionsOne = (-this.getB() + this.getDiscriminant())/(2*this.getA());
         return distinctSolutionsOne;

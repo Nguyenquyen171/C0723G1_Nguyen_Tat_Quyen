@@ -13,23 +13,15 @@ public class Main {
             // for you, but you can always add more by pressing Cmd+F8.
             System.out.println("i = " + i);
         }
-        int[] x = {3,5,6,9};
-
-        int a = 0, b = 0;
-
-        for(int y : x){
-
-            if(y % 2 != 0)
-
-            {
-
-                a+=y;
-
-                b++;
-
+        int[] a = {1, 9, 3, 2};
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    int x = a[i];
+                    a[i] = a[j];
+                    a[j] = x;
+                }
             }
-
         }
-        System.out.println((a) +","+ (b));
     }
 }
