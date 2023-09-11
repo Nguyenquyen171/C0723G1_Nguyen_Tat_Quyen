@@ -29,15 +29,15 @@ public class QuadraticEquation {
     }
 
     public double root1() {
-        double doubleSolution = -this.getB() / this.getA() * 2;
+        double doubleSolution = -this.getB() / (this.getA() * 2);
         return doubleSolution;
     }
     public double root2() {
-        double  distinctSolutionsOne = (-this.getB() + this.getDiscriminant())/2*this.getA();
+        double  distinctSolutionsOne = (-this.getB() + this.getDiscriminant())/(2*this.getA());
         return distinctSolutionsOne;
     }
     public double root3() {
-        double  distinctSolutionsTwo = (-this.getB() - this.getDiscriminant())/2*this.getA();
+        double  distinctSolutionsTwo = (-this.getB() - this.getDiscriminant())/(2*this.getA());
         return distinctSolutionsTwo;
     }
 }
