@@ -9,7 +9,6 @@ public class TestCircle {
         System.out.println(circle.getRadius());
 
     }
-
     public static class Circle {
         private double radius = 1.0;
         private String color = "red";

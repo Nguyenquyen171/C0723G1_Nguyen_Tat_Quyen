@@ -28,15 +28,12 @@ public class QuadraticEquation {
         return delta;
     }
 
+
     public double root1() {
-        double doubleSolution = -this.getB() / (this.getA() * 2);
-        return doubleSolution;
-    }
-    public double root2() {
         double  distinctSolutionsOne = (-this.getB() + this.getDiscriminant())/(2*this.getA());
         return distinctSolutionsOne;
     }
-    public double root3() {
+    public double root2() {
         double  distinctSolutionsTwo = (-this.getB() - this.getDiscriminant())/(2*this.getA());
         return distinctSolutionsTwo;
     }

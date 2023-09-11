@@ -26,7 +26,7 @@ public class Main {
             System.out.println("The euqations has double solution x1,x2: " + equation.root1());
 
         } else if (equation.getDiscriminant() > 0) {
-            System.out.println("The euqations has distinct solutions x1: " + equation.root2() + " and x2: " + equation.root3());
+            System.out.println("The euqations has distinct solutions x1: " + equation.root1() + " and x2: " + equation.root2());
 
         }
     }
