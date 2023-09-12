@@ -1,7 +1,5 @@
 package ss5.baitap.circle;
 
-import java.util.Scanner;
-
 public class TestCircle {
     public static void main(String[] args) {
         Circle circle = new Circle();
@@ -19,10 +17,6 @@ public class TestCircle {
 
         public String getColor() {
             return color;
-        }
-
-        public void setRadius(double radius) {
-            this.radius = radius;
         }
 
         public Circle() {

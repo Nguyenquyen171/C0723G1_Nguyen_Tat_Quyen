@@ -11,11 +11,6 @@ public class Circle {
     public String getColor() {
         return color;
     }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
     public Circle() {
     }
 
