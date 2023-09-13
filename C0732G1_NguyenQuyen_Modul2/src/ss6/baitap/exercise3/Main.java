@@ -13,4 +13,5 @@ public class Main {
         System.out.println(moveAblePointOne);
         System.out.println(moveAblePointOne.move());
     }
+
 }

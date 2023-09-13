@@ -38,7 +38,6 @@ public class MoveAblePoint extends Point {
         return arraySpeed;
 
     }
-
     public MoveAblePoint move() {
         this.setX(this.getX() + this.getXSpeed());
         this.setY(this.getY() + this.getYSpeed());
@@ -46,7 +45,6 @@ public class MoveAblePoint extends Point {
     }
 
     public MoveAblePoint() {
-
     }
 
     @Override
@@ -57,4 +55,6 @@ public class MoveAblePoint extends Point {
                 "," + getYSpeed() +
                 "]";
     }
+
+
 }
