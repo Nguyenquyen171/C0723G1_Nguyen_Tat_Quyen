@@ -27,10 +27,6 @@ public class Circle extends Shape implements Resizeable{
         return radius * radius * Math.PI;
     }
 
-    public double getPerimeter() {
-        return 2 * radius * Math.PI;
-    }
-
     @Override
     public String toString() {
         return "A Circle with radius="

@@ -1,9 +1,8 @@
 package ss7.baitap.interface_resizeable;
 
-public class Shape implements Resizeable{
+public abstract class Shape implements Resizeable{
     private String color = "green";
     private boolean filled = true;
-
     public Shape() {
     }
 
@@ -35,8 +34,5 @@ public class Shape implements Resizeable{
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
-    @Override
-    public void resize(double percent){
-    }
-
+    public abstract double getArea();
 }
