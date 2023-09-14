@@ -37,20 +37,20 @@ public class Tennis {
         return "Win for player2";
     }
     public static String matchDisplay(int playerScore){
-        String result = "";
+        String resultScore = "";
         switch(playerScore) {
             case 0:
-                result = SCORE ;
+                resultScore = SCORE ;
                 break;
             case 1:
-                result = SCORE1;
+                resultScore = SCORE1;
                 break;
             case 2:
-                result = SCORE2;
+                resultScore = SCORE2;
                 break;
             case 3:
-                result = SCORE3;
+                resultScore = SCORE3;
         }
-        return result;
+        return resultScore;
     }
 }
