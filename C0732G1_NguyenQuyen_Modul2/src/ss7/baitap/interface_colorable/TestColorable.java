@@ -13,8 +13,8 @@ public class TestColorable {
         shape[2] = new Square(7);
         for (int i = 0; i < shape.length; i++) {
             System.out.println(shape[i]);
-            if (shape[i] instanceof InterfaceColorable) {
-                ((InterfaceColorable) shape[i]).howToColor();
+            if (shape[i] instanceof Colorable) {
+                ((Colorable) shape[i]).howToColor();
             }
         }
     }

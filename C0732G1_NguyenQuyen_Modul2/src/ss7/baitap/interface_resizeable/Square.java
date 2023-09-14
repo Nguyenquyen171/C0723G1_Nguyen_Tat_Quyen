@@ -1,8 +1,8 @@
 package ss7.baitap.interface_resizeable;
 
-import ss7.baitap.interface_colorable.InterfaceColorable;
+import ss7.baitap.interface_colorable.Colorable;
 
-public class Square extends Rectangle implements Resizeable, InterfaceColorable {
+public class Square extends Rectangle implements  Colorable {
     public Square() {
     }
 

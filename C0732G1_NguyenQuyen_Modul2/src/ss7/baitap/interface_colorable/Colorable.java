@@ -1,5 +1,5 @@
 package ss7.baitap.interface_colorable;
 
-public interface InterfaceColorable {
+public interface Colorable {
     void howToColor();
 }
