@@ -39,7 +39,6 @@ public class Tennis {
         return "Win for player2";
 
     }
-
     public static String matchDisplay(int playerScore) {
         String resultScore = "";
         switch (playerScore) {
@@ -57,8 +56,16 @@ public class Tennis {
         }
         return resultScore;
     }
+    public static String displayResult(int player1Score, int player2Score) {
 
-    public static void main(String[] args) {
-        System.out.println(winDisplay(4,4));
+        if (player1Score == player2Score) {
+             return drawDisplay(player1Score);
+        } else if (player1Score >= 4 || player2Score >= 4) {
+          return   winDisplay(player1Score, player2Score);
+        } else {
+          return   matchDisplay(player1Score);
+        }
     }
+
+
 }
