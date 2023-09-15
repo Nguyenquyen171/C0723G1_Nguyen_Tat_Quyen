@@ -1,7 +1,4 @@
 package ss10.Exercise;
-import java.util.Arrays;
-
-//import static com.sun.tools.javac.util.ArrayUtils.ensureCapacity;
 
 public class MyList<E> {
     private int size = 0;
@@ -70,10 +67,9 @@ public class MyList<E> {
         return newArr;
     }
     public void clear (){
-        for (int i = 0; i < size; i++) {
-            elements[i] = null;
-        }
-        size = 0;
+        Object[] newArray= new Object[0];
+        size=0;
+        elements=newArray;
     }
     boolean isEmpty(){
         if(size!=0){
@@ -81,8 +77,6 @@ public class MyList<E> {
         }
         return true;
     }
-
-
 }
 
 

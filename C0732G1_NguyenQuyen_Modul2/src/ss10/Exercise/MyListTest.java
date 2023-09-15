@@ -20,6 +20,6 @@ public class MyListTest {
         System.out.println(myList);
         myList.clear();
         System.out.println(myList);
-
+      
     }
 }
