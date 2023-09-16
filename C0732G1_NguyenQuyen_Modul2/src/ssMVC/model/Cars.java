@@ -4,11 +4,15 @@ public class Cars extends Vehicle {
     private int numberSeats;
     private String carType;
 
-    public Cars(int vehicleId, String companyName, int year, int ownerName, int numberSeats, String carType) {
+    public Cars(int vehicleId, String companyName, int year, String ownerName, int numberSeats, String carType) {
         super(vehicleId, companyName, year, ownerName);
         this.numberSeats = numberSeats;
         this.carType = carType;
     }
+    public Cars(){
+
+    }
+
 
     public int getNumberSeats() {
         return numberSeats;
@@ -34,4 +38,5 @@ public class Cars extends Vehicle {
                 " and car type :" + getCarType() +
                 " , owner name is: " + getOwnerName();
     }
+
 }

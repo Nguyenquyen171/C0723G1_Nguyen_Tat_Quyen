@@ -3,9 +3,12 @@ package ssMVC.model;
 public class Trucks extends Vehicle {
     private int load;
 
-    public Trucks(int vehicleId, String companyName, int year, int ownerName, int load) {
+    public Trucks(int vehicleId, String companyName, int year, String ownerName, int load) {
         super(vehicleId, companyName, year, ownerName);
         this.load = load;
+    }
+    public Trucks(){
+
     }
 
     public int getLoad() {

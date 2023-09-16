@@ -4,9 +4,9 @@ public abstract class Vehicle {
     private int vehicleId;
     private String companyName;
     private int year;
-    private int ownerName;
+    private String ownerName;
 
-    public Vehicle(int vehicleId, String companyName, int year, int ownerName) {
+    public Vehicle(int vehicleId, String companyName, int year, String ownerName) {
         this.vehicleId = vehicleId;
         this.companyName = companyName;
         this.year = year;
@@ -37,11 +37,11 @@ public abstract class Vehicle {
         this.year = year;
     }
 
-    public int getOwnerName() {
+    public String getOwnerName() {
         return ownerName;
     }
 
-    public void setOwnerName(int ownerName) {
+    public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
     public Vehicle(){
