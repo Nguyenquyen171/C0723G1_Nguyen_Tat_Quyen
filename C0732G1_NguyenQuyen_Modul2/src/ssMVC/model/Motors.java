@@ -23,6 +23,6 @@ public class Motors extends Vehicle {
         return getCompanyName()+ "license plate number " +
                 getVehicleId() + " has the year of manufacture " +
                 getYear()+  " with engine capacity "+ capacity +
-                " , owner name is: " + getOwnerName();
+                " CC, owner name is: " + getOwnerName();
     }
 }

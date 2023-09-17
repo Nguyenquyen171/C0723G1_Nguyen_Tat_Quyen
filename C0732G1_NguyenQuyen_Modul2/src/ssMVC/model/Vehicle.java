@@ -6,6 +6,7 @@ public abstract class Vehicle {
     private int year;
     private String ownerName;
 
+
     public Vehicle(int vehicleId, String companyName, int year, String ownerName) {
         this.vehicleId = vehicleId;
         this.companyName = companyName;

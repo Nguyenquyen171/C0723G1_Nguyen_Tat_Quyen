@@ -8,6 +8,9 @@ import ssMVC.model.Motors;
 import ssMVC.model.Trucks;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -41,7 +44,7 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Invalid option!!!");
             }
-        } while (choiceOption < 0 || choiceOption > 4);
+        } while (choiceOption < 1 || choiceOption > 5);
         if (choiceOption == 5) {
             System.exit(5);
 
@@ -78,6 +81,7 @@ public class Main {
         cars.setCarType(scanner.nextLine());
         return cars;
     }
+
     public Motors inputMotor(){
         Motors motors= new Motors();
         System.out.println("Enter the motor id: ");
@@ -85,13 +89,14 @@ public class Main {
         System.out.println("Enter the company name: ");
         motors.setCompanyName(scanner.nextLine());
         System.out.println("Enter the year: ");
-        motors.setYear(scanner.nextInt());
+        motors.setYear(Integer.parseInt(scanner.nextLine()));
         System.out.println("Enter the owner name: ");
         motors.setOwnerName(scanner.nextLine());
         System.out.println("Enter the motorbike capacity ");
-        System.out.println(Integer.parseInt(scanner.nextLine()));
+        motors.setCapacity(Integer.parseInt(scanner.nextLine()));
         return motors;
     }
+
     public Trucks inputTruck(){
         Trucks trucks= new Trucks();
         System.out.println("Enter the truck id: ");
@@ -99,14 +104,100 @@ public class Main {
         System.out.println("Enter the company name: ");
         trucks.setCompanyName(scanner.nextLine());
         System.out.println("Enter the year: ");
-        trucks.setYear(scanner.nextInt());
+        trucks.setYear(Integer.parseInt(scanner.nextLine()));
         System.out.println("Enter the owner name: ");
         trucks.setOwnerName(scanner.nextLine());
         System.out.println("Enter the truck load ");
         trucks.setLoad(Integer.parseInt(scanner.nextLine()));
         return trucks;
     }
-    
+
+    public int inputID(){
+        System.out.println("Please enter the ID vehicle: ");
+        return Integer.parseInt(scanner.nextLine());
+    }
+
+    public void managementProgram(){
+        int option;
+        int chooseObject;
+        do {
+            option= this.choose();
+            chooseObject= this.chooseObject();
+            switch (option){
+                case 1:
+                    if (chooseObject==1){
+                        this.carController.createCar(inputCar());
+                    }else if (chooseObject==2) {
+                        this.motorController.createMotor(inputMotor());
+                    }else {
+                        this.truckController.createTruck(inputTruck());
+                    }
+                    break;
+                case 2:
+                    if (chooseObject==1){
+                        List<Cars> cars=this.carController.showCar();
+                        for(Cars car: cars){
+                            System.out.println(car);
+                        }
+                    } else if (chooseObject==2) {
+                        List<Motors> motors=this.motorController.showMotor();
+                        for (Motors motor:motors){
+                            System.out.println(motor);
+                        }
+                    }else {
+                        List<Trucks> trucks= this.truckController.showTruck();
+                        for (Trucks truck:trucks){
+                            System.out.println(truck);
+                        }
+                    }
+                    break;
+                case 3:
+                    if (chooseObject==1){
+                       this.carController.removeCar(inputID());
+                    } else if (chooseObject==2) {
+                        this.motorController.removeMotor(inputID());
+                    }else {
+                        this.truckController.removeTruck(inputID());
+                    }
+                    break;
+                case 4:
+                    if (chooseObject==1) {
+
+                        List<Cars> cars = this.carController.showCar();
+                        for (Cars car : cars) {
+                            if (car.getVehicleId()== inputID()){
+                                System.out.println(car);
+                            }else {
+                                System.out.println("Not found Car");
+                            }
+                        }
+                    }else if (chooseObject==2) {
+                    List<Motors> motors=this.motorController.showMotor();
+                    for (Motors motor : motors) {
+                        if (motor.getVehicleId()== inputID()){
+                            System.out.println(motor);
+                        }else {
+                            System.out.println("Not found motor");
+                        }
+                    }
+                }else {
+                        List<Trucks>trucks=this.truckController.showTruck();
+                        for (Trucks truck: trucks){
+                            if (truck.getVehicleId()==inputID()){
+                                System.out.println(truck);
+                            }else {
+                                System.out.println("Not found Truck");
+                            }
+                        }
+                    }
+                default:
+                    System.out.println("Invalid choice!");
+                    break;
+            }
+
+        }while (option!=5);
+    }
+
 
 }
 

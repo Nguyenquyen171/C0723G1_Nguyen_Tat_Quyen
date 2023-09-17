@@ -24,6 +24,7 @@ public class Trucks extends Vehicle {
         return getCompanyName()+ "license plate number " +
                 getVehicleId() + " has the year of manufacture " +
                 getYear()+  " with play load "+ load +
-                " , owner name is: " + getOwnerName();
+                " Kg, owner name is: " + getOwnerName();
     }
+
 }
