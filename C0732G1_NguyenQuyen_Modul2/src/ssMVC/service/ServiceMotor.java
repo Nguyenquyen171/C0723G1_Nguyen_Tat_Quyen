@@ -2,7 +2,7 @@ package ssMVC.service;
 
 import ssMVC.model.Motors;
 import ssMVC.interface_repovehicle.IRepoMotor;
-import ssMVC.Repo.RepoMotor;
+import ssMVC.repo.RepoMotor;
 import ssMVC.interface_vehicle.IMotoService;
 
 import java.util.List;

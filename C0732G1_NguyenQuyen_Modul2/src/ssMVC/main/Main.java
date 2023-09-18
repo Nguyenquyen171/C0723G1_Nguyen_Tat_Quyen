@@ -1,4 +1,4 @@
-package ssMVC.Main;
+package ssMVC.main;
 
 import ssMVC.controller.CarController;
 import ssMVC.controller.MotorController;
@@ -7,9 +7,6 @@ import ssMVC.model.Cars;
 import ssMVC.model.Motors;
 import ssMVC.model.Trucks;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 

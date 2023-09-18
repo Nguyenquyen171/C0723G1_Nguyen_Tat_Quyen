@@ -32,7 +32,7 @@ public class Cars extends Vehicle {
 
     @Override
     public String toString() {
-        return getCompanyName()+ "license plate number " +
+        return getCompanyName()+ " license plate number " +
                 getVehicleId() + " has the year of manufacture " +
                 getYear()+  " with= number of seats  " + getNumberSeats()+
                 " and car type :" + getCarType() +

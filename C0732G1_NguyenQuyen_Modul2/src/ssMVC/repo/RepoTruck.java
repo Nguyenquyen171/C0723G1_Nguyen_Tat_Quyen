@@ -1,4 +1,4 @@
-package ssMVC.Repo;
+package ssMVC.repo;
 
 import ssMVC.model.Trucks;
 import ssMVC.interface_repovehicle.IRepoTruck;

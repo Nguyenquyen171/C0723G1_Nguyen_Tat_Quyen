@@ -1,4 +1,4 @@
-package ssMVC.Repo;
+package ssMVC.repo;
 
 import ssMVC.model.Motors;
 import ssMVC.interface_repovehicle.IRepoMotor;

@@ -1,9 +1,9 @@
 package ssMVC.model;
 
 public class Trucks extends Vehicle {
-    private int load;
+    private double load;
 
-    public Trucks(int vehicleId, String companyName, int year, String ownerName, int load) {
+    public Trucks(int vehicleId, String companyName, int year, String ownerName, double load) {
         super(vehicleId, companyName, year, ownerName);
         this.load = load;
     }
@@ -11,11 +11,11 @@ public class Trucks extends Vehicle {
 
     }
 
-    public int getLoad() {
+    public double getLoad() {
         return load;
     }
 
-    public void setLoad(int load) {
+    public void setLoad(double load) {
         this.load = load;
     }
 
