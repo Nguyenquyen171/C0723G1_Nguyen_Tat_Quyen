@@ -1,4 +1,4 @@
-package ssMVC.interface_vehicle;
+package ssMVC.service.interface_vehicle;
 
 import ssMVC.model.Cars;
 

@@ -1,4 +1,4 @@
-package ssMVC.main;
+package ssMVC.view;
 
 import ssMVC.controller.CarController;
 import ssMVC.controller.MotorController;
@@ -10,7 +10,7 @@ import ssMVC.model.Trucks;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class MainController {
     Scanner scanner = new Scanner(System.in);
     private final CarController carController = new CarController();
     private final MotorController motorController = new MotorController();

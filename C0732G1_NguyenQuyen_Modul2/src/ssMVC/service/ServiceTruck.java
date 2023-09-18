@@ -1,9 +1,9 @@
 package ssMVC.service;
 
 import ssMVC.model.Trucks;
-import ssMVC.interface_repovehicle.IRepoTruck;
+import ssMVC.repo.interface_repovehicle.IRepoTruck;
 import ssMVC.repo.RepoTruck;
-import ssMVC.interface_vehicle.ITruckService;
+import ssMVC.service.interface_vehicle.ITruckService;
 
 import java.util.List;
 

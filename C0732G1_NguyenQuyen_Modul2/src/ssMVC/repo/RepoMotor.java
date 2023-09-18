@@ -1,7 +1,7 @@
 package ssMVC.repo;
 
 import ssMVC.model.Motors;
-import ssMVC.interface_repovehicle.IRepoMotor;
+import ssMVC.repo.interface_repovehicle.IRepoMotor;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ss10.Exercise;
+package ss10.exercise;
 
 public class MyList<E> {
     private int size = 0;
@@ -28,6 +28,7 @@ public class MyList<E> {
         }
     }
     public E remove(int index){
+        E temp = (E) elements[index];
         if (index < 0 || index >= size) {
             throw new ArithmeticException("The index: " + index + " out of bound");
         } else {
@@ -38,7 +39,7 @@ public class MyList<E> {
 
         }
         size--;
-        return (E) elements[index];
+        return (E) temp;
     }
     public void ensureCapacity(int minCapacity) {
         if (minCapacity > elements.length) {

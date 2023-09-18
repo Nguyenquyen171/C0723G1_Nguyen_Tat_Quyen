@@ -1,4 +1,4 @@
-package ss10.Exercise;
+package ss10.exercise;
 
 import java.util.Arrays;
 

@@ -1,7 +1,6 @@
 package ssMVC.controller;
 
-import ssMVC.interface_vehicle.IMotoService;
-import ssMVC.interface_vehicle.ITruckService;
+import ssMVC.service.interface_vehicle.IMotoService;
 import ssMVC.model.Motors;
 import ssMVC.service.ServiceMotor;
 

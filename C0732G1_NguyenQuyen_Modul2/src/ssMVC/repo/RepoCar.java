@@ -1,7 +1,7 @@
 package ssMVC.repo;
 
 import ssMVC.model.Cars;
-import ssMVC.interface_repovehicle.IRepoCar;
+import ssMVC.repo.interface_repovehicle.IRepoCar;
 
 import java.util.ArrayList;
 import java.util.List;

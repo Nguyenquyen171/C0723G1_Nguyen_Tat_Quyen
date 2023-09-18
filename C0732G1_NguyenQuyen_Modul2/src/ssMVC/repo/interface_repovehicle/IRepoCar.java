@@ -1,4 +1,4 @@
-package ssMVC.interface_repovehicle;
+package ssMVC.repo.interface_repovehicle;
 
 import ssMVC.model.Cars;
 
