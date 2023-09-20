@@ -10,7 +10,7 @@ import ssMVC.model.Trucks;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainController {
+public class ProductManagement {
     Scanner scanner = new Scanner(System.in);
     private final CarController carController = new CarController();
     private final MotorController motorController = new MotorController();
