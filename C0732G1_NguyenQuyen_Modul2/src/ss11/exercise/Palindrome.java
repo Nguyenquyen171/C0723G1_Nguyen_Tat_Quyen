@@ -1,13 +1,12 @@
 package ss11.exercise;
 
-import ss11.practice.Queue;
-
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Palindrome {
 
     public static boolean isPalindrome(String str) {
-        LinkedList<Character> queue = new LinkedList<>();
+        Queue<Character> queue = new LinkedList<>();
         LinkedList<Character> stack = new LinkedList<>();
         for (char c : str.toCharArray()) {
             queue.add(c);

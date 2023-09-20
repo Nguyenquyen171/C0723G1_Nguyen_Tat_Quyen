@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class Bracket {
     public static void main(String[] args) {
         String equation = "(– b + (b^2 – 4*a*c)^(0.5/ 2*a)) ";
+
         Stack<Character> blacketStack = new Stack<>();
         char[] charArray = equation.toCharArray();
         for (char index : charArray) {
