@@ -1,14 +1,11 @@
 package ss12.exercise.service;
 
 
-import ss12.exercise.Repository.IRepository.IRepositoryFan;
-import ss12.exercise.Repository.RepoFan;
+import ss12.exercise.repository.RepoFan;
 import ss12.exercise.model.Fan;
 import ss12.exercise.service.iservice.IServiceFan;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class ServiceFan implements IServiceFan {
     private RepoFan repoFan = new RepoFan();

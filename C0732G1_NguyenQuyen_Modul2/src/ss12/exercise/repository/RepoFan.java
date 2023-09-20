@@ -1,6 +1,6 @@
-package ss12.exercise.Repository;
+package ss12.exercise.repository;
 
-import ss12.exercise.Repository.IRepository.IRepositoryFan;
+import ss12.exercise.repository.irepository.IRepositoryFan;
 import ss12.exercise.model.Fan;
 
 import java.util.ArrayList;
@@ -8,20 +8,21 @@ import java.util.List;
 
 
 public class RepoFan implements IRepositoryFan {
-    private final ArrayList<Fan> fanRepo = new ArrayList<>();
+    private final List<Fan> fans = new ArrayList<>();
 
     @Override
     public ArrayList<Fan> getFan() {
-        return fanRepo;
+
+        return (ArrayList<Fan>) fans;
     }
 
     @Override
     public void editProduct(int id, Fan fan) {
-        for (int i = 0; i < fanRepo.size(); i++) {
-            if (fanRepo.get(i).getId() == id) {
-                fanRepo.get(i).setName(fan.getName());
-                fanRepo.get(i).setId(fan.getId());
-                fanRepo.get(i).setValue(fan.getValue());
+        for (int i = 0; i < fans.size(); i++) {
+            if (fans.get(i).getId() == id) {
+                fans.get(i).setName(fan.getName());
+                fans.get(i).setId(fan.getId());
+                fans.get(i).setValue(fan.getValue());
                 return;
             }
         }
@@ -29,15 +30,15 @@ public class RepoFan implements IRepositoryFan {
 
     @Override
     public void createFan(Fan fan) {
-        fanRepo.add(fan);
+        fans.add(fan);
 
     }
 
     @Override
     public void removeFan(int idFan) {
-        for (int i = 0; i < fanRepo.size(); i++) {
-            if (fanRepo.get(i).getId() == idFan) {
-                fanRepo.remove(i);
+        for (int i = 0; i < fans.size(); i++) {
+            if (fans.get(i).getId() == idFan) {
+                fans.remove(i);
                 return;
             }
         }
@@ -45,7 +46,7 @@ public class RepoFan implements IRepositoryFan {
     }
     @Override
     public void sortByPriceProductUp() {
-        fanRepo.sort((o1, o2) -> {
+        fans.sort((o1, o2) -> {
             if (o1.getValue() > o2.getValue()) {
                 return 1;
             } else if (o1.getValue() == o2.getValue()) {
@@ -58,7 +59,7 @@ public class RepoFan implements IRepositoryFan {
     }
     @Override
     public void sortByPriceProductDown() {
-        fanRepo.sort((o1, o2) -> {
+        fans.sort((o1, o2) -> {
             if (o1.getValue() < o2.getValue()) {
                 return 1;
             } else if (o1.getValue() == o2.getValue()) {

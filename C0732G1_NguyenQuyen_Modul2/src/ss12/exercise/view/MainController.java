@@ -1,6 +1,6 @@
 package ss12.exercise.view;
 
-import ss12.exercise.Controller.FanController;
+import ss12.exercise.controller.FanController;
 import ss12.exercise.model.Fan;
 
 import java.util.List;

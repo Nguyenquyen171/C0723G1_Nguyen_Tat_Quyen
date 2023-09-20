@@ -1,9 +1,8 @@
-package ss12.exercise.Repository.IRepository;
+package ss12.exercise.repository.irepository;
 
 import ss12.exercise.model.Fan;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface IRepositoryFan {
     ArrayList<Fan> getFan();

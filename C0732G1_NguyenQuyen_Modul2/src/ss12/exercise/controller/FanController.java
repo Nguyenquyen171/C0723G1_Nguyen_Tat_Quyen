@@ -1,4 +1,4 @@
-package ss12.exercise.Controller;
+package ss12.exercise.controller;
 
 import ss12.exercise.model.Fan;
 import ss12.exercise.service.ServiceFan;
