@@ -97,8 +97,12 @@ public class MainController {
                     break;
                 case 5:
                     List<Fan> fan=this.fanController.getFan();
-                    for (Fan fan: fan){
-                        if ()
+                    for (Fan fan1: fan){
+                        if (fan1.getName()==inputName()){
+                            System.out.println(fan1);
+                        }else {
+                            System.out.println("Not found Fan");
+                        }
                     }
                     break;
                 case 6:
