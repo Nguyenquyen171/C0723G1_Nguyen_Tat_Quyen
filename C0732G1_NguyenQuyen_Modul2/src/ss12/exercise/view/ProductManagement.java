@@ -6,7 +6,7 @@ import ss12.exercise.model.Fan;
 import java.util.List;
 import java.util.Scanner;
 
-public class MainController {
+public class ProductManagement {
     Scanner scanner = new Scanner(System.in);
     private final FanController fanController= new FanController();
 
