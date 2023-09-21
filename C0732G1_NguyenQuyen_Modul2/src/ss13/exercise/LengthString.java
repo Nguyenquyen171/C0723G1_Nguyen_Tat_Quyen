@@ -1,32 +1,34 @@
 package ss13.exercise;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 public class LengthString {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String string = scanner.nextLine();
+        String result = "";
 
+        List<Character> max = new LinkedList<>();
 
-        Scanner input = new Scanner(System.in);
-        LinkedList<Character> max = new LinkedList<>();
-        LinkedList<Character> list = new LinkedList<>();
-
-        System.out.print("Enter the String");
-
-        for (char ch : input.nextLine().toCharArray()) {
-            if (list.size() > 1 && ch <= list.getLast() && list.contains(ch)) {
-                list.clear();
+        for (int i = 0; i < string.length(); i++) {
+            List<Character> list = new LinkedList<>();
+            list.add(string.charAt(i));
+            for (int j = i + 1; j < string.length(); j++) {
+                if (string.charAt(j) > ((LinkedList<Character>) list).getLast()) {
+                    list.add(string.charAt(j));
+                }
             }
-            list.add(ch);
             if (list.size() > max.size()) {
                 max.clear();
                 max.addAll(list);
             }
         }
-        for (char ch : max) {
-            System.out.print(ch);
-        }
         System.out.println();
+        System.out.println("The longest ascending sorted string is: ");
+        for (Character chaz : max) {
+            System.out.print(chaz);
+        }
     }
-
-
 }
