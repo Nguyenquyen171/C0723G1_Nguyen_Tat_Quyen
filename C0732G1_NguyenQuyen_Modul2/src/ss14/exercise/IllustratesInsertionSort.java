@@ -16,6 +16,7 @@ public class IllustratesInsertionSort {
                 j = j - 1;
 
             }
+            System.out.println("-----------");
             list[j + 1] = index;
             System.out.println("Loop " + i + Arrays.toString(list));
         }
