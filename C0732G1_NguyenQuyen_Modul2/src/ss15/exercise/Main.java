@@ -16,6 +16,9 @@ public class Main {
                     try {
                         System.out.println("Enter the number A");
                         numberA= Integer.parseInt(scanner.nextLine());
+                        if (numberA <= 0) {
+                            System.out.println("You must enter a number greater than 0");
+                        }
                     }catch (NumberFormatException e ){
                         System.out.println("Number A not a number");
                     }
@@ -24,6 +27,9 @@ public class Main {
                     try {
                         System.out.println("Enter the number B");
                         numberB= Integer.parseInt(scanner.nextLine());
+                        if (numberB <= 0) {
+                            System.out.println("You must enter a number greater than 0");
+                        }
                     }catch (NumberFormatException e ){
                         System.out.println("Number B not a number");
                     }
@@ -32,6 +38,9 @@ public class Main {
                     try {
                         System.out.println("Enter the number C");
                         numberC= Integer.parseInt(scanner.nextLine());
+                        if (numberC <= 0) {
+                            System.out.println("You must enter a number greater than 0");
+                        }
                     }catch (NumberFormatException e ){
                         System.out.println("Number C not a number");
                     }
@@ -40,7 +49,7 @@ public class Main {
             }catch (IllegalTriangleException e){
                 System.out.println(e.getMessage());
             }
-        }while (numberA + numberB <= numberC || numberA + numberC <= numberB || numberB + numberC <= numberA);
+        }while (numberA + numberB <= numberC && numberA + numberC < numberB && numberB + numberC <= numberA);
     }
 
 }
