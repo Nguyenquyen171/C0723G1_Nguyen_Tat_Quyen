@@ -1,12 +1,12 @@
 package ss12.exercise.controller;
 
 import ss12.exercise.model.Fan;
-import ss12.exercise.service.ServiceFan;
+import ss12.exercise.service.FanService;
 
 import java.util.ArrayList;
 
 public class FanController {
-    private final ServiceFan serviceFan = new ServiceFan();
+    private final FanService serviceFan = new FanService();
 
     public ArrayList<Fan> getFan() {
         return serviceFan.getFan();

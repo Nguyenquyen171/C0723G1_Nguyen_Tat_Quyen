@@ -7,7 +7,7 @@ import ss12.exercise.service.iservice.IServiceFan;
 
 import java.util.ArrayList;
 
-public class ServiceFan implements IServiceFan {
+public class FanService implements IServiceFan {
     private RepoFan repoFan = new RepoFan();
 
     @Override
@@ -41,6 +41,5 @@ public class ServiceFan implements IServiceFan {
     @Override
     public void sortByPriceProductDown() {
         repoFan.sortByPriceProductDown();
-
     }
 }

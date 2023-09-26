@@ -27,7 +27,6 @@ public class RepoFan implements IRepositoryFan {
             }
         }
     }
-
     @Override
     public void createFan(Fan fan) {
         fans.add(fan);

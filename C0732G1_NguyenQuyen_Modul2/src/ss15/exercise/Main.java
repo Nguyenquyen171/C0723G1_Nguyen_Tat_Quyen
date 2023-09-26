@@ -1,5 +1,6 @@
 package ss15.exercise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -10,46 +11,49 @@ public class Main {
         int numberA=0;
         int numberB=0;
         int numberC=0;
+
         do {
-            try{
+            try {
                 do {
                     try {
                         System.out.println("Enter the number A");
-                        numberA= Integer.parseInt(scanner.nextLine());
+                        numberA = Integer.parseInt(scanner.nextLine());
                         if (numberA <= 0) {
                             System.out.println("You must enter a number greater than 0");
                         }
-                    }catch (NumberFormatException e ){
+                    } catch (NumberFormatException e) {
                         System.out.println("Number A not a number");
                     }
-                }while (numberA<=0);
+                } while (numberA <= 0);
                 do {
                     try {
                         System.out.println("Enter the number B");
-                        numberB= Integer.parseInt(scanner.nextLine());
+                        numberB = Integer.parseInt(scanner.nextLine());
                         if (numberB <= 0) {
                             System.out.println("You must enter a number greater than 0");
                         }
-                    }catch (NumberFormatException e ){
+                    } catch (NumberFormatException e) {
                         System.out.println("Number B not a number");
                     }
-                }while (numberB<=0);
+                } while (numberB <= 0);
                 do {
                     try {
                         System.out.println("Enter the number C");
-                        numberC= Integer.parseInt(scanner.nextLine());
+                        numberC = Integer.parseInt(scanner.nextLine());
                         if (numberC <= 0) {
                             System.out.println("You must enter a number greater than 0");
                         }
-                    }catch (NumberFormatException e ){
+                    } catch (NumberFormatException e) {
                         System.out.println("Number C not a number");
                     }
-                }while (numberC<=0);
-                exception.checkInputEdge(numberA,numberB,numberC);
-            }catch (IllegalTriangleException e){
+                } while (numberC <= 0);
+                if (exception.checkInputEdge(numberA, numberB, numberC)) {
+                    Triangle triangle = new Triangle(numberA, numberB, numberC);
+                    System.out.println(triangle);
+                }
+            }catch (IllegalTriangleException e) {
                 System.out.println(e.getMessage());
             }
-        }while (numberA + numberB <= numberC && numberA + numberC < numberB && numberB + numberC <= numberA);
-    }
-
+        }while (numberA + numberB < numberC && numberA + numberC < numberB && numberB + numberC <= numberA);
+ }
 }
