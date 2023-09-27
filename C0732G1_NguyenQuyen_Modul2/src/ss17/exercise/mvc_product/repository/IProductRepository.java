@@ -1,4 +1,4 @@
-package ss17.exercise.mvc_product.repository.impl;
+package ss17.exercise.mvc_product.repository;
 
 import ss17.exercise.mvc_product.model.Product;
 

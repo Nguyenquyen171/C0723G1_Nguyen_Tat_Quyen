@@ -1,8 +1,8 @@
-package ss17.exercise.mvc_product.service;
+package ss17.exercise.mvc_product.service.impl;
 
 import ss17.exercise.mvc_product.model.Product;
-import ss17.exercise.mvc_product.repository.ProductRepository;
-import ss17.exercise.mvc_product.service.impl.IProductService;
+import ss17.exercise.mvc_product.repository.impl.ProductRepository;
+import ss17.exercise.mvc_product.service.IProductService;
 
 import java.util.List;
 

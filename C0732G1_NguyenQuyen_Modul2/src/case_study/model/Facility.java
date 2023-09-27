@@ -1,13 +1,13 @@
 package case_study.model;
 
-public class Place {
+public abstract class Facility {
     private int idPlace;
     private String namePlace;
     private double areaPlace;
     private double pricePlace;
     private int quantityPeople;
 
-    public Place(int idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople) {
+    public Facility(int idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople) {
         this.idPlace = idPlace;
         this.namePlace = namePlace;
         this.areaPlace = areaPlace;

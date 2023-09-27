@@ -1,6 +1,6 @@
 package case_study.model;
 
-public class Villa extends Place{
+public class Villa extends Facility {
     private String roomStandards;
     private String areaPool;
 

@@ -1,8 +1,8 @@
-package ss17.exercise.mvc_product.repository;
+package ss17.exercise.mvc_product.repository.impl;
 
 import ss17.exercise.mvc_product.file_ultils.FileUtils;
 import ss17.exercise.mvc_product.model.Product;
-import ss17.exercise.mvc_product.repository.impl.IProductRepository;
+import ss17.exercise.mvc_product.repository.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;

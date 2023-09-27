@@ -5,7 +5,6 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 public class BinaryFile {
-    public class FileCopyExample {
         public static void main(String[] args) {
             String sourcePath = "/Users/nguyentatquyen/Documents/GitHub/C0723G1_Nguyen_Tat_Quyen/C0732G1_NguyenQuyen_Modul2/src/ss17/exercise/optional/source.txt";
             String destPath = "/Users/nguyentatquyen/Documents/GitHub/C0723G1_Nguyen_Tat_Quyen/C0732G1_NguyenQuyen_Modul2/src/ss17/exercise/optional/dest.txtt";
@@ -41,5 +40,5 @@ public class BinaryFile {
 
             Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
         }
-    }
+
 }

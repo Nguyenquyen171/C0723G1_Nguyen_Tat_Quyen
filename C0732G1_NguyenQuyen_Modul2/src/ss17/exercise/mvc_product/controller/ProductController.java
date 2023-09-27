@@ -1,7 +1,7 @@
 package ss17.exercise.mvc_product.controller;
 
 import ss17.exercise.mvc_product.model.Product;
-import ss17.exercise.mvc_product.service.ProductService;
+import ss17.exercise.mvc_product.service.impl.ProductService;
 
 import java.util.List;
 

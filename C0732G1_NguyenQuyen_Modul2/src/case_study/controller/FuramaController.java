@@ -95,5 +95,30 @@ public class FuramaController {
             System.exit(6);
         }
         return choiceManagement;
+
     }
+    public void managementProgram(){
+        int chooseObject;
+        int chooseOption;
+        do {
+            chooseObject= this.choose();
+            chooseOption=this.chooseManagement();
+            switch (chooseObject){
+                case 1:
+                    this.employeeManagement();
+                case 2:
+                    this.customerManagement();
+                case 3:
+                    this.facilityManagement();
+                case 4:
+                    this.bookingManagement();
+                case 5:
+                    this.promotionManagement();
+                default:
+                    System.out.println("Invalid choice!");
+                    break;
+            }
+        }while (chooseObject!=6);
+    }
+
 }
