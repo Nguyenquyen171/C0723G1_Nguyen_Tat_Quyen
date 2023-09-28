@@ -1,4 +1,4 @@
-package case_study.model;
+package case_study.model.facility;
 
 public class House extends Facility {
     private String roomStandards;
