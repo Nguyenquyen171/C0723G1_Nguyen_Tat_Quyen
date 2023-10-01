@@ -1,6 +1,7 @@
 package case_study.service;
 
 import case_study.model.person.Customer;
+import case_study.model.person.Employee;
 
 import java.util.List;
 
@@ -14,11 +15,7 @@ public interface ICustomerService extends IService<Customer> {
     @Override
     List<Customer> display();
 
-    @Override
-    List<Customer> convert(List<String> strings);
 
-    @Override
-    List<String> convertToString(List<Customer> e);
     void searchCustomer(String nameCustomer);
     void editCustomer(String idCustomer, Customer customer);
 }

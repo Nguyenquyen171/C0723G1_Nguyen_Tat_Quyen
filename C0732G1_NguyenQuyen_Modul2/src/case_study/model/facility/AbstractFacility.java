@@ -1,13 +1,13 @@
 package case_study.model.facility;
 
-public abstract class Facility {
-    private int idPlace;
+public abstract class AbstractFacility {
+    private String  idPlace;
     private String namePlace;
     private double areaPlace;
     private double pricePlace;
     private int quantityPeople;
 
-    public Facility(int idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople) {
+    public AbstractFacility(String idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople) {
         this.idPlace = idPlace;
         this.namePlace = namePlace;
         this.areaPlace = areaPlace;
@@ -15,11 +15,11 @@ public abstract class Facility {
         this.quantityPeople = quantityPeople;
     }
 
-    public int getIdPlace() {
+    public String getIdPlace() {
         return idPlace;
     }
 
-    public void setIdPlace(int idPlace) {
+    public void setIdPlace(String idPlace) {
         this.idPlace = idPlace;
     }
 

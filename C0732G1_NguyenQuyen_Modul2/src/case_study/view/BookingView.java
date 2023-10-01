@@ -38,7 +38,7 @@ public class BookingView {
                 System.out.println("Please enter your choice again!");
             }
 
-        }while (bookingChoice<0||bookingChoice>6);
+        }while (bookingChoice>0&&bookingChoice<=6);
     }
 
 

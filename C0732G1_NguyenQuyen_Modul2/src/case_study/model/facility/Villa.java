@@ -1,10 +1,10 @@
 package case_study.model.facility;
 
-public class Villa extends Facility {
+public class Villa extends AbstractFacility {
     private String roomStandards;
     private String areaPool;
 
-    public Villa(int idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople, String roomStandards, String areaPool) {
+    public Villa(String idPlace, String namePlace, double areaPlace, double pricePlace, int quantityPeople, String roomStandards, String areaPool) {
         super(idPlace, namePlace, areaPlace, pricePlace, quantityPeople);
         this.roomStandards = roomStandards;
         this.areaPool = areaPool;

@@ -63,7 +63,7 @@ public class MainView {
                 switch (choiceManagementFuruma) {
                     case 1:
                         EmployeeView employeeView = new EmployeeView();
-                        employeeView.inputEmployee();
+                        employeeView.employeeManager();
                         break;
                     case 2:
                         CustomerView customerView = new CustomerView();
@@ -81,14 +81,14 @@ public class MainView {
                         PromotionView promotionView = new PromotionView();
                         this.promotionView.inputPromotion();
                         break;
+                    case 6:
+                        System.exit(0);
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter your choice again!");
             }
-        } while (choiceManagementFuruma < 0 || choiceManagementFuruma > 6);
-        if (choiceManagementFuruma == 6) {
-            System.exit(6);
-        }
+        } while (choiceManagementFuruma > 0 && choiceManagementFuruma <= 6);
+
         return choiceManagementFuruma;
 
     }

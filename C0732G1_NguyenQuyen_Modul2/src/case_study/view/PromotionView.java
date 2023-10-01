@@ -32,7 +32,7 @@ public class PromotionView {
 
             }
 
-        }while (promotionChoice<0|| promotionChoice>3);
+        }while (promotionChoice>0 &&promotionChoice<=3);
     }
 
 }

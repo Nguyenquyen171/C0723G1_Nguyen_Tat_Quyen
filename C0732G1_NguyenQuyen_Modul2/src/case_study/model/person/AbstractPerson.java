@@ -3,17 +3,18 @@ package case_study.model.person;
 public abstract class AbstractPerson {
     private String id;
     private String name;
+    private String age;
     private String gender;
-    private String birthDay;
     private String identificationCard;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
-    public AbstractPerson(String id, String name, String gender, String birthDay, String identificationCard, int phoneNumber, String email) {
+    public AbstractPerson(String id, String name, String age, String gender, String identificationCard, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
+        this.age = age;
         this.gender = gender;
-        this.birthDay = birthDay;
+
         this.identificationCard = identificationCard;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -35,6 +36,14 @@ public abstract class AbstractPerson {
         this.name = name;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public String getGender() {
         return gender;
     }
@@ -43,13 +52,6 @@ public abstract class AbstractPerson {
         this.gender = gender;
     }
 
-    public String getBirthDay() {
-        return birthDay;
-    }
-
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
-    }
 
     public String getIdentificationCard() {
         return identificationCard;
@@ -59,11 +61,11 @@ public abstract class AbstractPerson {
         this.identificationCard = identificationCard;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -73,6 +75,9 @@ public abstract class AbstractPerson {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public AbstractPerson(){
+
     }
 }
 

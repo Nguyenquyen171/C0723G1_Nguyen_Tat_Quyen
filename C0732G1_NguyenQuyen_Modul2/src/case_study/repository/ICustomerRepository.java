@@ -18,7 +18,7 @@ public interface ICustomerRepository extends  IRepository<Customer> {
     List<Customer> convert(List<String> strings);
 
     @Override
-    List<String> convertToString(List<Customer> e);
-    void searchCustomer(String nameCustomer);
+    List<String> convertToString(List<Customer> customerList);
+    List<Customer> searchCustomer(String nameCustomer);
     void editCustomer(String idCustomer, Customer customer);
 }
