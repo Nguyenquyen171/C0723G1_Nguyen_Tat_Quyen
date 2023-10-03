@@ -10,6 +10,7 @@ public class Customer extends AbstractPerson {
         Location = location;
     }
 
+
     public String getLevel() {
         return level;
     }
@@ -24,5 +25,14 @@ public class Customer extends AbstractPerson {
 
     public void setLocation(String location) {
         Location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString()+
+                " level='" + level + '\'' +
+                ", Location='" + Location + '\'' +
+                '}';
     }
 }

@@ -23,19 +23,17 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> display() {
-
         return this.customerRepository.display();
     }
 
     @Override
-    public void searchCustomer(String nameCustomer) {
-        customerRepository.searchCustomer(nameCustomer);
+    public List<Customer> searchCustomer(String nameCustomer) {
+        return customerRepository.searchCustomer(nameCustomer);
 
     }
 
     @Override
     public void editCustomer(String idCustomer, Customer customer) {
         customerRepository.editCustomer(idCustomer,customer);
-
     }
 }

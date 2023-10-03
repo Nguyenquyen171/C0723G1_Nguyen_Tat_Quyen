@@ -3,10 +3,13 @@ package case_study.view;
 import java.util.Scanner;
 
 public class MainView {
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
-    PromotionView promotionView = new PromotionView();
+    private final PromotionView promotionView = new PromotionView();
 
+    public static void main(String[] args) {
+
+    }
     public void displayMainMenu() {
         System.out.println("Menu Manager");
         System.out.println("1: Employee Management");
@@ -16,48 +19,11 @@ public class MainView {
         System.out.println("5: Promotion Management");
         System.out.println("6: Exit");
     }
-
-    public int choose() {
-        int choiceOption = 0;
-        this.displayMainMenu();
-        do {
-            try {
-                System.out.println("Please choose the Furama management program:");
-                choiceOption = Integer.parseInt(scanner.nextLine());
-            } catch (Exception e) {
-                System.out.println("Invalid option!!");
-
-            }
-        } while (choiceOption < 1 || choiceOption > 6);
-        if (choiceOption == 6) {
-            System.exit(6);
-        }
-        return choiceOption;
-    }
-
-    public int chooseManagement() {
-        int choiceManagement = 0;
-        this.displayMainMenu();
-        do {
-            try {
-                System.out.println("Please choose the Furama management program:");
-                choiceManagement = Integer.parseInt(scanner.nextLine());
-            } catch (Exception e) {
-                System.out.println("Invalid option!!");
-
-            }
-        } while (choiceManagement < 1 || choiceManagement > 6);
-        if (choiceManagement == 6) {
-            System.exit(6);
-        }
-        return choiceManagement;
-
-    }
-
     public int managementFuruma() {
         int choiceManagementFuruma = -1;
-        this.displayMainMenu();
+
         do {
+            this.displayMainMenu();
             try {
                 choiceManagementFuruma = Integer.parseInt(scanner.nextLine());
                 switch (choiceManagementFuruma) {
@@ -83,13 +49,14 @@ public class MainView {
                         break;
                     case 6:
                         System.exit(0);
+                    default:
+                        System.out.println("Can't find the option you're looking for");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter your choice again!");
             }
-        } while (choiceManagementFuruma > 0 && choiceManagementFuruma <= 6);
+        } while (choiceManagementFuruma != 6);
 
         return choiceManagementFuruma;
-
     }
 }

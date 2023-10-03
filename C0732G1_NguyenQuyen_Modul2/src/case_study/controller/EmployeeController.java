@@ -24,7 +24,7 @@ public class EmployeeController {
         employeeService.editEmployee(id, employee);
     }
 
-    public void searchEmployee(String nameEmployee) {
-        employeeService.searchEmployee(nameEmployee);
+    public List<Employee> searchEmployee(String nameEmployee) {
+        return employeeService.searchEmployee(nameEmployee);
     }
 }

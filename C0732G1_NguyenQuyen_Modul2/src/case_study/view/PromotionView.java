@@ -5,7 +5,7 @@ import case_study.Main;
 import java.util.Scanner;
 
 public class PromotionView {
-    Scanner scanner= new Scanner(System.in);
+    private final  Scanner scanner= new Scanner(System.in);
 
     public void promotionManagement() {
         System.out.println("Promotion Managerment");

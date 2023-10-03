@@ -22,8 +22,8 @@ public class CustomerController {
         return customerService.display();
     }
 
-    public void searchCustomer(String nameCustomer) {
-        customerService.searchCustomer(nameCustomer);
+    public List<Customer> searchCustomer(String nameCustomer) {
+        return customerService.searchCustomer(nameCustomer);
     }
 
     public void editCustomer(String idCustomer, Customer customer) {

@@ -38,4 +38,14 @@ public class Employee extends AbstractPerson {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                super.toString() +
+                " guestType='" + guestType + '\'' +
+                ", address='" + address + '\'' +
+                ", amount='" + amount + '\'' +
+                '}';
+    }
 }

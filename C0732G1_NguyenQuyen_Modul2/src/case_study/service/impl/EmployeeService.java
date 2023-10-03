@@ -26,16 +26,17 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public List<Employee> display() {
 
-        return null;
+        return employeeRepository.display();
     }
 
     @Override
     public void editEmployee(String id, Employee employee) {
+        employeeRepository.editEmployee(id,employee);
 
     }
 
     @Override
     public List<Employee> searchEmployee(String nameEmployee) {
-        return null;
+        return employeeRepository.searchEmployee(nameEmployee);
     }
 }

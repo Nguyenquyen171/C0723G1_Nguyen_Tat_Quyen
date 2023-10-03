@@ -3,7 +3,7 @@ package case_study.view;
 import java.util.Scanner;
 
 public class BookingView {
-    Scanner scanner=new Scanner(System.in);
+    private Scanner scanner=new Scanner(System.in);
 
     public void bookingManagement() {
         System.out.println("Booking Managerment");
@@ -32,13 +32,15 @@ public class BookingView {
                     case 5:
                         break;
                     case 6:
-                       return;
+                       break;
+                    default:
+                        System.out.println("Can't find the option you're looking for");
                 }
             }catch (NumberFormatException e){
                 System.out.println("Please enter your choice again!");
             }
 
-        }while (bookingChoice>0&&bookingChoice<=6);
+        }while (bookingChoice!=6);
     }
 
 

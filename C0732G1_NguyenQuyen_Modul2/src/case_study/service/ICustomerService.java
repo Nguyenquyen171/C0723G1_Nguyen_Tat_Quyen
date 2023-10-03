@@ -14,8 +14,6 @@ public interface ICustomerService extends IService<Customer> {
 
     @Override
     List<Customer> display();
-
-
-    void searchCustomer(String nameCustomer);
+    List<Customer> searchCustomer(String nameCustomer);
     void editCustomer(String idCustomer, Customer customer);
 }

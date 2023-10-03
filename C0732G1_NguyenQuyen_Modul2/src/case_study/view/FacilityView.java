@@ -3,7 +3,7 @@ package case_study.view;
 import java.util.Scanner;
 
 public class FacilityView {
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void facilityManagement() {
         System.out.println("Facility Management");
@@ -31,7 +31,8 @@ public class FacilityView {
                         break;
                     case 5:
                         break;
-
+                    default:
+                        System.out.println("Can't find the option you're looking for");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter your choice again!");

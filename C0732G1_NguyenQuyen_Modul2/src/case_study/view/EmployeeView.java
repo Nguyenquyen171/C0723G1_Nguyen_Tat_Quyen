@@ -1,16 +1,20 @@
 package case_study.view;
 
+import case_study.Main;
 import case_study.controller.EmployeeController;
+import case_study.model.person.Customer;
 import case_study.model.person.Employee;
 import case_study.utils.RegexFile;
+
 
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeView {
-    private final Scanner scanner = new Scanner(System.in);
+    private  final Scanner scanner = new Scanner(System.in);
     private final EmployeeController employeeController = new EmployeeController();
     private final RegexFile regexFile = new RegexFile();
+
 
 
     public void employeeManagement() {
@@ -40,23 +44,33 @@ public class EmployeeView {
                         this.employeeController.add(inputNewEmployee());
                         break;
                     case 3:
-                        this.employeeController.editEmployee(this.inputIdEmployee(),inputNewEmployee());
+                        this.employeeController.editEmployee(this.inputIdEmployee(), inputNewEmployee());
                         break;
                     case 4:
                         this.employeeController.remove(inputIdEmployee());
                         break;
                     case 5:
-                        this.employeeController.searchEmployee(inputNameEmployee());
-                        break;
+                       List<Employee> employees= this.employeeController.searchEmployee(inputNameEmployee());
+                        if(employees.isEmpty()){
+                            System.out.println("Name not find in List");
+                        }else {
+                            System.out.println(employees);
+                            System.out.println("Successfully");
+                        }
                     case 6:
+//                      MainView mainView=new MainView();
+//                        mainView.managementFuruma();
+//                        break;
                         break;
+                    default:
+                        System.out.println("Can't find the option you're looking for");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter your choice again!");
 
             }
 
-        } while (employeeChoice!=6);
+        } while (employeeChoice != 6);
     }
 
     public Employee inputNewEmployee() {
@@ -109,44 +123,31 @@ public class EmployeeView {
         String salary;
         do {
             System.out.println("Please enter your salary");
-            salary=scanner.nextLine();
-            if (Integer.parseInt(salary)>0){
+            salary = scanner.nextLine();
+            if (Integer.parseInt(salary) > 0) {
                 break;
-            }else {
+            } else {
                 System.out.println("Salary > 0");
             }
-        }while (true);
-        return new Employee(addId,addAddress,addAge,addGender,addEmail,addGuestType,addName,salary,addIdentificationCard,addPhoneNumber);
-    }
-    public String inputIdEmployee(){
-        List<Employee> employeeList=employeeController.display();
-        String id;
-        do {
-            System.out.println("Please enter the id  ");
-            id=scanner.nextLine();
-            for (Employee employee: employeeList){
-                if (employee.getId().equals(id)){
-                    break;
-                }else {
-                    System.out.println("Id not found");
-                }
-            }
-        }while (true);
-    }
-    public String inputNameEmployee(){
-        List<Employee> employeeList= employeeController.display();
-        String name;
-        do {
-            System.out.println("Enter the name you want to find");
-            name=scanner.nextLine();
-            for (Employee employee: employeeList){
-                if (employee.getName().equals(name)){
-                    break;
-                }else {
-                    System.out.println("Dont find the Name");
-                }
-            }
-        }while (true);
+        } while (true);
+        return new Employee(addId, addAddress, addAge, addGender, addEmail, addGuestType, addName, salary, addIdentificationCard, addPhoneNumber);
     }
 
+    public String inputIdEmployee() {
+        String string;
+        do {
+            System.out.println("Nhap ID");
+            string = scanner.nextLine();
+        } while (!regexFile.validateId(string));
+        return string;
+    }
+
+    public String inputNameEmployee() {
+        String string;
+        System.out.println("Enter the name you want to find");
+        string = scanner.nextLine();
+        return string;
+    }
 }
+
+

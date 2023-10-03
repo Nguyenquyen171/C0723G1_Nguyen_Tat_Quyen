@@ -3,15 +3,19 @@ package case_study.view;
 import case_study.controller.CustomerController;
 import case_study.model.person.Customer;
 import case_study.model.person.Employee;
+import case_study.utils.FileUtils;
 import case_study.utils.RegexFile;
 
 import java.security.PublicKey;
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerView {
-    Scanner scanner = new Scanner(System.in);
-    CustomerController customerController = new CustomerController();
+    private final  Scanner scanner = new Scanner(System.in);
+    private final CustomerController customerController = new CustomerController();
+    private final RegexFile regexFile= new RegexFile();
+    private  final MainView mainView = new MainView();
 
     public void customerManagement() {
         System.out.println("-----Customer Management------");
@@ -31,22 +35,37 @@ public class CustomerView {
                 customerChoice = Integer.parseInt(scanner.nextLine());
                 switch (customerChoice) {
                     case 1:
-                        this.customerController.display();
+                        List<Customer> customerList=customerController.display();
+                        for (Customer customer: customerList){
+                            System.out.println(customer);
+                        }
+                        System.out.println("Successfully");
                         break;
                     case 2:
                         this.customerController.add(inputNewCustomer());
                         break;
                     case 3:
-                        this.customerController.editCustomer(this.inputIdCustomer(), inputNewCustomer());
+                        this.customerController.editCustomer(inputIdCustomer(), inputNewCustomer());
+                        System.out.println("Successfully");
                         break;
                     case 4:
                         this.customerController.remove(inputIdCustomer());
+                        System.out.println("Successfully");
+
                         break;
                     case 5:
-                        this.customerController.searchCustomer(inputNameCustomer());
+                        List<Customer> customers = this.customerController.searchCustomer(inputNameCustomer());
+                        if(customers.isEmpty()){
+                            System.out.println("Name not find in List");
+                        }else {
+                            System.out.println(customers);
+                            System.out.println("Successfully");
+                        }
                         break;
                     case 6:
-                        break;
+                       break;
+                    default:
+                        System.out.println("Can't find the option you're looking for");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter your choice again!");
@@ -56,49 +75,49 @@ public class CustomerView {
     }
 
     public Customer inputNewCustomer() {
-        RegexFile regexFile = new RegexFile();
+         RegexFile regexFile = new RegexFile();
         String addName;
         do {
-            System.out.println("Please enter the name Customer");
+            System.out.println("Please enter the name Customer ( Nguyen Quyen )");
             addName = scanner.nextLine();
 
         } while (regexFile.validateName(addName));
         String addId;
         do {
-            System.out.println("Please enter the id customer");
+            System.out.println("Please enter the id customer KH-YYYY");
             addId = scanner.nextLine();
-        } while (!regexFile.validateId(addId));
+        } while (!regexFile.validateIdCustomer(addId));
         String addGender;
         do {
-            System.out.println("Please enter the gender");
+            System.out.println("Please enter the gender (Male- Female - Gay)");
             addGender = scanner.nextLine();
         } while (!regexFile.validateGender(addGender));
         String addAge;
         do {
-            System.out.println("Please enter your birth day");
+            System.out.println("Please enter your birth day (17-01-2002)");
             addAge = scanner.nextLine();
 
         } while (regexFile.validateAge(addAge));
         String addIdentificationCard;
         do {
-            System.out.println("Please enter the identification card");
+            System.out.println("Please enter the identification card (9-12 Number)");
             addIdentificationCard = scanner.nextLine();
 
         } while (!regexFile.validateIdentificationCard(addIdentificationCard));
         String addPhoneNumber;
         do {
-            System.out.println("Please enter your phone number");
+            System.out.println("Please enter your phone number (10 numbers)");
             addPhoneNumber = scanner.nextLine();
 
         } while (!regexFile.validatePhoneNumber(addPhoneNumber));
         String addEmail;
         do {
-            System.out.println("Please enter your email");
+            System.out.println("Please enter your email (nguyenquyen171202@gmail.com)");
             addEmail = scanner.nextLine();
         } while (!regexFile.validateEmail(addEmail));
         String addLevel;
         do {
-            System.out.println("Please enter your level");
+            System.out.println("Please enter your level (Diamond|Platinum|Gold|Silver|Member)");
             addLevel = scanner.nextLine();
 
         } while (!regexFile.validateLever(addLevel));
@@ -110,36 +129,19 @@ public class CustomerView {
         return new Customer(addId, addName, addAge, addGender, addIdentificationCard, addPhoneNumber, addEmail, addLevel, addLocation);
     }
 
-    public String inputIdCustomer() {
-        List<Customer> customerList = customerController.display();
-        String id;
+    public String inputIdCustomer(){
+        String string;
         do {
-            System.out.println("Please enter the id  ");
-            id = scanner.nextLine();
-            for (Customer customer : customerList) {
-                if (customer.getId().equals(id)) {
-                    break;
-                } else {
-                    System.out.println("Id not found");
-                }
-            }
-        } while (true);
+            System.out.println("Nhap ID");
+            string = scanner.nextLine();
+        } while (!regexFile.validateIdCustomer(string));
+        return string;
     }
 
     public String inputNameCustomer() {
-        List<Customer> customerList = customerController.display();
-        String name;
-        do {
-            System.out.println("Enter the name you want to find");
-            name = scanner.nextLine();
-            for (Customer customer : customerList) {
-                if (customer.getName().equals(name)) {
-                    break;
-                } else {
-                    System.out.println("Dont find the Name");
-                }
-            }
-        } while (true);
-
+      String string;
+          System.out.println("Enter the name you want to find");
+          string=scanner.nextLine();
+      return string;
     }
 }

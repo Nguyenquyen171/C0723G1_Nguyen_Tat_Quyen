@@ -8,5 +8,4 @@ public interface IService <E> {
     void add (E e);
     void remove(String id);
     List<E> display();
-
 }

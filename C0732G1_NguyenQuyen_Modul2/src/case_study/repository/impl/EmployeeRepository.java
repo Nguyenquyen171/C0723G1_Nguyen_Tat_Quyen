@@ -17,7 +17,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public void editEmployee(String id, Employee employee) {
         List<Employee> employeeList = display();
         for (Employee employee1 : employeeList) {
-            if (employee1.getId().contains(id)) {
+            if (employee1.getId().equals(id)) {
                 employee1.setId(employee.getId());
                 employee1.setName(employee.getName());
                 employee1.setAge(employee.getAge());
@@ -27,7 +27,6 @@ public class EmployeeRepository implements IEmployeeRepository {
                 employee1.setEmail(employee.getEmail());
                 employee1.setGuestType(employee.getGuestType());
                 employee1.setAddress(employee.getAddress());
-
                 return;
             }
         }
@@ -105,7 +104,7 @@ public class EmployeeRepository implements IEmployeeRepository {
         for (Employee employee : employeeList) {
             if (employee.getId().equals(id)) {
                 employeeList.remove(employee);
-                return;
+                break;
             }
         }
         FileUtils.writeFile(PATH_FILE, this.convertToString(employeeList));

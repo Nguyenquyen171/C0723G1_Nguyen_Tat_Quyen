@@ -1,7 +1,6 @@
 package case_study.repository.impl;
 
 import case_study.model.person.Customer;
-import case_study.model.person.Employee;
 import case_study.repository.ICustomerRepository;
 import case_study.utils.FileUtils;
 
@@ -24,16 +23,18 @@ private final String COMMA=",";
         for (Customer customer : customerList) {
             if (customer.getId().equals(id)) {
                 customerList.remove(customer);
-                return;
+                break;
             }
         }
         FileUtils.writeFile(PATH_FILE, this.convertToString(customerList));
-
     }
 
     @Override
     public List<Customer> display() {
+
+//        return convert(FileUtils.readFile(PATH_FILE));
         return convert(FileUtils.readFile(PATH_FILE));
+
     }
 
     @Override
@@ -80,7 +81,7 @@ private final String COMMA=",";
         List<Customer> customerList = display();
         List<Customer> searchCustomer = new ArrayList<>();
         for (Customer customer : customerList) {
-            if (customer.getName().equals(nameCustomer)) {
+            if (customer.getName().contains(nameCustomer)) {
                 searchCustomer.add(customer);
             }
         }

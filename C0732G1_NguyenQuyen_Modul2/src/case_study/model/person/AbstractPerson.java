@@ -79,5 +79,18 @@ public abstract class AbstractPerson {
     public AbstractPerson(){
 
     }
+
+    @Override
+    public String toString() {
+        return
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", gender='" + gender + '\'' +
+                ", identificationCard='" + identificationCard + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
 
