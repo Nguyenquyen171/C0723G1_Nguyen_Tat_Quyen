@@ -9,7 +9,8 @@ import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
     private final String PATH_FILE = "/Users/nguyentatquyen/Documents/GitHub/C0723G1_Nguyen_Tat_Quyen/C0732G1_NguyenQuyen_Modul2/src/case_study/data/data_customer";
-private final String COMMA=",";
+    private final String COMMA = ",";
+
     @Override
     public void add(Customer customer) {
         List<Customer> customerList = display();
@@ -39,9 +40,9 @@ private final String COMMA=",";
 
     @Override
     public List<Customer> convert(List<String> strings) {
-        List<Customer> customerList=new ArrayList<>();
-        for (String string: strings){
-            String[] data= string.split(COMMA);
+        List<Customer> customerList = new ArrayList<>();
+        for (String string : strings) {
+            String[] data = string.split(COMMA);
             customerList.add(new Customer(
                     data[0],
                     data[1],
@@ -59,18 +60,18 @@ private final String COMMA=",";
 
     @Override
     public List<String> convertToString(List<Customer> customerList) {
-        List<String> strings=new ArrayList<>();
-        for (Customer customer:  customerList){
+        List<String> strings = new ArrayList<>();
+        for (Customer customer : customerList) {
             strings.add(
                     customer.getId() + COMMA +
-                    customer.getName() + COMMA +
-                    customer.getIdentificationCard() + COMMA +
-                    customer.getPhoneNumber() + COMMA +
-                    customer.getEmail() + COMMA +
-                    customer.getLevel() + COMMA +
-                    customer.getLocation() + COMMA +
-                    customer.getGender() + COMMA +
-                    customer.getAge() + COMMA
+                            customer.getName() + COMMA +
+                            customer.getIdentificationCard() + COMMA +
+                            customer.getPhoneNumber() + COMMA +
+                            customer.getEmail() + COMMA +
+                            customer.getLevel() + COMMA +
+                            customer.getLocation() + COMMA +
+                            customer.getGender() + COMMA +
+                            customer.getAge() + COMMA
             );
         }
         return strings;
@@ -91,9 +92,9 @@ private final String COMMA=",";
 
     @Override
     public void editCustomer(String idCustomer, Customer customer) {
-        List<Customer> customerList= display();
-        for (Customer customer1: customerList){
-            if (customer1.getId().contains(idCustomer)){
+        List<Customer> customerList = display();
+        for (Customer customer1 : customerList) {
+            if (customer1.getId().contains(idCustomer)) {
                 customer1.setId(customer.getId());
                 customer1.setName(customer.getName());
                 customer1.setAge(customer.getAge());

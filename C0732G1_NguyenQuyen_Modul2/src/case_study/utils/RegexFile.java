@@ -27,7 +27,7 @@ public class RegexFile {
     public boolean validateName(String string) {
         regex = "^[A-Z][a-z]*(\\s[A-Z][a-z]*)*$";
         if (!validate(string, regex)) {
-            System.out.println("Invalid employee name");
+            System.out.println("Invalid  name");
         }
         return !validate(string, regex);
     }

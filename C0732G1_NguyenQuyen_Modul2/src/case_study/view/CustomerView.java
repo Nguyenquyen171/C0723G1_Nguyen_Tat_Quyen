@@ -2,8 +2,8 @@ package case_study.view;
 
 import case_study.controller.CustomerController;
 import case_study.model.person.Customer;
-import case_study.model.person.Employee;
-import case_study.utils.FileUtils;
+
+
 import case_study.utils.RegexFile;
 
 import java.security.PublicKey;
@@ -15,7 +15,6 @@ public class CustomerView {
     private final  Scanner scanner = new Scanner(System.in);
     private final CustomerController customerController = new CustomerController();
     private final RegexFile regexFile= new RegexFile();
-    private  final MainView mainView = new MainView();
 
     public void customerManagement() {
         System.out.println("-----Customer Management------");
