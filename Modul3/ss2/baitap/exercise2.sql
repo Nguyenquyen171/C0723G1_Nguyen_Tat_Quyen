@@ -3,22 +3,22 @@ create database if not exists manager;
 
 use manager;
 
-CREATE TABLE Product(
+CREATE TABLE product(
 	product_id INT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100) not null,
     product_price FLOAT not null
 );
 
-CREATE TABLE Customer(
+CREATE TABLE customer(
 	customer_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_name VARCHAR(100)not null,
     customer_age INT not null
 );
 
-CREATE TABLE `Order`(
+CREATE TABLE `order`(
 	order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT not null,
-    FOREIGN KEY(customer_id) REFERENCES Customer(customer_id),
+    FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
     order_date date not null,
     order_total_price FLOAT not null
 );
@@ -30,6 +30,6 @@ CREATE TABLE order_detail (
     FOREIGN KEY (order_id)
         REFERENCES `Order` (order_id),
     FOREIGN KEY (product_id)
-        REFERENCES Product (product_id),
+        REFERENCES product (product_id),
     PRIMARY KEY (order_id , product_id)
 );

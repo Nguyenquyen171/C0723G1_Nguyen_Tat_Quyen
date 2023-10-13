@@ -9,7 +9,7 @@ age int,
 country VARCHAR(50)
 );
 
-INSERT INTO Students(student_name, age, country)
+INSERT INTO students(student_name, age, country)
 VALUES ('Nguyen Quyen', 22, 'Vietnam'), ('Nguyen Van A', 2, 'Vietnam'), ('Elon Musk',60,'Vietnam');
 
 CREATE TABLE Class(
@@ -17,15 +17,15 @@ id int primary key auto_increment,
 class_name varchar(50)
 );
 
-INSERT INTO Class(class_name)
+INSERT INTO class(class_name)
 VALUES ('C0623G1'), ('C0723G1'), ('C0623G1');
 
-CREATE TABLE Teachers(
+CREATE TABLE teachers(
 	id int primary key auto_increment,
     teacher_name varchar(50),
     age int,
     country varchar(50)
 );
 
-INSERT INTO Teachers(teacher_name, age, country)
-VALUES ('Teacher A', 21, 'Vietnam'), ('Teacher B', 27, 'Vietnam'), ('Teacher C',40,'India');
+INSERT INTO teachers(teacher_name, age, country)
+VALUES ('Teacter A', 21, 'Vietnam'), ('Teacher B', 27, 'Vietnam'), ('Teacher C',40,'India');
