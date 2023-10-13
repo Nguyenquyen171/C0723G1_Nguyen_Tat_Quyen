@@ -31,7 +31,7 @@ CREATE TABLE order_detail(
 	FOREIGN KEY(product_id) REFERENCES product(product_id),
     PRIMARY KEY(order_id,product_id)
 );
-INSERT INTO `customer`(`customer_name`,`customer_age`)
+INSERT INTO customer(customer_name,customer_age)
 VALUES
 ('Minh Quan',10),
 ('Ngoc Oanh',20),
@@ -45,7 +45,7 @@ VALUES
 (1,'2006-3-16',null)
 ;
 
-INSERT INTO `product`(`product_name`,`product_price`)
+INSERT INTO product(product_name,product_price)
 VALUES
 ('May giat',3),
 ('Tu lanh',5),
@@ -54,7 +54,7 @@ VALUES
 ('Bep Dien',2)
 ;
 
-INSERT INTO `order_detail`(`order_id`,`product_id`,`order_qty`)
+INSERT INTO order_detail(order_id,product_id,order_qty)
 VALUES 
 (1,1,3),
 (1,3,7),
@@ -84,9 +84,9 @@ FROM
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 SELECT 
-    *
+    c.customer_name
 FROM
-    `customer` c
+    customer c
         LEFT JOIN
     `order` o ON c.customer_id = o.customer_id
 WHERE
