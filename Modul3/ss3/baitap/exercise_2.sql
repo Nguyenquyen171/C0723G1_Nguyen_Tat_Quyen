@@ -102,11 +102,11 @@ SELECT
     p.product_price,
     (od.order_qty * p.product_price) AS totalprice
 FROM
-    `order_detail` od
+    order_detail od
         JOIN
     `order` o ON od.order_id = o.order_id
         JOIN
-    `product` p ON od.product_id = p.product_id;
+    product p ON od.product_id = p.product_id;
 
 -- Total group by order_id
 SELECT 
@@ -114,9 +114,9 @@ SELECT
     o.order_date,
     SUM(od.order_qty * p.product_price) AS total
 FROM
-    `order_detail` od
+    order_detail od
         JOIN
     `order` o ON od.order_id = o.order_id
         JOIN
-    `product` p ON od.product_id = p.product_id
+    product p ON od.product_id = p.product_id
 GROUP BY order_id;
