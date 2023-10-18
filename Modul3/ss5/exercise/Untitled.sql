@@ -11,7 +11,7 @@ create table product (
  product_status bit
  );
 insert into product (id,product_code,product_name,product_price,product_amounts,product_description,product_status)
-values(1,'123','Notebook', 3500, 2, 'comic', 1),
+values(1,'123','Notebook', 3500, 3, 'comic', 1),
 		(2,'124','Pen', 2000, 4, 'red', 0),
 		(3,'125','Tee', 6000, 5, 'black', 1),
 		(4,'126','GongCha', 200000, 6, 'black', 0);
@@ -78,6 +78,7 @@ update_product(
     end // 
     delimiter ; 
     call update_product( '126', 'stabuck');
+    select * from product;
 -- Tạo store procedure xoá sản phẩm theo id
 delimiter // 
 create procedure 
