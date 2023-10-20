@@ -157,31 +157,205 @@ group by hd.dich_vu_di_kem;
 -- 11. Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách
 -- hàng có ten_loai_khach  là  “Diamond”  và có dia_chi ở “Vinh” hoặc
 -- “Quảng Ngãi”.
+select 
+ten_dich_vu_di_kem, ho_ten
+from 
+dich_vu_di_kem dk 
+join 
+hop_dong_chi_tiet hc on hc.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
+join 
+hop_dong h on h.ma_hop_dong = hc.ma_hop_dong
+join 
+khach_hang k on (h.ma_khach_hang = k.ma_khach_hang and (dia_chi like '%Vinh%' or dia_chi like '%Quảng Ngãi%'))
+join 
+loai_khach lk on (k.ma_loai_khach = lk.ma_loai_khach and (ten_loai_khach = 'Diamond'));
+
 -- 12. Hiển thị thông tin  ma_hop_dong,  ho_ten  (nhân viên),  ho_ten  (khách
 -- hàng),  so_dien_thoai  (khách   hàng),  ten_dich_vu,
 -- so_luong_dich_vu_di_kem  (được tính dựa trên việc sum so_luong ở
 -- dich_vu_di_kem),  tien_dat_coc  của tất cả các dịch vụ đã từng được
 -- khách hàng đặt vào  3   tháng   cuối   năm   2020   nhưng   chưa   từng   được
 -- khách hàng đặt vào 6 tháng đầu năm 2021.
+select 
+    hd.ma_hop_dong,
+    nv.ho_ten,
+    kh.ho_ten,
+    kh.so_dien_thoai,
+    dv.ten_dich_vu,
+    SUM(IFNULL(hdct.so_luong, 0)) AS 'SL'
+from
+    hop_dong hd
+        join
+    nhan_vien nv on hd.ma_nhan_vien = nv.ma_nhan_vien
+        join
+    khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
+        join
+    dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
+        LEFT join
+    hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
+where
+    month(hd.ngay_lam_hop_dong) between 10 AND 12
+        AND YEAR(hd.ngay_lam_hop_dong) = 2020
+        AND MONTH(hd.ngay_lam_hop_dong) NOT IN (SELECT 
+            hd.ma_dich_vu
+        FROM
+            hop_dong hd
+        WHERE
+            MONTH(hd.ngay_lam_hop_dong) BETWEEN 1 AND 6
+                AND YEAR(hd.ngay_lam_hop_dong) = 2021)
+GROUP BY hd.ma_hop_dong;
+
 -- 13. Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các
 -- Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử
 -- dụng nhiều như nhau).
+select 
+    dvk.ten_dich_vu_di_kem,
+    hdc.ma_dich_vu_di_kem,
+    SUM(hdc.so_luong) as so_luong_su_dung
+from dich_vu_di_kem    dvk
+join hop_dong_chi_tiet hdc on dvk.ma_dich_vu_di_kem = hdc.ma_dich_vu_di_kem
+group by hdc.ma_dich_vu_di_kem
+having SUM(hdc.so_luong) in (
+		select MAX(count_dvdk.sl)
+		from
+			(select 
+				ma_dich_vu_di_kem, 
+                SUM(so_luong) as sl
+			 from hop_dong_chi_tiet
+			 group by ma_dich_vu_di_kem) as count_dvdk);
 -- 14. Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một
 -- lần   duy   nhất.   Thông   tin   hiển   thị   bao   gồm  ma_hop_dong,
 -- ten_loai_dich_vu,   ten_dich_vu_di_kem,   so_lan_su_dung  (được tính
--- dựa trên việc count các ma_dich_vu_di_kem).
+-- dựa trên việc count các ma_dich_vu_di_kem)
+SET 
+sql_mode = 0;
+SELECT
+ hc.ma_hop_dong,
+ ld.ten_loai_dich_vu, 
+ dk.ten_dich_vu_di_kem, 
+ COUNT(hc.ma_hop_dong) AS so_lan_su_dung
+FROM 
+hop_dong h
+JOIN
+ dich_vu d ON h.ma_dich_vu = d.ma_dich_vu
+JOIN 
+loai_dich_vu ld ON d.ma_loai_dich_vu = ld.ma_loai_dich_vu
+LEFT JOIN
+ hop_dong_chi_tiet hc ON hc.ma_hop_dong = h.ma_hop_dong
+JOIN
+ dich_vu_di_kem dk ON hc.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
+GROUP BY hc.ma_dich_vu_di_kem
+HAVING COUNT(hc.ma_dich_vu_di_kem) = 1;
+
 -- 15. Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten,
 -- ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi mới chỉ lập được
 -- tối đa 3 hợp đồng từ năm 2020 đến 2021.
+SELECT h.ma_nhan_vien, ho_ten, ma_trinh_do, ma_bo_phan, so_dien_thoai, dia_chi, COUNT(h.ma_hop_dong) AS so_hop_dong_da_lap
+FROM nhan_vien n 
+JOIN hop_dong h ON n.ma_nhan_vien = h.ma_nhan_vien
+WHERE YEAR(h.ngay_lam_hop_dong) IN ('2020', '2021')
+GROUP BY h.ma_nhan_vien  
+HAVING COUNT(h.ma_hop_dong) <= 3;
 -- 16. Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019
 -- đến năm 2021.
+SELECT 
 -- 17. Cập nhật thông tin những khách hàng có ten_loai_khach từ  Platinum
 -- lên  Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với
 -- Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
+UPDATE khach_hang kh 
+SET 
+    ma_loai_khach = (SELECT 
+            ma_loai_khach
+        FROM
+            loai_khach
+        WHERE
+            ten_loai_khach = 'Diamond')
+WHERE
+    kh.ma_khach_hang IN (SELECT 
+            custom.ma_khach_hang
+        FROM
+            (SELECT 
+                kh.ma_khach_hang,
+                    kh.ho_ten,
+                    lk.ten_loai_khach,
+                    (IFNULL(dv.chi_phi_thue, 0) + SUM(IFNULL(hdct.so_luong, 0) * IFNULL(dvdk.gia, 0))) AS tong_tien
+            FROM
+                khach_hang kh
+            JOIN loai_khach lk ON kh.ma_loai_khach = lk.ma_loai_khach
+            JOIN hop_dong hd ON kh.ma_khach_hang = hd.ma_khach_hang
+            JOIN dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
+            JOIN hop_dong_chi_tiet hdct ON hd.ma_hop_dong = hdct.ma_hop_dong
+            JOIN dich_vu_di_kem dvdk ON hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+            WHERE
+                lk.ten_loai_khach = 'Platinium'
+                    AND YEAR(hd.ngay_lam_hop_dong) = 2021
+            GROUP BY kh.ma_khach_hang) AS custom
+        WHERE
+            custom.tong_tien > 1000000);
+            
 -- 18. Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc
 -- giữa các bảng).
+SET SQL_SAFE_UPDATES = 0;
+SET FOREIGN_KEY_CHECKS = 1;
+
+DELETE FROM hop_dong
+WHERE ma_khach_hang IN (
+    SELECT kh.ma_khach_hang
+    FROM (
+        SELECT hd.ma_khach_hang
+        FROM hop_dong hd
+        WHERE YEAR(hd.ngay_lam_hop_dong) < 2021
+    ) AS kh
+);
+
+DELETE FROM khach_hang
+WHERE ma_khach_hang IN (
+    SELECT kh.ma_khach_hang
+    FROM (
+        SELECT hd.ma_khach_hang
+        FROM hop_dong hd
+        WHERE YEAR(hd.ngay_lam_hop_dong) < 2021
+    ) AS kh
+);
+
 -- 19. Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong
 -- năm 2020 lên gấp đôi.
+UPDATE dich_vu_di_kem 
+SET 
+    gia = gia * 2
+WHERE
+    ma_dich_vu_di_kem IN (SELECT 
+            ma_dich_vu_di_kem
+        FROM
+            (SELECT 
+                dk.ma_dich_vu_di_kem, SUM(so_luong) AS 'so_lan_su_dung'
+            FROM
+                hop_dong_chi_tiet hc
+            JOIN dich_vu_di_kem dk ON hc.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
+            LEFT JOIN hop_dong h ON hc.ma_hop_dong = h.ma_hop_dong
+            WHERE
+                YEAR(ngay_lam_hop_dong) = '2020'
+            GROUP BY hc.ma_dich_vu_di_kem
+            HAVING SUM(so_luong) > 10) AS temp);
+SET sql_safe_updates = 1; 
 -- 20. Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ
 -- thống, thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang),
 -- ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
+SELECT 
+    ma_nhan_vien,
+    ho_ten,
+    email,
+    so_dien_thoai,
+    ngay_sinh,
+    dia_chi
+FROM
+    nhan_vien 
+UNION SELECT 
+    ma_khach_hang,
+    ho_ten,
+    email,
+    so_dien_thoai,
+    ngay_sinh,
+    dia_chi
+FROM
+    khach_hang;
