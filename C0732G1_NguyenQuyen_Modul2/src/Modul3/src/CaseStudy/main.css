@@ -1,0 +1,80 @@
+.cc-announcement {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    transition: max-height 1s, opacity 0.5s, visibility 0.5s;
+}
+
+.cc-announcement .cc-announcement__inner {
+    padding: 0.7em;
+}
+
+@media (max-width: 767px) {
+    .cc-announcement .cc-announcement__inner {
+        line-height: 1.2em;
+        max-height: 4.7em;
+        overflow: auto;
+    }
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+    -webkit-transition: color 150ms, background-color 150ms;
+    -ms-transition: color 150ms, background-color 150ms;
+    -moz-transition: color 150ms, background-color 150ms;
+    -o-transition: color 150ms, background-color 150ms;
+    transition: color 150ms, background-color 150ms;
+}
+
+@media (min-width: 1100px) {
+    .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 {
+        padding: 0 2em;
+    }
+
+    .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 ul > li > a {
+        position: relative;
+    }
+
+    .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 ul > li > a::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 2.4em);
+        bottom: 0;
+        left: 50%;
+        background-color: transparent;
+        height: 2px;
+        transform: translateX(-50%);
+    }
+
+    .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 ul > li > a:hover::after, .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 ul > li > a.expanded::after, .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 ul > li > a.active::after {
+        background-color: currentColor;
+    }
+
+    .site-control.nav-inline-desktop .site-control__inner .nav-row .tier-1 .nav-columns {
+        display: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .site-control.nav-inline-desktop .nav-right-side {
+        width: 270px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .site-control.nav-inline-desktop .nav-row .nav-columns {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+}
+.color-text{
+    color: black;
+}
