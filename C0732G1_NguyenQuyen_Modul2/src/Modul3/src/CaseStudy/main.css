@@ -78,3 +78,7 @@ a {
 .color-text{
     color: black;
 }
+video {
+    width: 100%;
+}
+
