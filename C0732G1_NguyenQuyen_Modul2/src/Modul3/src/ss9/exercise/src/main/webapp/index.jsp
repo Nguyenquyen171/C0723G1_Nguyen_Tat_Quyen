@@ -2,16 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+  <title>JSP - Hello World</title>
 </head>
 <body>
-<form action="/discount" method="post">
-    <p>Product Description</p>
-    <input type="text" name="Description" placeholder="Product Description">
-    <p>List Price</p>
-    <input type="text" name="price" placeholder="list price">
-    <p>List Price</p>
-    <input type="text" name="Description" placeholder="Product Description">
-</form>
+<h1><%= "Hello World!" %></h1>
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>
