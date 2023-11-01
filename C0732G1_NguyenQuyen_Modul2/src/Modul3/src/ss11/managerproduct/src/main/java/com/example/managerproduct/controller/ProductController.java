@@ -119,4 +119,23 @@ public class ProductController extends HttpServlet {
             requestDispatcher.forward(request, response);
         }
     }
+    private void searchProductByName(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Product> productList = this.productService.findByName(name);
+        RequestDispatcher requestDispatcher;
+        if(productList == null){
+            requestDispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else {
+            request.setAttribute("name",name);
+            request.setAttribute("productList",productList);
+            requestDispatcher = request.getRequestDispatcher("view/search.jsp");
+        }
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

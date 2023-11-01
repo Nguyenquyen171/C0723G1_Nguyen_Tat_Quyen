@@ -9,4 +9,6 @@ public interface IProductRepo {
     Product findById(int id);
     void editProduct(Product product);
     void deleteProduct(int id);
+    List<Product> findByName(String name);
+
 }

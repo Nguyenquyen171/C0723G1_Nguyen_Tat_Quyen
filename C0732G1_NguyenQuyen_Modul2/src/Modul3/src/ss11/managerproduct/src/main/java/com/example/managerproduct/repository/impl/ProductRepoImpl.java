@@ -55,4 +55,14 @@ public class ProductRepoImpl implements IProductRepo {
             }
         }
     }
+    @Override
+    public List<Product> findByName(String name) {
+        List<Product> productList1 = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.getName().contains(name)) {
+                productList1.add(product);
+            }
+        }
+        return productList1;
+    }
 }

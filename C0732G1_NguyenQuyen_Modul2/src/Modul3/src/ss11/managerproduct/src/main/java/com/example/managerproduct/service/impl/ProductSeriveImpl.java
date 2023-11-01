@@ -35,4 +35,8 @@ public class ProductSeriveImpl implements IProductService {
     public void deleteProduct(int id) {
         productRepo.deleteProduct(id);
     }
+    @Override
+    public List<Product> findByName(String name) {
+        return productRepo.findByName(name);
+    }
 }
