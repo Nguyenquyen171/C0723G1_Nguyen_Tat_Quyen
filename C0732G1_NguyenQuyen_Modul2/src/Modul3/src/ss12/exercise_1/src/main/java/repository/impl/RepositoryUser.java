@@ -10,11 +10,11 @@ import java.util.List;
 
 public class RepositoryUser implements IRepositoryUser {
 
-    private final static String SELECT = "SELECT * FROM users ORDER BY `name`;";
+    private final static String SELECT = "SELECT * FROM users ORDER BY name_user;";
     private final static String SELECT_BY_COUNTRY = "SELECT * FROM users WHERE country = ?;";
-    private final static String INSERT = "insert into users(name, email, country) values(?,?,?);";
+    private final static String INSERT = "insert into users(name_user, email, country) values(?,?,?);";
     private final static String FINDBYID = "SELECT * FROM users WHERE id = ?;";
-    private final static String UPDATE = "UPDATE users SET name = ?, email = ?, country= ? WHERE id = ?;";
+    private final static String UPDATE = "UPDATE users SET name_user = ?, email = ?, country= ? WHERE id = ?;";
     private final static String DELETE = "DELETE FROM users WHERE id = ?;";
 
 
@@ -50,7 +50,7 @@ public class RepositoryUser implements IRepositoryUser {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = new User(resultSet.getInt("id"),
-                        resultSet.getString("name"),
+                        resultSet.getString("name_user"),
                         resultSet.getString("email"),
                         resultSet.getString("country"));
             }
@@ -72,10 +72,11 @@ public class RepositoryUser implements IRepositoryUser {
             ResultSet resultSet = statement.executeQuery(SELECT);
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
+                String name = resultSet.getString("name_user");
                 String email = resultSet.getString("email");
                 String country = resultSet.getString("country");
                 user = new User(id, name, email, country);
+                userList.add(user);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -136,7 +137,7 @@ public class RepositoryUser implements IRepositoryUser {
             ResultSet resultSet= preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id= resultSet.getInt("id");
-                String name= resultSet.getString("name");
+                String name= resultSet.getString("name_user");
                 String email= resultSet.getString("email");
                 String countryFind= resultSet.getString("country");
                 user=new User(id,name,email,countryFind);

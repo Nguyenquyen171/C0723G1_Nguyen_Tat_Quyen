@@ -71,6 +71,7 @@ CREATE TABLE dich_vu (
     dich_vu_mien_phi_di_kem TEXT
 );
 CREATE TABLE hop_dong (
+
     ma_hop_dong INT PRIMARY KEY AUTO_INCREMENT,
     ngay_lam_hop_dong DATETIME NOT NULL,
     ngay_ket_thuc DATETIME NOT NULL,

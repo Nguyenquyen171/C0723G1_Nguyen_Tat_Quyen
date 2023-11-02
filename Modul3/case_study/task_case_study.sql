@@ -35,7 +35,7 @@ ORDER BY COUNT(ma_hop_dong) ASC;
 -- Giá,   với   Số   Lượng   và   Giá   là   từ   bảng   dich_vu_di_kem,
 -- hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. (những
 -- khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra). 
-SELECT 
+SELECT
     kh.ma_khach_hang,
     kh.ho_ten,
     lk.ten_loai_khach,

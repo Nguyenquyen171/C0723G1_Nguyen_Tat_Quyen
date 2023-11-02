@@ -4,7 +4,8 @@ use bai_lam_them;
 create table may_tinh (
 ma_may int primary key auto_increment,
 hang_san_xuay varchar (50) not null,
-vi_tri_dat_may varchar(199) not null
+vi_tri_dat_may varchar(199) not null,
+gia_tien double check(gia_tien>5000) not null
 );
 create table loai_khach_hang ( 
 id int primary key auto_increment,
@@ -34,16 +35,17 @@ create table dich_vu (
  thoi_gian_bat_dau datetime ,
  thoi_gian_ket_thuc datetime,
  id_may_tinh int not null,
- foreign key (id_may_tinh) references may_tinh(ma_may)
+ foreign key (id_may_tinh) references may_tinh(ma_may),
+ id_loai_khach int not null,
+foreign key (id_loai_khach) references loai_khach_hang(id),
+tong_tien double check (tong_tien>0)
 );
-create table tong_tien(
+create table chi_tiet_dich_vu (
 id int primary key,
-tong_tien double check (tong_tien>1000),
-id_khach_hang int not null,
-foreign key (id_khach_hang) references khach_hang(id),
-id_dich_vu int not null,
-foreign key (id_dich_vu) references dich_vu(id),
- id_may_tinh int not null,
- foreign key (id_may_tinh) references may_tinh(ma_may)
-);
+so_luong int,
+ id_dich_vu int not null,
+ foreign key (id_dich_vu) references dich_vu(id),
+  id_dich_vu_di_kem int not null,
+ foreign key (id_dich_vu_di_kem) references dich_vu_di_kem(id)
+ );
 
