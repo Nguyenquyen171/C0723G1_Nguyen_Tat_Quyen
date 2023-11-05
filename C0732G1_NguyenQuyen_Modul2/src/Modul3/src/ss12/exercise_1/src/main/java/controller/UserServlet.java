@@ -47,7 +47,7 @@ public class UserServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         User user = userService.selectUser(id);
         if (user != null) {
-            request.setAttribute("user", user);
+            request.setAttribute(" ", user);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("info.jsp");
             try {
                 requestDispatcher.forward(request, response);
@@ -93,7 +93,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private static void error404(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("users/error-404.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("error-404.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
