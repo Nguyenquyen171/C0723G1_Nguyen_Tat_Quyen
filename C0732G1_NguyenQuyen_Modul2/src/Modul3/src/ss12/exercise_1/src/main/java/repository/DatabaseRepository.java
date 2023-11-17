@@ -23,6 +23,5 @@ public class DatabaseRepository {
             throw new RuntimeException(e);
         }
         return connection;
-
     }
 }

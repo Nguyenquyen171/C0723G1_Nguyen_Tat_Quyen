@@ -12,9 +12,19 @@ public class RepositoryProduct implements IRepositoryProduct {
     private final static  String INSERT= "insert into loai_san_pham(ma_loai_sp, ten_loai, mo_ta) values(?,?,?);";
     private final static String SELECT = "SELECT * FROM loai_san_pham;";
     private final static String FINDBYID = "SELECT * FROM loai_san_pham WHERE id = ?;";
+    private final static String FINDBYNAME = "SELECT * FROM loai_san_pham WHERE id = ?;";
     private final static String UPDATE = "UPDATE loai_san_pham SET  ten_loai = ?, mo_ta= ? WHERE id = ?;";
     @Override
     public List<ProductType> findByName(String name) {
+        Connection connection = DatabaseRepository.getConnection();
+        List<ProductType> productTypeList=new ArrayList<>();
+        ProductType productType;
+        try {
+            PreparedStatement preparedStatement= connection.prepareStatement(FINDBYID);
+            preparedStatement.setString(1,name);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 
@@ -102,5 +112,4 @@ public class RepositoryProduct implements IRepositoryProduct {
         }
         return true;
     }
-
 }

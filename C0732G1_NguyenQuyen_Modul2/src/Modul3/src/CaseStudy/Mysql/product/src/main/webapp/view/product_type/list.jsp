@@ -142,7 +142,6 @@
                     <th>Mã loại sản phẩm</th>
                     <th>Chất liệu</th>
                     <th>Mô tả</th>
-                    ​
                 </tr>
                 </thead>
                 <tbody>
@@ -160,9 +159,6 @@
             </table>
         </div>
     </div>
-    ​
-    ​
-
 </div>
 </body>
 </html>

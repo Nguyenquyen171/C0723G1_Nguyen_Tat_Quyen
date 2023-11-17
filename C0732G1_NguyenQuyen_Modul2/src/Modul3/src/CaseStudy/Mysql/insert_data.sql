@@ -16,6 +16,7 @@ INSERT INTO `quan_ly_ban_hang`.`size` (`ma_size`, `ten_size`, `mo_ta`) VALUES ("
 ,  ("MS04", 'D', '18mm')
 ,  ("MS05", 'E', '19mm');
 
+
 INSERT INTO san_pham (id,ma_san_pham, ten_san_pham, id_loai_san_pham, id_chat_lieu, id_size, gia, so_luong, mo_ta, trang_thai)
 VALUES
 (1, 'SP0001', 'Nhẫn Tình Yêu Mãi Mãi', 1, 1, 1, 1000000, 50, 'Nhẫn vàng', 1),

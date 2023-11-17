@@ -1,9 +1,9 @@
 package com.example.product.controller;
 
 import com.example.product.model.ProductType;
+import com.example.product.repository.DatabaseRepository;
 import com.example.product.service.IServiceProduct;
 import com.example.product.service.impl.ServiceProduct;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/product_type")
@@ -57,6 +58,7 @@ public class ProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+
     private void showEditProductType(HttpServletRequest request,HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         ProductType productType = serviceProduct.selectProductType(id);
@@ -98,7 +100,6 @@ public class ProductServlet extends HttpServlet {
         String describe =request.getParameter("describe") ;
         if (serviceProduct.updateProductType(new ProductType(id,typeName,describe))){
             showListProductType(request,response);
-
         }
     }
 }

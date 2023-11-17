@@ -7,8 +7,6 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
-<br/>
 <c:redirect url="/product_type"></c:redirect>
 </body>
 </html>
