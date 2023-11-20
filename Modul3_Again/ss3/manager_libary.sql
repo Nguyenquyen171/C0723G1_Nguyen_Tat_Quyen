@@ -38,3 +38,55 @@ VALUES (1,1,'2022-12-12','2022-12-13'),
 (3,3,'2022-12-8','2022-12-14'),
 (2,1,'2022-12-6','2022-12-30');
 
+-- 	 Lấy ra toàn bộ sách có trong thư viện, cùng với tên thể loại và tác giả			
+SELECT 
+    b.id, b.title, c.name, a.name
+FROM
+    book b
+        JOIN
+    category c ON c.id = b.id
+        JOIN
+    authors a ON a.id = b.id;
+
+-- + Lấy ra danh sách các học viên đã từng mượn sách và sắp xếp danh sách theo theo tên từ a->z
+SELECT 
+    s.name, title
+FROM
+    student s
+        JOIN
+    borrow b ON b.id = s.id
+        JOIN
+    book ON book.id = b.id
+ORDER BY s.name;
+
+
+-- + Lấy ra  2 quyển sách được mượn nhiều nhất
+select book.title, count(borrow.id) as quanity
+from borrow
+join book on borrow.id_book=book.id
+group by book.id
+order by quanity desc
+limit 2;
+
+-- ss4
+-- - Thông kê các đầu sách được mượn nhiều nhất	
+select book.title, count(borrow.id) as quanity
+from borrow
+join book on borrow.id_book=book.id
+group by book.id
+order by quanity desc;
+-- - Lấy ra các học viên mượn sách nhiều nhất của thư viện
+SELECT 
+    s.name, title, count(borrow.id) as quanity
+FROM
+    student s
+        JOIN
+    borrow b ON b.id = s.id
+        JOIN
+    book ON book.id = borrow.id
+ group by book.id 
+order by quanity desc;
+
+-- - Thông kê các đầu sách chưa được mượn		
+-- - Lấy ra danh sách các học viên đã từng mượn sách và sắp xếp  theo số lượng mượn sách từ lớn đến nhỏ
+			
