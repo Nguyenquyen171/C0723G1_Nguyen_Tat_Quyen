@@ -70,11 +70,22 @@ limit 2;
 
 -- ss4
 -- - Thông kê các đầu sách được mượn nhiều nhất	
-select book.title, count(borrow.id) as quanity
-from borrow
-join book on borrow.id_book=book.id
-group by book.id
-order by quanity desc;
+SELECT 
+    b.title, COUNT(b.id) AS max
+FROM
+    book b
+        JOIN
+    borrow br ON b.id = br.id
+GROUP BY b.id
+HAVING max IN (SELECT 
+        MAX(max)
+    FROM
+        (SELECT 
+            COUNT(b.id) AS max, b.title
+        FROM
+            book b
+        JOIN borrow br ON b.id = br.id
+        GROUP BY b.id) AS so_luong);
 -- - Lấy ra các học viên mượn sách nhiều nhất của thư viện
 SELECT 
     s.name, title, count(borrow.id) as quanity
@@ -87,6 +98,46 @@ FROM
  group by book.id 
 order by quanity desc;
 
--- - Thông kê các đầu sách chưa được mượn		
+-- - Thông kê các đầu sách chưa được mượn	
+SELECT 
+    b.id,b.title
+FROM
+    book b
+WHERE
+    id NOT IN (SELECT 
+            b.id
+        FROM
+            book b
+                JOIN
+            borrow br ON b.id = br.id);
 -- - Lấy ra danh sách các học viên đã từng mượn sách và sắp xếp  theo số lượng mượn sách từ lớn đến nhỏ
-			
+SELECT 
+    s.name, COUNT(s.id) AS so_luong
+FROM
+    student s
+        JOIN
+    borrow br ON s.id = br.id
+GROUP BY s.id
+ORDER BY so_luong DESC;
+
+-- ss5
+-- - Tao index cho cột  title của bảng books		
+create index book_title on book(title);					
+-- - Tạo 1 view để lấy ra danh sách các quyển sách đã được mượn, có hiển thị thêm cột số lần đã được mượn
+CREATE VIEW book_view AS
+    (SELECT 
+        b.title, COUNT(b.id) AS so_luong
+    FROM
+        book b
+            JOIN
+        borrow br ON b.id = br.id);							
+-- - Viết 1 stored procedure thêm mới book trong database với tham số kiểu IN	
+delimiter //
+create procedure book_procedure( title varchar(50), page_size int, authors_id int, category_id int)
+   begin 
+   insert into book (title, page_size, authors_id, category_id)
+   values(title, page_size, authors_id, category_id);
+   end // 
+  delimiter ;
+  
+call book_procedure ('Quyen', 17, 1,1);						
