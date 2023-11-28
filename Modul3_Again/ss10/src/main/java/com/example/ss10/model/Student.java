@@ -5,12 +5,22 @@ public class Student {
     private String name;
     private String gender;
     private int point;
+    private String classification;
 
-    public Student(int id, String name, String gender, int point) {
+    public String getClassification() {
+        return classification;
+    }
+
+    public Student(int id, String name, String gender, int point, String classification) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.point = point;
+        this.classification = classification;
+    }
+
+    public void setClassification(String classification) {
+        this.classification = classification;
     }
 
     public int getId() {
@@ -42,6 +52,13 @@ public class Student {
     }
 
     public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public Student(int id, String name, String gender, int point) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
         this.point = point;
     }
 }

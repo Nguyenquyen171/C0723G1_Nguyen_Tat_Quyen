@@ -1,11 +1,11 @@
-package com.example.ss10.repository;
+package com.example.ss11.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/ss10";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/ss11";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "12345678";
 
@@ -23,9 +23,5 @@ public class BaseRepository {
             e.printStackTrace();
         }
         return connection;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(BaseRepository.getConnection());
     }
 }
