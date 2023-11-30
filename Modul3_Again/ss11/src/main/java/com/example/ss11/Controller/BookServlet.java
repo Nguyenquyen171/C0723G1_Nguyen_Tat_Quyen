@@ -15,26 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "BookServlet",value = "/book")
+@WebServlet(name = "BookServlet", value = "/book")
 public class BookServlet extends HttpServlet {
-    private final IServiceBook serviceBook= new ServiceBook();
+    private final IServiceBook serviceBook = new ServiceBook();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
-        if (action==null){
-            action="";
+        if (action == null) {
+            action = "";
         }
-        switch (action){
+        switch (action) {
+            case "create":
+                createBook(req, resp);
+                break;
             default:
-                listBook(req,resp);
+                listBook(req, resp);
                 break;
         }
     }
 
-    private void listBook(HttpServletRequest req, HttpServletResponse resp) {
-        List<Book> bookList= serviceBook.showListBook();
-        req.setAttribute("bookList",bookList);
-        RequestDispatcher requestDispatcher= req.getRequestDispatcher("index.jsp");
+    private void createBook(HttpServletRequest req, HttpServletResponse resp) {
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("create.jsp");
         try {
             requestDispatcher.forward(req, resp);
         } catch (ServletException e) {
@@ -42,5 +44,44 @@ public class BookServlet extends HttpServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void listBook(HttpServletRequest req, HttpServletResponse resp) {
+        List<Book> bookList = serviceBook.showListBook();
+        req.setAttribute("bookList", bookList);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+        try {
+            requestDispatcher.forward(req, resp);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String action= req.getParameter("action");
+        if (action==null){
+            action="";
+        }
+        switch (action){
+            case "create":
+            addBook(req,resp);
+                break;
+            default:
+                listBook(req, resp);
+                break;
+        }
+    }
+
+    private void addBook(HttpServletRequest req, HttpServletResponse resp) {
+        String tittle= req.getParameter("title");
+        int pageSize= Integer.parseInt(req.getParameter("page_size"));
+        String author= req.getParameter("author");
+        String category= req.getParameter("category");
+        Book book= new Book(tittle,pageSize,author,category);
+        serviceBook.createBook(book);
+        listBook(req,resp);
     }
 }

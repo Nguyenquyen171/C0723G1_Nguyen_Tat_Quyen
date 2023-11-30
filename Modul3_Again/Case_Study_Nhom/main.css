@@ -261,7 +261,9 @@ background: rgb(255,56,92);
     font-weight: var(--pricing-guest-primary-line-unit-price-font-weight, 800);
 }
 
-
+.btn-1:hover{
+    background:  rgb(255,56,92) !important;
+}
 
 
 

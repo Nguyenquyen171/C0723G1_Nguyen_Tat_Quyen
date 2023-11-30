@@ -11,7 +11,7 @@ import java.util.List;
 public class RepositoryBook implements IRepository {
     private final String SELECT_ALL= "select * from book;";
     private final String CREATE=" insert into book(title,page_size,author,category) values (?,?,?,?);";
-    private static final String DELETE = "delete from book where id = ?;";
+    private  final String DELETE = "delete from book where id = ?;";
     @Override
     public List<Book> showListBook() {
         Connection connection= BaseRepository.getConnection();
@@ -54,7 +54,7 @@ public class RepositoryBook implements IRepository {
     public void deleteBook(int id) {
         Connection connection= BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement= connection.prepareStatement("DELETE");
+            PreparedStatement preparedStatement= connection.prepareStatement(DELETE);
             preparedStatement.setInt(1,id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

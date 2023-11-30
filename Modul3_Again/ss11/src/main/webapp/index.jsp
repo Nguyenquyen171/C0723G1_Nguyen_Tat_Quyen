@@ -21,11 +21,10 @@
 <div class="container">
   <h2>Danh sách công việc</h2>
   <%--    <p>The .table-hover class enables a hover state on table rows:</p>--%>
-  <a class="btn btn-outline-primary" href="?action=createForm" role="button">Thêm mới công việc</a>
+  <a class="btn btn-outline-primary" href="?action=create" role="button">Thêm mới công việc</a>
   <table style="margin-top: 5px" class="table table-hover table-bordered">
     <thead>
     <tr>
-      <th>Id</th>
       <th>Tên</th>
       <th>Kích thước trang </th>
       <th>Tác giả </th>
