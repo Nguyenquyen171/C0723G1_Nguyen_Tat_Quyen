@@ -23,4 +23,14 @@ public class ServiceBook implements  IServiceBook{
     public void deleteBook(int id) {
         repository.deleteBook(id);
     }
+
+    @Override
+    public Book selectBook(int id) {
+        return repository.selectBook(id);
+    }
+
+    @Override
+    public boolean updateBook(Book book) {
+        return repository.updateBook(book);
+    }
 }

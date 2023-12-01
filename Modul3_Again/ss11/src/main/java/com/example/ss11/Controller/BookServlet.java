@@ -29,10 +29,31 @@ public class BookServlet extends HttpServlet {
             case "create":
                 createBook(req, resp);
                 break;
+            case "update":
+                showUpdate(req, resp);
+                break;
             default:
                 listBook(req, resp);
                 break;
         }
+    }
+
+    private void showUpdate(HttpServletRequest req, HttpServletResponse resp) {
+        int id = Integer.parseInt(req.getParameter("id"));
+        Book book = serviceBook.selectBook(id);
+        if (book != null) {
+            req.setAttribute("book", book);
+            req.setAttribute("id", id);
+            RequestDispatcher requestDispatcher= req.getRequestDispatcher("edit.jsp");
+            try {
+                requestDispatcher.forward(req,resp);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
     private void createBook(HttpServletRequest req, HttpServletResponse resp) {
@@ -61,13 +82,19 @@ public class BookServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action= req.getParameter("action");
-        if (action==null){
-            action="";
+        String action = req.getParameter("action");
+        if (action == null) {
+            action = "";
         }
-        switch (action){
+        switch (action) {
             case "create":
-            addBook(req,resp);
+                addBook(req, resp);
+                break;
+            case "delete":
+                deleteBook(req, resp);
+                break;
+            case "update":
+                updateBook(req,resp);
                 break;
             default:
                 listBook(req, resp);
@@ -75,13 +102,36 @@ public class BookServlet extends HttpServlet {
         }
     }
 
-    private void addBook(HttpServletRequest req, HttpServletResponse resp) {
-        String tittle= req.getParameter("title");
-        int pageSize= Integer.parseInt(req.getParameter("page_size"));
+    private void updateBook(HttpServletRequest req, HttpServletResponse resp) {
+        int id =Integer.parseInt(req.getParameter("id"));
+        String title= req.getParameter("title");
+        int pageSize = Integer.parseInt(req.getParameter("page_size"));
         String author= req.getParameter("author");
         String category= req.getParameter("category");
-        Book book= new Book(tittle,pageSize,author,category);
+        if (serviceBook.updateBook(new Book(id,title,pageSize,author,category))){
+            listBook(req,resp);
+        }
+    }
+
+    private void deleteBook(HttpServletRequest req, HttpServletResponse resp) {
+        int id = Integer.parseInt(req.getParameter("id"));
+        serviceBook.deleteBook(id);
+        req.setAttribute("id", id);
+        try {
+            resp.sendRedirect("/");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void addBook(HttpServletRequest req, HttpServletResponse resp) {
+        String tittle = req.getParameter("title");
+        int pageSize = Integer.parseInt(req.getParameter("page_size"));
+        String author = req.getParameter("author");
+        String category = req.getParameter("category");
+        Book book = new Book(tittle, pageSize, author, category);
         serviceBook.createBook(book);
-        listBook(req,resp);
+        listBook(req, resp);
     }
 }

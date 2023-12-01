@@ -8,4 +8,6 @@ public interface IServiceBook {
     List<Book> showListBook();
     void createBook(Book book);
     void deleteBook(int id );
+    Book selectBook(int id);
+    boolean updateBook(Book book);
 }

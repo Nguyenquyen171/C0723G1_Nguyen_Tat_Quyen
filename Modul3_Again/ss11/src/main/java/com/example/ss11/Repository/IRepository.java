@@ -8,4 +8,8 @@ public interface IRepository {
     List<Book> showListBook();
     void createBook(Book book);
     void deleteBook(int id );
+
+//    chỉnh sửa Book
+    Book selectBook(int id);
+    boolean updateBook(Book book);
 }

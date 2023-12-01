@@ -16,25 +16,20 @@
         <thead>
         <tr>
             <th>Tên</th>
-            <th>Công</th>
-            <th>Ngày hết hạn</th>
-            <th>Trạng thái</th>
-            <th>Mô tả thêm</th>
+            <th>Kích thước trang </th>
+            <th>Tác giả </th>
+            <th>Loại sách</th>
+            <th>Chức năng</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td><input type="text" name="name"></td>
-            <td><input type="date" name="startDate"></td>
-            <td><input type="date" name="deadline"></td>
-            <td>
-                <select name="statusId">
-                    <c:forEach items="${statusList}" var="status">
-                        <option name="statusId" value="${status.statusId}">${status.status}</option>
-                    </c:forEach>
-                </select>
-            </td>
-            <td><input type="text" name="description"></td>
+            <td><input type="text" name="title"></td>
+            <td><input type="number" name="page_size"></td>
+            <td><input type="text" name="author"></td>
+            <td><input type="text" name="author"></td>
+            <td><input type="category" name="category"></td>
+            <input type="submit" value="Submit">
         </tr>
         </tbody>
     </table>

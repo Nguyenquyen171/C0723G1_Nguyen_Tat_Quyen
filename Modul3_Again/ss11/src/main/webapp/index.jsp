@@ -25,6 +25,7 @@
   <table style="margin-top: 5px" class="table table-hover table-bordered">
     <thead>
     <tr>
+      <th>Id</th>
       <th>Tên</th>
       <th>Kích thước trang </th>
       <th>Tác giả </th>
@@ -40,11 +41,11 @@
         <td>${book.pageSize}</td>
         <td>${book.author}</td>>
         <td>${book.category}</td>
-          <%--            <td><a class="btn btn-outline-primary" href="" role="button">Edit</a></td>--%>
+                      <td><a class="btn btn-outline-primary" href="?action=edit&id=${book.getId}" role="button">Edit</a></td>
         <td style="text-align: center"><button type="button" class="btn btn-outline-danger"
                                                data-bs-toggle="modal" data-bs-target="#exampleModaal"
-          <%--                                                       onclick="sendInf('${job.id}','${job.name}')">--%>
-        >
+<%--                                               onclick="sendInf('${book.id}','${book.title}')"--%>
+        \>
           Xóa
         </button></td>
       </tr>
@@ -62,7 +63,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="hidden" name="idDel" id="idDel">
+          <input type="hidden" name="id" id="idDel">
           Bạn chắc chắn muốn xóa công việc <span id="nameDel" class="text-danger"> </span> ?
         </div>
         <div class="modal-footer">
@@ -73,20 +74,10 @@
     </form>
   </div>
 </div>
-
-<%--pagination--%>
-<nav aria-label="Page navigation example" class="mt-3">
-  <ul class="pagination justify-content-center">
-    <c:forEach begin="1" end="" var="page">
-      <li class="page-item"><a class="page-link" href=""></a> </li>
-    </c:forEach>
-  </ul>
-</nav>
-
 <script>
-  function sendInf(id, name) {
-    document.getElementById("nameDel").innerText = name;
-    document.getElementById("idDel").value = id;
+  function sendInf(id, title) {
+    document.getElementById("nameDel").innerText = title;
+    document.getElementById("id").value = id;
   }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
