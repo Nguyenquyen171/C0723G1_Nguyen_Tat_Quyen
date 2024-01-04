@@ -5,9 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f5d6768-ae05-4694-9ade-9d703dfd9c94" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/exercise_1/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise_1/src/main/java/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_1/src/main/java/repository/DatabaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exercise_1/src/main/java/repository/DatabaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise_1/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/exercise_1/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/Model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/Model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/config/FilterError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/config/FilterUTF8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/controller/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/repository/account/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/repository/account/IAccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/repository/baseRepository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/repository/customer/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/service/account/IServiceAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/service/account/ServiceAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/service/customer/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/service/customer/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/service/utils/BCryptUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/webapp/error-access.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/Loai_San_Pham.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/Loai_San_Pham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/Moon.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/Moon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/Case_Study_Nhom/db_nhom.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/Case_Study_Nhom/db_nhom.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/ServletBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/java/com/example/demo1/controller/ServletBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/webapp/trangchu/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/webapp/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Modul3_Again/demo1/src/main/webapp/trangchu/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/ss8/ss8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../Modul3_Again/ss8/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,27 +72,27 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2XbZkdnrpMwwZacWDCuwvoy0Hez" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/nguyentatquyen/Documents/GitHub/C0723G1_Nguyen_Tat_Quyen/C0732G1_NguyenQuyen_Modul2/src/Modul3/src/ss12",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nguyentatquyen/Documents/GitHub/C0723G1_Nguyen_Tat_Quyen/C0732G1_NguyenQuyen_Modul2/src/Modul3/src/ss12&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.82" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -153,18 +181,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,6 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698899883904</updated>
       <workItem from="1698899885006" duration="356000" />
+      <workItem from="1704186277735" duration="1804000" />
     </task>
     <servers />
   </component>

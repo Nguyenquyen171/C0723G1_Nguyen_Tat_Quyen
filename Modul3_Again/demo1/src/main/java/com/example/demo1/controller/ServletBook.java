@@ -1,4 +1,4 @@
-package com.example.demo1;
+package com.example.demo1.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +38,7 @@ public class ServletBook extends HttpServlet {
     }
 
     private void listBook(HttpServletRequest req, HttpServletResponse resp) {
-        RequestDispatcher requestDispatcher= req.getRequestDispatcher("index.jsp");
+        RequestDispatcher requestDispatcher= req.getRequestDispatcher("trangchu/index.jsp");
         try {
             requestDispatcher.forward(req, resp);
         } catch (ServletException e) {

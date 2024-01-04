@@ -11,27 +11,29 @@ create table loai_tai_khoan(
 id_loai_tai_khoan int primary key auto_increment,
 loai varchar(50)
 );
+
+
 create table tai_khoan(
 id_tai_khoan int primary key auto_increment,
-tai_khoan varchar(50),
+tai_khoan varchar(50) unique,
 mat_khau varchar(50),
 id_loai_tai_khoan int,
-foreign key (id_loai_tai_khoan) references loai_tai_khoan(id_loai_tai_khoan),
-id_khach_hang int,
-foreign key (id_khach_hang) references khach_hang(id_khach_hang)
+foreign key (id_loai_tai_khoan) references loai_tai_khoan(id_loai_tai_khoan)
 );
-
 create table khach_hang(
-
 id_khach_hang int primary key auto_increment,
 ma_khach_hang varchar(50),
 ho_ten varchar(50),
 so_dien_thoai varchar(50),
+dia_chi varchar(100),
 gmail varchar(50),
 gioi_tinh varchar(50),
 id_loai_khach int,
-foreign key (id_loai_khach) references loai_khach(id_loai_khach)
+foreign key (id_loai_khach) references loai_khach(id_loai_khach),
+id_tai_khoan int,
+foreign key (id_tai_khoan) references tai_khoan(id_tai_khoan)
 );
+
 create table the_loai(
 id_the_loai int primary key auto_increment,
 ten_the_loai varchar(100),
@@ -45,7 +47,7 @@ mo_ta text
 
 create table sach(
 id_sach int primary key auto_increment,
-ma_san_pham varchar(100),
+ten_sach varchar(100),
 gia double,
 so_luong int,
 hinh_anh text,
@@ -75,7 +77,10 @@ ma_thanh_toan int,
 id_tai_khoan int,
 foreign key (id_tai_khoan) references tai_khoan(id_tai_khoan),
 id_thanh_toan int,
-foreign key (id_thanh_toan) references thanh_toan(id_thanh_toan)
+foreign key (id_thanh_toan) references thanh_toan(id_thanh_toan),
+id_khach_hang int,
+foreign key (id_khach_hang) references khach_hang(id_khach_hang)
+
 );
 
 create table chi_tiet_don_hang(
@@ -88,3 +93,5 @@ foreign key (id_don_hang) references don_hang(id_don_hang),
 id_sach int,
 foreign key (id_sach) references sach(id_sach)
 );
+
+

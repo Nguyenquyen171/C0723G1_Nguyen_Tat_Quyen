@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
-    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="trangchu/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -54,13 +55,13 @@
                                                style="color: white"></i>
                     </button>
                 </form>
-                <ul style="margin: 0;font-weight: 500; font-size: 15px;color: rgb(119,119,119)">
+                <ul style="margin: 0;font-weight: 500; font-size: 15px;color: rgb(119,119,119);padding:30px 15px">
+                    <span-1><i class="fa-solid fa-cart-shopping" style="font-size: 20px"></i> Giỏ Hàng
+                    </span-1>
                     <span-1 style="margin-right: 15px">
-                        <i class="fa-solid fa-user" style="font-size: 20px"></i><a href="?action=login" methods="post" role="button"> Đăng Nhập
-                    </a>
+                     <i class="fa-solid fa-user" style="font-size: 20px"></i>   <a href="?action=login" methods="post"> Đăng Nhập</a>
                     </span-1>
-                    <span-1><i class="fa-solid fa-right-to-bracket" style="font-size: 20px"></i><a href="?action=login" methods="post" role="button"> Đăng kí </a>
-                    </span-1>
+
                 </ul>
             </div>
 
@@ -402,6 +403,8 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </body_2>
 </body>
 </html>
