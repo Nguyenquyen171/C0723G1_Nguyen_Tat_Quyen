@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <meta charset="UTF-8" />
@@ -21,45 +22,55 @@
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="#" class="sign-in-form">
-        <h2 class="title">Đăng Nhập</h2>
+      <form action="/login" class="sign-in-form" method="post">
+        <h2 class="title">Đăng Nhập </h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Tên Đăng Nhập" />
+          <input type="text" placeholder="Tên Đăng Nhập"  name="tai_khoan"/>
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Mật Khẩu" />
+          <input type="password" placeholder="Mật Khẩu"  name="mat_khau" />
         </div>
-        <input type="submit" value="Đăng Nhập" class="btn solid" />
+        <input type="submit" value="Đăng Nhập 01" class="btn solid" />
       </form>
-      <form action="#" class="sign-up-form">
+      <c:if test="${not empty errorUsername}">
+        <p class="text-danger">
+            ${errorUsername}
+        </p>
+      </c:if>
+      <c:if test="${not empty errorPassword}">
+        <p class="text-danger">
+            ${errorPassword}
+        </p>
+      </c:if>
+      <form action="/signup" class="sign-up-form" method="post">
         <h2 class="title">Tạo Tài Khoản Mới</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Tên Tài Khoản" />
+          <input type="text" placeholder="Tên Tài Khoản"name="tai_khoan_dk" />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Mật Khẩu" />
+          <input type="password" placeholder="Mật Khẩu"  name="mat_khau_dk" />
         </div>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Họ & Tên" />
+          <input type="text" placeholder="Họ & Tên"  name="ho_ten" />
         </div>
         <div class="input-field">
           <i class="fas fa-phone"></i>
-          <input type="number" placeholder="Số Điện Thoại" />
+          <input type="number" placeholder="Số Điện Thoại" name="so_dien_thoai" />
         </div>
         <div class="input-field">
           <i class="fas fa-address-book"></i>
-          <input type="text" placeholder="Địa Chỉ" />
+          <input type="text" placeholder="Địa Chỉ" name="dia_chi" />
         </div>
         <div class="input-field">
           <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Email" />
+          <input type="email" placeholder="Email" name="gmail" />
         </div>
-        <input type="submit" class="btn" value="Đăng Ký" />
+        <input type="submit" class="btn" value="Đăng Ký " />
       </form>
     </div>
   </div>

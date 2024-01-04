@@ -7,27 +7,21 @@ public class Customer {
     private String phoneNumber;
     private String address;
     private String email;
-    private String gender;
-    private String customerType;
     private Account idAccount;
 
-    public Customer(int id, String name, String phoneNumber, String address, String email, String gender, String customerType, Account idAccount) {
+    public Customer(int id, String name, String phoneNumber, String address, String email, Account idAccount) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.email = email;
-        this.gender = gender;
-        this.customerType = customerType;
         this.idAccount = idAccount;
     }
-    public Customer(int id, String name, String phoneNumber, String address, String email, String gender, Account idAccount) {
-        this.id = id;
+    public Customer(String name, String phoneNumber, String address, String email, Account idAccount) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.email = email;
-        this.gender = gender;
         this.idAccount = idAccount;
     }
 
@@ -69,22 +63,6 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getCustomerType() {
-        return customerType;
-    }
-
-    public void setCustomerType(String customerType) {
-        this.customerType = customerType;
     }
 
     public Account getIdAccount() {

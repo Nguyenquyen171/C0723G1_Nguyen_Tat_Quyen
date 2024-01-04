@@ -70,13 +70,13 @@ public class AccountRepository implements IAccountRepository {
     public boolean createAccount(Account account) {
         Connection connection = BaseRepository.getConnection();
         int count = 0;
-        String passwordHash = BCryptUtils.encryptPassword(account.getPassword());
-        System.out.println(passwordHash);
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(NEW_EMPLOYEE);
             preparedStatement.setString(1, account.getUsername());
-            preparedStatement.setString(2, passwordHash);
+            preparedStatement.setString(2, account.getPassword());
             preparedStatement.setString(3, account.getAccountType());
+            count=preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

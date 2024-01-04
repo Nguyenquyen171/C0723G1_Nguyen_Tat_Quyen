@@ -11,4 +11,5 @@ public interface IAccountRepository {
     Account findByName (String account);
     Account findAccount(String useName, String password);
     int findIdAccount(String account);
+
 }

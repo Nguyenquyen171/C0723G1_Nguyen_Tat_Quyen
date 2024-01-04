@@ -13,9 +13,9 @@ import java.util.List;
 public class CustomerRepository implements ICustomerRepository {
     private final IAccountRepository accountRepository = new AccountRepository();
     private static final String DELETE = "delete from khach_hang where id_khach_hang = ?";
-    private static final String SELECT_ALL = "select id_khach_hang,ho_ten,so_dien_thoai,dia_chi,gmail,gioi_tinh from khach_hang;";
-    private static final String INSERT = "INSERT INTO khach_hang(ho_ten,so_dien_thoai,dia_chi,gmail,gioi_tinh) VALUES (?,?,?,?,?);";
-    private static final String SELECT_BY_ID = "select id_khach_hang,ho_ten,so_dien_thoai,dia_chi,gmail,gioi_tinh from khach_hang where id_khach_hang = ?";
+    private static final String SELECT_ALL = "select id_khach_hang,ho_ten,so_dien_thoai,dia_chi,gmail from khach_hang;";
+    private static final String INSERT = "INSERT INTO khach_hang(ho_ten,so_dien_thoai,dia_chi,gmail) VALUES (?,?,?,?);";
+    private static final String SELECT_BY_ID = "select id_khach_hang,ho_ten,so_dien_thoai,dia_chi,gmail from khach_hang where id_khach_hang = ?";
 
 
     @Override
@@ -32,9 +32,8 @@ public class CustomerRepository implements ICustomerRepository {
                 String phoneNumber = resultSet.getString("so_dien_thoai");
                 String address = resultSet.getString("dia_chi");
                 String gmail = resultSet.getString("gmail");
-                String gender = resultSet.getString("gioi_tinh");
                 Account account = accountRepository.findById(resultSet.getInt("id_tai_khoan"));
-                customerList.add(new Customer(id, name, phoneNumber, address, gmail, gender, account));
+                customerList.add(new Customer(id, name, phoneNumber, address, gmail, account));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -52,7 +51,6 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(2, customer.getPhoneNumber());
             preparedStatement.setString(3, customer.getAddress());
             preparedStatement.setString(4, customer.getEmail());
-            preparedStatement.setString(5, customer.getGender());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -90,9 +88,8 @@ public class CustomerRepository implements ICustomerRepository {
                 String phoneNumber = resultSet.getString("so_dien_thoai");
                 String address = resultSet.getString("dia_chi");
                 String gmail = resultSet.getString("gmail");
-                String gender = resultSet.getString("gioi_tinh");
                 Account account = accountRepository.findById(resultSet.getInt("id_tai_khoan"));
-                customer= new Customer(id,name,phoneNumber,address,gmail,gender,account);
+                customer= new Customer(id,name,phoneNumber,address,gmail,account);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
