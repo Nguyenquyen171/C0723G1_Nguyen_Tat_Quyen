@@ -135,7 +135,5 @@ public class LoginServlet extends HttpServlet {
         req.setAttribute("customer",customer);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/signup-sussces.jsp");
         requestDispatcher.forward(req, resp);
-
-
     }
 }
