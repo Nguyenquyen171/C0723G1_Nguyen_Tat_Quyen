@@ -3,7 +3,7 @@ package com.example.book.model;
 import jakarta.persistence.*;
 
 @Entity
-public class RentalBook {
+public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -14,17 +14,17 @@ public class RentalBook {
     private Integer codeRental;
     private boolean isReturn;
 
-    public RentalBook() {
+    public Rental(Book book, Integer codeRental, boolean b) {
     }
 
-    public RentalBook(int id, Book book, Integer codeRental, boolean isReturn) {
+    public Rental(int id, Book book, Integer codeRental, boolean isReturn) {
         this.id = id;
         this.book = book;
         this.codeRental = codeRental;
         this.isReturn = isReturn;
     }
 
-    public int getId() {
+    public boolean getId() {
         return id;
     }
 

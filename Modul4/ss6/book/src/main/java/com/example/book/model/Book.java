@@ -14,11 +14,11 @@ public class Book {
     private String author;
     private Integer count;
     @OneToMany(mappedBy = "id")
-    private Set<RentalBook> rentalBooks;
+    private Set<Rental> rentalBooks;
     public Book() {
     }
 
-    public Book(Integer id, String name, String image, String author, Integer count, Set<RentalBook> rentalBooks) {
+    public Book(Integer id, String name, String image, String author, Integer count, Set<Rental> rentalBooks) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -67,11 +67,11 @@ public class Book {
         this.count = count;
     }
 
-    public Set<RentalBook> getRentalBooks() {
+    public Set<Rental> getRentalBooks() {
         return rentalBooks;
     }
 
-    public void setRentalBooks(Set<RentalBook> rentalBooks) {
+    public void setRentalBooks(Set<Rental> rentalBooks) {
         this.rentalBooks = rentalBooks;
     }
 }

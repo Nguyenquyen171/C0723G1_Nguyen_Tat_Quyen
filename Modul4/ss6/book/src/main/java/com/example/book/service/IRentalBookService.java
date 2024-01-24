@@ -1,10 +1,10 @@
 package com.example.book.service;
 
-import com.example.book.exception.RentalBookException;
-import com.example.book.model.RentalBook;
+import com.example.book.exception.RentalException;
+import com.example.book.model.Rental;
 
 public interface IRentalBookService {
-    void createRentalBook(RentalBook rentalBook);
-    void updateRentalBook(RentalBook rentalBook);
-    RentalBook findByCodeRental(Integer id) throws RentalBookException;
+    void creatRental(Rental rental);
+    void updateRental(Rental rental);
+    Rental findByCodeRental(Integer id) throws RentalException;
 }
