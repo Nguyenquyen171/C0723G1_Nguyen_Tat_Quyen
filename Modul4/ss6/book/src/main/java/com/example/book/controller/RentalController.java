@@ -1,7 +1,5 @@
 package com.example.book.controller;
 
-
-
 import com.example.book.exception.RentalException;
 import com.example.book.model.Book;
 import com.example.book.model.Rental;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Random;
-
 @Controller
 @RequestMapping("/rental")
 public class RentalController {
@@ -23,7 +20,6 @@ public class RentalController {
 
     @Autowired
     private IRentalBookService rentalService;
-
     @GetMapping("/{id}")
     public String rentalBook(@PathVariable Integer id, RedirectAttributes redirectAttributes, Model model) throws RentalException {
         Book book = bookService.getBook(id);
@@ -43,21 +39,18 @@ public class RentalController {
             return "redirect:/rental/detail/";
         }
     }
-
     @GetMapping("/detail/")
     public String showInfo() {
         return "detail";
     }
-
     @GetMapping("/give/book")
     public String showForm() {
         return "give";
     }
-
     @PostMapping("/give/book")
     public String giveBookBack(@RequestParam Integer codeRental, Model model) throws RentalException {
         Rental rental = rentalService.findByCodeRental(codeRental);
-        if (rental.getId()) {
+        if (rental.setReturn(false)) {
             throw new RentalException("Mã sách này đã được trả trước đó !");
         } else {
             rental.setReturn(true);

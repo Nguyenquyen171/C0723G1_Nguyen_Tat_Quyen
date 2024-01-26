@@ -29,13 +29,14 @@ public class BookController {
     public ModelAndView showFormAdd() {
         return new ModelAndView("add", "bookDTO", new BookDTO());
     }
+
     @PostMapping("/add")
-    public ModelAndView createBook(@Valid @ModelAttribute BookDTO bookDTO, BindingResult bindingResult){
-        if (bindingResult.hasFieldErrors()){
-            return new ModelAndView("add", "bookDTO",bookDTO);
-        }else {
-            Book book= new Book();
-            BeanUtils.copyProperties(bookDTO,book);
+    public ModelAndView createBook(@Valid @ModelAttribute BookDTO bookDTO, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
+            return new ModelAndView("add", "bookDTO", bookDTO);
+        } else {
+            Book book = new Book();
+            BeanUtils.copyProperties(bookDTO, book);
             bookService.create(book);
             return showHome();
         }

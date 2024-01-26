@@ -24,9 +24,10 @@ public class Rental {
         this.isReturn = isReturn;
     }
 
-    public boolean getId() {
-        return id;
+    public Rental() {
+
     }
+
 
     public void setId(int id) {
         this.id = id;
@@ -52,7 +53,8 @@ public class Rental {
         return isReturn;
     }
 
-    public void setReturn(boolean aReturn) {
+    public boolean setReturn(boolean aReturn) {
         isReturn = aReturn;
+        return aReturn;
     }
 }
