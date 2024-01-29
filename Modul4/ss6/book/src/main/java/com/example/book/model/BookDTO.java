@@ -20,6 +20,7 @@ public class BookDTO implements Validated {
     public Class<?>[] value() {
         return new Class[0];
     }
+
     @Size(max = 100, message = "Tên tác giả không được quá 100 kí tự")
     @Pattern(regexp = "^[a-zA-Z0-9]$",message = "Không được phép nhập kí tự đặc biệt")
     private String author;
@@ -27,6 +28,7 @@ public class BookDTO implements Validated {
     @Min(value = 0,message = "Số sách hiện không đủ phải lớn hơn hoặc bằng 0")
     @Positive(message = "Phải là số nguyên")
     private Integer count;
+   mn
 
     public BookDTO(String name, String message, String author, Integer count) {
         this.name = name;
@@ -74,5 +76,4 @@ public class BookDTO implements Validated {
     public Class<? extends Annotation> annotationType() {
         return null;
     }
-
 }
