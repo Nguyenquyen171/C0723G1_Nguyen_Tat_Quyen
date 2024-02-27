@@ -61,7 +61,6 @@ function displayInfo(obj) {
 }
 
 let obj1 = { firstName: "John", degree: "PhD" };
-displayInfo(obj1); // firstName: John, degree: PhD
-
+displayInfo(obj1);
 let obj2 = {};
 displayInfo(obj2);
