@@ -31,6 +31,8 @@ courses.forEach(course => {
         console.log(`${course.id} - ${course.title} - ${course.rating}`);
     }
 });
+
+
 let addedCourses = [
     {
         id: 6,
@@ -51,16 +53,3 @@ let addedCourses = [
 let mergedCourses = [...courses, ...addedCourses];
 console.log(mergedCourses);
 
-function displayInfo(obj) {
-    let firstName = obj.firstName || "Quân";
-
-    let degree = obj.degree || "NA";
-
-
-    console.log(`firstName: ${firstName}, degree: ${degree}`);
-}
-
-let obj1 = { firstName: "John", degree: "PhD" };
-displayInfo(obj1);
-let obj2 = {};
-displayInfo(obj2);
