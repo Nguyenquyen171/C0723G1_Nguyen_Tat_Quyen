@@ -1,7 +1,4 @@
 package com.example.blog.model;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -57,7 +54,6 @@ public class Blog {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -69,6 +65,7 @@ public class Blog {
     public void setContent(String content) {
         this.content = content;
     }
+
 
     public String getSummary() {
         return summary;
