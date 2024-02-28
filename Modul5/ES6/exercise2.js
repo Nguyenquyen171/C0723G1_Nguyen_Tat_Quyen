@@ -20,9 +20,10 @@ const person = {
     age: 25,
     gender: 'Male',
     country: 'USA'
+
 };
 
-const { name, age, ...rest } = person;
+const {name, age, ...rest} = person;
 const student = {
     ...rest,
     role: 'Student'
@@ -39,11 +40,11 @@ function displayInfo(obj) {
 
     let degree = obj.degree || "NA";
 
-
     console.log(`firstName: ${firstName}, degree: ${degree}`);
+
 }
 
-let obj1 = { firstName: "John", degree: "PhD" };
+let obj1 = {firstName: "John", degree: "PhD"}
 displayInfo(obj1);
 let obj2 = {};
 displayInfo(obj2);
