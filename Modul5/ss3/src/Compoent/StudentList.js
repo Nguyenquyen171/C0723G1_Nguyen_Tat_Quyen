@@ -51,7 +51,6 @@ class StudentList extends Component {
                             <td>{student.address}</td>
                         </tr>
                     ))}
-
                     </tbody>
                 </table>
             </div>
