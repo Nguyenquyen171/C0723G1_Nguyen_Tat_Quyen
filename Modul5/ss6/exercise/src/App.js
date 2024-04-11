@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import CreateBook from "./components/BookManagement/CreateBook";
-import Library from "./components/BookManagement/Libary";
-import EditBook from "./components/BookManagement/EditBook";
+import Home from './UI/Home';
+import Create from './UI/Create';
+import "react-toastify/dist/ReactToastify.css";
+import Edit from './UI/Edit';
+
+
 
 function App() {
     return (
-        <>
-            {/*<ToDoApp/>*/}
+        <div>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Library/>}/>
-                    <Route path="create" element={<CreateBook/>}/>
-                    <Route path="edit/:bookId"  element={<EditBook/>}/>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/create' element={<Create/>}/>
+                    <Route path='/edit/:id' element={<Edit/>}/>
                 </Routes>
             </BrowserRouter>
-            {/*<ToastContainer/>*/}
-
-        </>
+        </div>
     );
 }
 
